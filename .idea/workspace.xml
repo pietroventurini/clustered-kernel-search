@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="19a04420-5ddd-4d75-ad68-00d03c3d6f7d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YIoEkV6x4W1esG3tTbG9U8ipce" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Start">
+    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Start" />
+      <module name="KernelSearch" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;./instances/eil33-2.mps&quot; &quot;&quot; &quot;config.txt&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemSorterByValueAndAbsoluteRCTest.sort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="KernelSearch" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ItemSorterByValueAndAbsoluteRCTest" />
+      <option name="METHOD_NAME" value="sort" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Start" />
+      <item itemvalue="JUnit.ItemSorterByValueAndAbsoluteRCTest.sort" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Start" />
+        <item itemvalue="JUnit.ItemSorterByValueAndAbsoluteRCTest.sort" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19a04420-5ddd-4d75-ad68-00d03c3d6f7d" name="Default Changelist" comment="" />
+      <created>1582639359897</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582639359897</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="127" key="#Project_Structure" timestamp="1582810238601">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="320" y="127" key="#Project_Structure/0.23.1440.877@0.23.1440.877" timestamp="1582810238601" />
+    <state x="263" y="224" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582643914550">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="263" y="224" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1582643914550" />
+    <state x="100" y="123" width="1240" height="677" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1582721365766">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="100" y="123" width="1240" height="677" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1440.877@0.23.1440.877" timestamp="1582721365766" />
+    <state x="533" y="178" key="#com.intellij.ide.util.MemberChooser" timestamp="1582725400699">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="533" y="178" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877@0.23.1440.877" timestamp="1582725400698" />
+    <state x="558" y="179" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1582643250435">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="558" y="179" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.23.1440.877@0.23.1440.877" timestamp="1582643250435" />
+    <state x="801" y="436" width="467" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1582643318399">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="801" y="436" width="467" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1440.877@0.23.1440.877" timestamp="1582643318399" />
+    <state width="1398" height="250" key="GridCell.Tab.0.bottom" timestamp="1582793251711">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="250" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1582793251711" />
+    <state width="1398" height="250" key="GridCell.Tab.0.center" timestamp="1582793251709">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="250" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1582793251709" />
+    <state width="1398" height="250" key="GridCell.Tab.0.left" timestamp="1582793251706">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="250" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1582793251706" />
+    <state width="1398" height="250" key="GridCell.Tab.0.right" timestamp="1582793251711">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="250" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1582793251711" />
+    <state width="1398" height="250" key="GridCell.Tab.1.bottom" timestamp="1582793251714">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="250" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1582793251714" />
+    <state width="1398" height="250" key="GridCell.Tab.1.center" timestamp="1582793251714">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="250" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1582793251714" />
+    <state width="1398" height="250" key="GridCell.Tab.1.left" timestamp="1582793251713">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="250" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1582793251713" />
+    <state width="1398" height="250" key="GridCell.Tab.1.right" timestamp="1582793251714">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="250" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1582793251714" />
+    <state x="208" y="43" key="SettingsEditor" timestamp="1582714818652">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="208" y="43" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1582714818652" />
+    <state x="424" y="362" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582714813927">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="424" y="362" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.877@0.23.1440.877" timestamp="1582714813927" />
+    <state x="470" y="195" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1582711711957">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="470" y="195" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.877@0.23.1440.877" timestamp="1582711711957" />
+    <state x="97" y="84" key="new project wizard" timestamp="1582799785651">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="97" y="84" key="new project wizard/0.23.1440.877@0.23.1440.877" timestamp="1582799785651" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/untitled$ItemSorterByValueAndAbsoluteRCTest_sort.ic" NAME="ItemSorterByValueAndAbsoluteRCTest.sort Coverage Results" MODIFIED="1582714860426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
