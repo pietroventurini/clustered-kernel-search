@@ -13,6 +13,27 @@ public class Configuration
 	private int numIterations;
 	private int timeLimitBucket;
 
+	//Added later
+	private String instPath;
+
+	public String getInstPath() {
+		return instPath;
+	}
+
+	public void setInstPath(String instPath) {
+		this.instPath = instPath;
+	}
+
+	public String getLogPath() {
+		return logPath;
+	}
+
+	public void setLogPath(String logPath) {
+		this.logPath = logPath;
+	}
+
+	private String logPath;
+
 	public BucketBuilder getBucketBuilder()
 	{
 		return bucketBuilder;

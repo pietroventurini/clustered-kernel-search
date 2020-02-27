@@ -9,7 +9,8 @@ public class ClusteredBucketBuilder implements BucketBuilder {
     public List<Bucket> build(List<Item> items, Configuration config) { // NOTE: items does not contain kernel items
 
 
-        Map<String, Set<String>> associations = fromConstraintsToAssociations(items, model);
+        Map<String, Set<String>> associations = fromConstraintsToAssociations(items, config);
+        visualizeAssociations(associations);
 
         //TODO call clustered Kernel Search to identify the clusters
 
@@ -19,13 +20,21 @@ public class ClusteredBucketBuilder implements BucketBuilder {
         return buckets;
     }
 
+
+    private GRBModel retrieveGurobiModel(Configuration config) {
+        Model model = new Model(config.getInstPath(), config.getLogPath(), config.getTimeLimit(), config, true); // time limit equal to the global time limit
+        model.buildModel();
+        return model.getGRBModel();
+    }
+
     /**
      * Retrieve constraints from the model and convert them into an "adjacency map between variables"
      * @param items a list of items that are not in the kernel (out-of-base variables)
-     * @param model Gurobi's model
+     * @param config problem's configuration
      * @return a map of the form <K: variable, V: set of variables that join a constraint with variable K>
      */
-    private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> items, GRBModel model) {
+    private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> items, Configuration config) {
+        GRBModel model = retrieveGurobiModel(config);
         List<ArrayList<String>> constraints = readAllConstraints(model);
         removeKernelVarsFromConstraints(constraints, items);
         Map<String, Set<String>> associations = findAssociationsBetweenVars(constraints);
@@ -95,5 +104,10 @@ public class ClusteredBucketBuilder implements BucketBuilder {
         return associations;
     }
 
-
+    private void visualizeAssociations(Map<String, Set<String>> associations) {
+        System.out.println("VISUALIZING ASSOCIATIONS BETWEEN VARIABLES");
+        associations.entrySet().forEach(v ->{
+            System.out.println(v.getKey() + " is related with " + v.getValue());
+        });
+    }
 }

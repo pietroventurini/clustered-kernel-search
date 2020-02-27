@@ -17,6 +17,7 @@ public class Model
 	private boolean lpRelaxation;
 	private GRBEnv env;
 	private GRBModel model;
+
 	private boolean hasSolution;
 	private double positiveThreshold = 1e-5;
 	
@@ -241,5 +242,9 @@ public class Model
 	public void setCallback(GRBCallback callback)
 	{
 		model.setCallback(callback);
+	}
+
+	public GRBModel getGRBModel() {
+		return model;
 	}
 }

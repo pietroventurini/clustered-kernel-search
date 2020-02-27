@@ -4,6 +4,9 @@ public class Start {
         String pathlog = args[1];
         String pathConfig = args[2];
         Configuration config = ConfigurationReader.read(pathConfig);
+        config.setInstPath(pathmps);
+        config.setLogPath(pathlog);
+
         KernelSearch ks = new KernelSearch(pathmps, pathlog, config);
         ks.start();
     }
