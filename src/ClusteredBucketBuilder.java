@@ -10,7 +10,7 @@ public class ClusteredBucketBuilder implements BucketBuilder {
 
 
         Map<String, Set<String>> associations = fromConstraintsToAssociations(items, config);
-        visualizeAssociations(associations);
+        //visualizeAssociations(associations);
 
         //TODO call clustered Kernel Search to identify the clusters
 
@@ -22,7 +22,7 @@ public class ClusteredBucketBuilder implements BucketBuilder {
 
 
     private GRBModel retrieveGurobiModel(Configuration config) {
-        Model model = new Model(config.getInstPath(), config.getLogPath(), config.getTimeLimit(), config, true); // time limit equal to the global time limit
+        Model model = new Model(config.getInstPath(), config.getLogPath(), config.getTimeLimit(), config, true);
         model.buildModel();
         return model.getGRBModel();
     }
