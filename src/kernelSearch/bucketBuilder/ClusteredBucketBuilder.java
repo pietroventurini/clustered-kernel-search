@@ -15,16 +15,18 @@ public class ClusteredBucketBuilder implements BucketBuilder {
 
     @Override
     public List<Bucket> build(List<Item> items, Configuration config) { // NOTE: items does not contain kernel items
-
-
+    	
         Map<String, Set<String>> associations = fromConstraintsToAssociations(items, config);
+        // Graph g = fromConstraintsToGraph(items, GRBModel)
         //visualizeAssociations(associations);
-
+        
         //TODO call clustered Kernel Search to identify the clusters
-
+        //List<Set<Node>> clusters = GreedyModularity.extract(g);
+        
         //TODO convert clusters back into buckets
+        //List<Set<Item>> itemClusters = nodeToItems(clusters, mapNodeToItem)
         List<Bucket> buckets = new ArrayList<>();
-
+        //buckets = composeBuckets(clusters);
         return buckets;
     }
 
@@ -37,14 +39,15 @@ public class ClusteredBucketBuilder implements BucketBuilder {
 
     /**
      * Retrieve constraints from the model and convert them into an "adjacency map between variables"
-     * @param items a list of items that are not in the kernel (out-of-base variables)
+     * @param kernel_items a list of items that are not in the kernel (out-of-base variables)
      * @param config problem's configuration
      * @return a map of the form <K: variable, V: set of variables that join a constraint with variable K>
      */
-    private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> items, Configuration config) {
+    //private Graph fromConstraintsToGraph(List<Item> items, GRBModel grb_model){
+    private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> kernel_items, Configuration config) {
         GRBModel model = retrieveGurobiModel(config);
         List<ArrayList<String>> constraints = readAllConstraints(model);
-        removeKernelVarsFromConstraints(constraints, items);
+        removeKernelVarsFromConstraints(constraints, kernel_items);
         Map<String, Set<String>> associations = findAssociationsBetweenVars(constraints);
         return associations;
     }
@@ -56,7 +59,6 @@ public class ClusteredBucketBuilder implements BucketBuilder {
      * is identified by its name
      */
     private List<ArrayList<String>> readAllConstraints(GRBModel model) {
-
         List<ArrayList<String>> constraints = new ArrayList<>(); // list of lists of strings
 
         // iterate over all the constraints in the model

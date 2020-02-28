@@ -56,6 +56,8 @@ public class KernelSearch{
 		items = buildItems();
 		sorter.sort(items);	
 		kernel = kernelBuilder.build(items, config);
+		// è possibile fornire al bucketBuilder direttamente il GRBmodel usato nella risoluzione del kernel?
+		// alla fine ci servono solo le variabili(Items), della soluzione non ci importa
 		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), config);
 		solveKernel();
 		iterateBuckets();
@@ -91,8 +93,7 @@ public class KernelSearch{
 		model.disableItems(toDisable);
 		model.setCallback(callback);
 		model.solve();
-		if(model.hasSolution() && (model.getSolution().getObj() < bestSolution.getObj() || bestSolution.isEmpty()))
-		{
+		if(model.hasSolution() && (model.getSolution().getObj() < bestSolution.getObj() || bestSolution.isEmpty())){
 			bestSolution = model.getSolution();
 			model.exportSolution();
 		}

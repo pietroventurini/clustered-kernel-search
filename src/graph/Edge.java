@@ -9,23 +9,23 @@ public class Edge {
 	private static final String endFormat = ")";
 	
 	private String label;
-	private Node nodeA;
-	private Node nodeB;
+	private SimpleNode nodeA;
+	private SimpleNode nodeB;
 	private double weight;
 	
-	public Edge(Node a, Node b) {
+	public Edge(SimpleNode a, SimpleNode b) {
 		init(a, b, 1.0, "");
 	}
-	public Edge(Node a, Node b, String label) {
+	public Edge(SimpleNode a, SimpleNode b, String label) {
 		init(a, b, 1.0, label);
 	}
-	public Edge(Node a, Node b, double weight, String label) {
+	public Edge(SimpleNode a, SimpleNode b, double weight, String label) {
 		init(a, b, weight, label);
 	}
-	public Edge(Node a, Node b, double weight) {
+	public Edge(SimpleNode a, SimpleNode b, double weight) {
 		init(a, b, weight, "");
 	}
-	private void init(Node n, Node m, double weight, String label) {
+	private void init(SimpleNode n, SimpleNode m, double weight, String label) {
 		this.label = label;
 		this.nodeA = n;
 		this.nodeB = m;
@@ -56,8 +56,8 @@ public class Edge {
 		return sb.toString();
 	}
 	
-	public ArrayList<Node> nodes() {
-		ArrayList<Node> tmp = new ArrayList<Node>();
+	public ArrayList<SimpleNode> nodes() {
+		ArrayList<SimpleNode> tmp = new ArrayList<SimpleNode>();
 		tmp.add(nodeA);
 		tmp.add(nodeB);
 		return tmp;

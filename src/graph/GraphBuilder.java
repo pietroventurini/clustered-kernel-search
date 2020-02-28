@@ -5,7 +5,6 @@ import java.util.stream.IntStream;
 
 /**
  * Class to build a graph from an adjacency matrix
- * @author Matteo
  *
  */
 public class GraphBuilder {
@@ -13,8 +12,8 @@ public class GraphBuilder {
 		if(IntStream.range(0, adj.length).anyMatch((i)->adj[i].length!=adj.length))
 			throw new IllegalArgumentException("Matrix is not square");
 		
-		HashMap<Integer,Node> intToNode = new HashMap<Integer,Node>();
-		IntStream.range(0, adj.length).forEach((i)->intToNode.put(i, new Node(""+i)));
+		HashMap<Integer,SimpleNode> intToNode = new HashMap<Integer,SimpleNode>();
+		IntStream.range(0, adj.length).forEach((i)->intToNode.put(i, new SimpleNode(""+i)));
 		
 		SimpleUndirectedGraph g = new SimpleUndirectedGraph();
 		intToNode.forEach((i,n)->g.add_node(n));
