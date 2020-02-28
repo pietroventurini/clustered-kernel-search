@@ -26,8 +26,16 @@ public class Item
 		return xr;
 	}
 	
-	public double getAbsoluteRC()
-	{
+	public double getAbsoluteRC(){
 		return Math.abs(rc);
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	public boolean equals(Object obj) {
+		if(obj==null || Item.class.isAssignableFrom(obj.getClass()))
+			return false;
+		final Item other = (Item) obj;
+		return name.equals(other.name);
 	}
 }
