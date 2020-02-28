@@ -1,3 +1,4 @@
+package kernelSearch;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -7,8 +8,11 @@ import java.util.stream.Collectors;
 import gurobi.GRBCallback;
 import gurobi.GRBModel;
 
-public class KernelSearch
-{
+import kernelSearch.bucketBuilder.BucketBuilder;
+import kernelSearch.itemSorter.ItemSorter;
+import kernelSearch.kernelBuilder.KernelBuilder;
+
+public class KernelSearch{
 	private String instPath;
 	private String logPath;
 	private Configuration config;
@@ -28,8 +32,7 @@ public class KernelSearch
 	
 	private Instant startTime;
 	
-	public KernelSearch(String instPath, String logPath, Configuration config)
-	{
+	public KernelSearch(String instPath, String logPath, Configuration config){
 		this.instPath = instPath;
 		this.logPath = logPath;
 		this.config = config;
@@ -37,8 +40,7 @@ public class KernelSearch
 		configure(config);
 	}
 	
-	private void configure(Configuration configuration)
-	{
+	private void configure(Configuration configuration){
 		sorter = config.getItemSorter();
 		tlim = config.getTimeLimit();
 		bucketBuilder = config.getBucketBuilder();
@@ -48,8 +50,7 @@ public class KernelSearch
 		tlimBucket = config.getTimeLimitBucket();
 	}
 	
-	public Solution start()
-	{
+	public Solution start(){
 		startTime = Instant.now();
 		callback = new CustomCallback(logPath, startTime);
 		items = buildItems();

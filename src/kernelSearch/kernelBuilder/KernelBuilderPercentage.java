@@ -1,4 +1,9 @@
+package kernelSearch.kernelBuilder;
 import java.util.List;
+
+import kernelSearch.Configuration;
+import kernelSearch.Item;
+import kernelSearch.Kernel;
 
 public class KernelBuilderPercentage implements KernelBuilder
 {

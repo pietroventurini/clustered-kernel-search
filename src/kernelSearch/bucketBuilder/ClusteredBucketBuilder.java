@@ -1,7 +1,15 @@
-import gurobi.*;
+package kernelSearch.bucketBuilder;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import gurobi.*;
+
+import kernelSearch.Bucket;
+import kernelSearch.Configuration;
+import kernelSearch.Item;
+import kernelSearch.Model;
+
 
 public class ClusteredBucketBuilder implements BucketBuilder {
 

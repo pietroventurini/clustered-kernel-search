@@ -1,5 +1,8 @@
+package kernelSearch.itemSorter;
 import java.util.Comparator;
 import java.util.List;
+
+import kernelSearch.Item;
 
 public class ItemSorterByValueAndAbsoluteRC implements ItemSorter
 {

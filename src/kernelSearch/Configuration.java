@@ -1,3 +1,8 @@
+package kernelSearch;
+import kernelSearch.bucketBuilder.BucketBuilder;
+import kernelSearch.itemSorter.ItemSorter;
+import kernelSearch.kernelBuilder.KernelBuilder;
+
 public class Configuration
 {
 	private int numThreads;

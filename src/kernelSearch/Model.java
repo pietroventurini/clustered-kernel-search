@@ -1,3 +1,4 @@
+package kernelSearch;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,13 +77,10 @@ public class Model
 	{
 		List<String> varNames = new ArrayList<>();
 		
-		for(GRBVar v : model.getVars())
-		{
-			try
-			{
+		for(GRBVar v : model.getVars()){
+			try{
 				varNames.add(v.get(StringAttr.VarName));
-			} catch (GRBException e)
-			{
+			} catch (GRBException e){
 				e.printStackTrace();
 			}
 		}

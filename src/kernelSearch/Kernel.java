@@ -1,3 +1,4 @@
+package kernelSearch;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,9 +21,9 @@ public class Kernel
 		items.add(it);
 	}
 	
-	public boolean contains(Item it)
-	{
-		return items.stream().anyMatch(it2 -> it2.getName().equals(it.getName()));
+	public boolean contains(Item it){
+		// return items.stream().anyMatch(it2 -> it2.getName().equals(it.getName()));
+		return items.contains(it);
 	}
 	
 	public int size()
