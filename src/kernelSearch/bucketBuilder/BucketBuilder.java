@@ -1,14 +1,20 @@
 package kernelSearch.bucketBuilder;
 
-import gurobi.GRBModel;
+import java.util.List;
 
 import kernelSearch.Bucket;
 import kernelSearch.Configuration;
 import kernelSearch.Item;
-
-import java.util.List;
+import kernelSearch.Kernel;
 
 public interface BucketBuilder
 {
-	public List<Bucket> build(List<Item> items, Configuration config);
+	/**
+	 * Builds a list of Buckets starting from a set of items
+	 * @param toDispose the set of items to dispose in buckets
+	 * @param kernel the kernel
+	 * @param config the configuration for the construction
+	 * @return the list of Buckets
+	 */
+	public List<Bucket> build(List<Item> toDispose, List<Item> kernel, Configuration config);
 }

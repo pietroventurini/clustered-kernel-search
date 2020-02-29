@@ -1,35 +1,32 @@
 package kernelSearch;
-public class Item
-{
+
+public class Item implements Comparable<Item>{
 	private String name; // variable's name
 	private double rc; // variables's reduced cost
 	private double xr; // variable's value
 	
-	public Item(String name, double xr, double rc)
-	{
+	public Item(String name, double xr, double rc){
 		this.name = name;
 		this.xr = xr;
 		this.rc = rc;
 	}
 	
-	public String getName()
-	{
+	public String getName(){
 		return name;
 	}
 
-	public double getRc()
-	{
+	public double getRc(){
 		return rc;
 	}
 	
-	public double getXr()
-	{
+	public double getXr(){
 		return xr;
 	}
 	
 	public double getAbsoluteRC(){
 		return Math.abs(rc);
 	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
@@ -38,5 +35,12 @@ public class Item
 			return false;
 		final Item other = (Item) obj;
 		return name.equals(other.name);
+	}
+	/**
+	 * @see java.lang.Comparable<Item>{@link #compareTo(Item)}
+	 */
+	@Override
+	public int compareTo(Item o) {
+		return name.compareTo(o.name);
 	}
 }

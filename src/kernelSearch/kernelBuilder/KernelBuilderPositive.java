@@ -1,4 +1,5 @@
 package kernelSearch.kernelBuilder;
+import java.util.ArrayList;
 import java.util.List;
 
 import kernelSearch.Configuration;
@@ -8,15 +9,12 @@ import kernelSearch.Kernel;
 public class KernelBuilderPositive implements KernelBuilder
 {
 	@Override
-	public Kernel build(List<Item> items, Configuration config)
-	{
-		Kernel kernel = new Kernel();
+	public List<Item> build(List<Item> items, Configuration config){
+		List<Item> kernel = new ArrayList<Item>();
 		
-		for(Item it : items)
-		{
-			if(it.getXr()> 0)
-			{
-				kernel.addItem(it);
+		for(Item it : items){
+			if(it.getXr()> 0){
+				kernel.add(it);
 			}
 		}
 		return kernel;

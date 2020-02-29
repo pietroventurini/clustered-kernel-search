@@ -7,5 +7,5 @@ import kernelSearch.Kernel;
 
 public interface KernelBuilder
 {
-	public Kernel build(List<Item> items, Configuration config);
+	public List<Item> build(List<Item> items, Configuration config);
 }

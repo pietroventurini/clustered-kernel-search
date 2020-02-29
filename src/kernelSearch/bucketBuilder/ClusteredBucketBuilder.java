@@ -1,48 +1,98 @@
 package kernelSearch.bucketBuilder;
 
 import java.util.*;
-import java.util.stream.Collectors;
+import java.util.stream.*;
 
+import clustering.GreedyModularity;
+import graph.SimpleUndirectedGraph;
+import graph.UndirectedGraph;
 import gurobi.*;
-
+import gurobi.GRB.DoubleAttr;
 import kernelSearch.Bucket;
 import kernelSearch.Configuration;
 import kernelSearch.Item;
 import kernelSearch.Model;
 
-
-public class ClusteredBucketBuilder implements BucketBuilder {
-
+/**
+ * Define the behavior of Bucket Builders that build a list of Buckets
+ * from clusters of these items.
+ * Pattern: Template Method (circa)
+ * @author Matteo
+ */
+public abstract class ClusteredBucketBuilder implements BucketBuilder {
+	
     @Override
-    public List<Bucket> build(List<Item> items, Configuration config) { // NOTE: items does not contain kernel items
-    	
-        Map<String, Set<String>> associations = fromConstraintsToAssociations(items, config);
-        // UndirectedGraph<Item> g = fromConstraintsToGraph(items, GRBModel)
+    public List<Bucket> build(List<Item> items, List<Item> kernel, Configuration config) { // NOTE: items does not contain kernel items
+        // Map<String, Set<String>> associations = fromConstraintsToAssociations(items, config);
+        UndirectedGraph<Item> g = fromConstraintsToGraph(items, kernel, config);
+        //UndirectedGraph<Item> g = fromConstraintsToGraph(items, GRBModel);
         //visualizeAssociations(associations);
         
         //TODO call clustered Kernel Search to identify the clusters
         //TODO convert clusters back into buckets
-        //List<Set<Item>> clusters = GreedyModularity.extract(g);
+        List<Set<Item>> clusters = GreedyModularity.extract(g);
         
-        List<Bucket> buckets = new ArrayList<>();
-        //buckets = composeBuckets(clusters);
+        List<Bucket> buckets = composeBuckets(clusters, items.size() + kernel.size());
         return buckets;
     }
-
-
-    private GRBModel retrieveGurobiModel(Configuration config) {
-        Model model = new Model(config.getInstPath(), config.getLogPath(), config.getTimeLimit(), config, true);
-        model.buildModel();
-        return model.getGRBModel();
+    
+    /**
+     * Retrieve constraints from the model and convert them into an "adjacency map between variables"
+     * @param kernel_items a list of items that are not in the kernel (out-of-base variables)
+     * @param config problem's configuration
+     * @return 
+     */
+    private UndirectedGraph<Item> fromConstraintsToGraph(List<Item> items, List<Item> kernel_items, Configuration config){
+    	GRBModel model = retrieveGurobiModel(config);
+        List<PriorityQueue<Item>> constraints = extractConstraints(items, kernel_items, model);
+    	return composeGraph(constraints);
     }
-
+    
+    private List<PriorityQueue<Item>> extractConstraints(List<Item> items, List<Item> kernel_items, GRBModel model){
+        List<PriorityQueue<Item>> constraints = new ArrayList<PriorityQueue<Item>>(); // list of lists of strings
+        
+        // iterate over all the constraints in the model
+        for (GRBConstr c : model.getConstrs()) {
+            try {
+                GRBLinExpr e = model.getRow(c); //retrieve Linear Expression e corresponding to constraint c
+                PriorityQueue<Item> constraint = new PriorityQueue<Item>();
+                for (int i = 0; i < e.size(); i++) {
+                    GRBVar var = e.getVar(i); // retrieve i-th variable of the LinExpr e
+                    Item var_item = new Item(var.get(GRB.StringAttr.VarName), var.get(DoubleAttr.X), var.get(DoubleAttr.RC));
+                    if(items.contains(var_item))
+                    	constraint.add(items.stream().filter(item->item.equals(var_item)).findAny().get());
+                }
+                if(constraint.size() > 0)
+                	constraints.add(constraint);
+            } catch (GRBException ex) {
+                ex.printStackTrace();
+            }
+        }
+    	return constraints;
+    }
+    
+    private UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints){
+    	SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
+    	IntStream.range(0, constraints.size())
+    				.forEach(i->{
+    					while(constraints.get(i).size()>1) {
+    						Item current = constraints.get(i).poll();
+    						g.add_node(current);
+    						constraints.get(i).stream()
+    											.forEach(item->{
+    												g.add_node(item);
+    												g.add_edge(current, item);
+    											});
+    					}
+    				});
+    	return g;
+    }
     /**
      * Retrieve constraints from the model and convert them into an "adjacency map between variables"
      * @param kernel_items a list of items that are not in the kernel (out-of-base variables)
      * @param config problem's configuration
      * @return a map of the form <K: variable, V: set of variables that join a constraint with variable K>
      */
-    //private Graph fromConstraintsToGraph(List<Item> items, GRBModel grb_model){
     private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> kernel_items, Configuration config) {
         GRBModel model = retrieveGurobiModel(config);
         List<ArrayList<String>> constraints = readAllConstraints(model);
@@ -51,6 +101,12 @@ public class ClusteredBucketBuilder implements BucketBuilder {
         return associations;
     }
 
+    private GRBModel retrieveGurobiModel(Configuration config) {
+        Model model = new Model(config.getInstPath(), config.getLogPath(), config.getTimeLimit(), config, true);
+        model.buildModel();
+        return model.getGRBModel();
+    }
+    
     /**
      * Analyzes the Gurobi's model converting its constraints into lists of variables' names
      * @param model Gurobi's model
@@ -119,4 +175,12 @@ public class ClusteredBucketBuilder implements BucketBuilder {
             System.out.println(v.getKey() + " is related with " + v.getValue());
         });
     }
+    
+    /**
+     * Compose a list of Buckets using the clusters of items found
+     * @param clusters the list of items clusters
+     * @param itemsN the total number of items: |kernel| + sum(|cluster|)
+     * @return the list of Buckets
+     */
+    public abstract List<Bucket> composeBuckets(List<Set<Item>> clusters, int itemsN);
 }

@@ -13,6 +13,11 @@ import kernelSearch.itemSorter.ItemSorterByValueAndAbsoluteRC;
 import kernelSearch.kernelBuilder.KernelBuilderPercentage;
 import kernelSearch.kernelBuilder.KernelBuilderPositive;
 
+/**Extract the configuration from a config file.
+ * TODO Refactor the logic
+ * @author Matteo
+ *
+ */
 public class ConfigurationReader
 {
 	public static Configuration read(String path)
@@ -70,6 +75,7 @@ public class ConfigurationReader
         					config.setBucketBuilder(new DefaultBucketBuilder());
         					break;
 						case 1:
+							// the logic must be changes
 							config.setBucketBuilder(new ClusteredBucketBuilder());
 							break;
         				default:

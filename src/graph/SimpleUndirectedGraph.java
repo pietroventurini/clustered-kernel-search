@@ -35,9 +35,22 @@ public class SimpleUndirectedGraph<N> implements UndirectedGraph<N>{
 									.filter((k)->k.equals(m))
 									.findFirst().get();
 		Edge<N> e = new Edge<N>(n_act, m_act, weight, label);
-		comp.get(n).add(e);
-		comp.get(m).add(e);
-		edges+=e.weight();
+		if(neighbors(n).contains(m)) {
+			Edge<N> e_new = new Edge<N>(n_act, 
+										m_act, 
+										weight + comp.get(n).stream()
+														.filter(edge->edge.equals(e))
+														.findAny().get().weight(), 
+										label);
+			comp.get(n).remove(e);
+			comp.get(m).remove(e);
+			comp.get(n).add(e_new);
+			comp.get(m).add(e_new);
+		}else {
+			comp.get(n).add(e);
+			comp.get(m).add(e);
+		}
+		edges+=weight;
 		return true;
 	}
 	public boolean add_edge(N n, N m, double weight) {
