@@ -9,20 +9,19 @@ import graph.UndirectedGraph;
 import gurobi.*;
 import gurobi.GRB.DoubleAttr;
 import kernelSearch.Bucket;
-import kernelSearch.Configuration;
 import kernelSearch.Item;
 import kernelSearch.Model;
+import kernelSearch.ModelProperties;
 
 /**
  * Define the behavior of Bucket Builders that build a list of Buckets
  * from clusters of these items.
  * Pattern: Template Method (circa)
- * @author Matteo
  */
 public abstract class ClusteredBucketBuilder implements BucketBuilder {
 	
     @Override
-    public List<Bucket> build(List<Item> items, List<Item> kernel, Configuration config) { // NOTE: items does not contain kernel items
+    public List<Bucket> build(List<Item> items, List<Item> kernel, double bucketSize, ModelProperties config) { // NOTE: items does not contain kernel items
         // Map<String, Set<String>> associations = fromConstraintsToAssociations(items, config);
         UndirectedGraph<Item> g = fromConstraintsToGraph(items, kernel, config);
         //UndirectedGraph<Item> g = fromConstraintsToGraph(items, GRBModel);
@@ -42,7 +41,7 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
      * @param config problem's configuration
      * @return 
      */
-    private UndirectedGraph<Item> fromConstraintsToGraph(List<Item> items, List<Item> kernel_items, Configuration config){
+    private UndirectedGraph<Item> fromConstraintsToGraph(List<Item> items, List<Item> kernel_items, ModelProperties config){
     	GRBModel model = retrieveGurobiModel(config);
         List<PriorityQueue<Item>> constraints = extractConstraints(items, kernel_items, model);
     	return composeGraph(constraints);
@@ -93,7 +92,7 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
      * @param config problem's configuration
      * @return a map of the form <K: variable, V: set of variables that join a constraint with variable K>
      */
-    private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> kernel_items, Configuration config) {
+    private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> kernel_items, ModelProperties config) {
         GRBModel model = retrieveGurobiModel(config);
         List<ArrayList<String>> constraints = readAllConstraints(model);
         removeKernelVarsFromConstraints(constraints, kernel_items);
@@ -101,8 +100,8 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         return associations;
     }
 
-    private GRBModel retrieveGurobiModel(Configuration config) {
-        Model model = new Model(config.getInstPath(), config.getLogPath(), config.getTimeLimit(), config, true);
+    private GRBModel retrieveGurobiModel(ModelProperties config) {
+        Model model = new Model(config, 100000, true);
         model.buildModel();
         return model.getGRBModel();
     }

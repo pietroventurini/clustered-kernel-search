@@ -1,53 +1,66 @@
 package kernelSearch;
+
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.stream.Collectors;
 
 import gurobi.GRBCallback;
-import gurobi.GRBModel;
 
 import kernelSearch.bucketBuilder.BucketBuilder;
+import kernelSearch.bucketBuilder.BucketBuilderFactory;
 import kernelSearch.itemSorter.ItemSorter;
+import kernelSearch.itemSorter.ItemSorterFactory;
 import kernelSearch.kernelBuilder.KernelBuilder;
+import kernelSearch.kernelBuilder.KernelBuilderFactory;
 
 public class KernelSearch{
-	private String instPath;
-	private String logPath;
-	private Configuration config;
+	private final String instPath;
+	private final String logPath;
 	private List<Item> items;
-	private ItemSorter sorter;
+	private final ItemSorter sorter;
 	private BucketBuilder bucketBuilder;
 	private KernelBuilder kernelBuilder;
-	private int tlim;
+	private final int tlim;
 	private Solution bestSolution;
 	private List<Bucket> buckets;
 	private List<Item> kernel;
-	private int tlimKernel;
-	private int tlimBucket;
+	private final int tlimKernel;
+	private final int tlimBucket;
 	private int numIterations;
 	private GRBCallback callback;
-	private int timeThreshold = 5;
+	private final int timeThreshold = 5;
+	private final ModelProperties modelProp;
+	private final double kernelSize;
+	private final double bucketSize;
+	
+	
 	
 	private Instant startTime;
 	
-	public KernelSearch(String instPath, String logPath, Configuration config){
-		this.instPath = instPath;
-		this.logPath = logPath;
-		this.config = config;
+	public KernelSearch(Properties p){
+		this.instPath = p.getProperty(ConfigKey.INSTANCE.key());
+		this.logPath = p.getProperty(ConfigKey.LOG.key());
 		bestSolution = new Solution();
-		configure(config);
-	}
-	
-	private void configure(Configuration configuration){
-		sorter = config.getItemSorter();
-		tlim = config.getTimeLimit();
-		bucketBuilder = config.getBucketBuilder();
-		kernelBuilder = config.getKernelBuilder();
-		tlimKernel = config.getTimeLimitKernel();
-		numIterations = config.getNumIterations();
-		tlimBucket = config.getTimeLimitBucket();
+		sorter = ItemSorterFactory.get(p.getProperty(ConfigKey.SORTER.key()));
+		tlim = Integer.parseInt(p.getProperty(ConfigKey.TIME_LIMIT.key()));
+		tlimKernel = Integer.parseInt(p.getProperty(ConfigKey.KERNEL_TIME_LIMIT.key()));
+		numIterations = Integer.parseInt(p.getProperty(ConfigKey.ITERATIONS.key()));
+		tlimBucket = Integer.parseInt(p.getProperty(ConfigKey.BUCKET_TIME_LIMIT.key()));
+		kernelSize = Double.parseDouble(p.getProperty(ConfigKey.KERNEL_SIZE.key()));
+		bucketSize = Double.parseDouble(p.getProperty(ConfigKey.BUCKET_SIZE.key()));
+		bucketBuilder = BucketBuilderFactory.get(p.getProperty(ConfigKey.BUCKET_BUILDER.key()),
+													bucketSize,
+													Double.parseDouble(p.getProperty(ConfigKey.PRIVILEGED_ITEMS_PERCENTAGE.key())));
+		kernelBuilder = KernelBuilderFactory.get(p.getProperty(ConfigKey.KERNEL_BUILDER.key()));
+		modelProp = new ModelProperties(instPath,
+										logPath,
+										Integer.parseInt(p.getProperty(ConfigKey.THREADS.key())),
+										Integer.parseInt(p.getProperty(ConfigKey.PRESOLVE.key())),
+										Double.parseDouble(p.getProperty(ConfigKey.MIPGAP.key())));
+
 	}
 	
 	public Solution start(){
@@ -55,10 +68,13 @@ public class KernelSearch{
 		callback = new CustomCallback(logPath, startTime);
 		items = buildItems();
 		sorter.sort(items);	
-		kernel = kernelBuilder.build(items, config);
+		kernel = kernelBuilder.build(items, kernelSize);
 		// è possibile fornire al bucketBuilder direttamente il GRBmodel usato nella risoluzione del kernel?
 		// alla fine ci servono solo le variabili(Items), della soluzione non ci importa
-		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), kernel, config);
+		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), 
+										kernel, 
+										bucketSize,
+										modelProp);
 		solveKernel();
 		iterateBuckets();
 		
@@ -67,7 +83,7 @@ public class KernelSearch{
 
 	private List<Item> buildItems()
 	{
-		Model model = new Model(instPath, logPath, config.getTimeLimit(), config, true); // time limit equal to the global time limit
+		Model model = new Model(modelProp, tlim, true); // time limit equal to the global time limit
 		model.buildModel();
 		model.solve(); // solving the relaxation (lpRelaxation parameter = true)
 		List<Item> items = new ArrayList<>();
@@ -84,7 +100,7 @@ public class KernelSearch{
 	
 	private void solveKernel()
 	{
-		Model model = new Model(instPath, logPath, Math.min(tlimKernel, getRemainingTime()), config, false);	
+		Model model = new Model(modelProp, Math.min(tlimKernel, getRemainingTime()), false);	
 		model.buildModel();
 		if(!bestSolution.isEmpty())
 			model.readSolution(bestSolution);
@@ -115,7 +131,7 @@ public class KernelSearch{
 		{
 			List<Item> toDisable = items.stream().filter(it -> !kernel.contains(it) && !b.contains(it)).collect(Collectors.toList());
 
-			Model model = new Model(instPath, logPath, Math.min(tlimBucket, getRemainingTime()), config, false);	
+			Model model = new Model(modelProp, Math.min(tlimBucket, getRemainingTime()), false);	
 			model.buildModel();
 					
 			model.disableItems(toDisable);
