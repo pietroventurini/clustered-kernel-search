@@ -3,8 +3,6 @@ package kernelSearch.bucketBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-import gurobi.GRBModel;
-
 import kernelSearch.Bucket;
 import kernelSearch.Configuration;
 import kernelSearch.Item;

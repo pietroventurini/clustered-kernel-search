@@ -17,14 +17,13 @@ public class ClusteredBucketBuilder implements BucketBuilder {
     public List<Bucket> build(List<Item> items, Configuration config) { // NOTE: items does not contain kernel items
     	
         Map<String, Set<String>> associations = fromConstraintsToAssociations(items, config);
-        // Graph g = fromConstraintsToGraph(items, GRBModel)
+        // UndirectedGraph<Item> g = fromConstraintsToGraph(items, GRBModel)
         //visualizeAssociations(associations);
         
         //TODO call clustered Kernel Search to identify the clusters
-        //List<Set<Node>> clusters = GreedyModularity.extract(g);
-        
         //TODO convert clusters back into buckets
-        //List<Set<Item>> itemClusters = nodeToItems(clusters, mapNodeToItem)
+        //List<Set<Item>> clusters = GreedyModularity.extract(g);
+        
         List<Bucket> buckets = new ArrayList<>();
         //buckets = composeBuckets(clusters);
         return buckets;
