@@ -14,8 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-import graph.Graph;
-import graph.SimpleNode;
+import graph.UndirectedGraph;
 
 /**
  * Implements the Greedy Modularity method proposed by Clauset, Newman and Moore
@@ -52,7 +51,7 @@ public class GreedyModularity {
 	 * @param g the graph to be analyzed
 	 * @return the list of clusters found
 	 */
-	public static List<Set<SimpleNode>> extract(Graph g) {
+	public static <N> List<Set<N>> extract(UndirectedGraph<N> g) {
 		initLogger();
 		log.info("start: GREEDY MODULARITY on "+g);
 		
@@ -61,8 +60,8 @@ public class GreedyModularity {
 		double q0 = 1.0/(2.0*m);
 		
 		// Maps every node in an integer(just to simplify the use of nodes)
-		TreeMap<Integer,SimpleNode> labelToNode = new TreeMap<Integer,SimpleNode>();
-		HashMap<SimpleNode,Integer> nodeToLabel = new HashMap<SimpleNode,Integer>();
+		TreeMap<Integer, N> labelToNode = new TreeMap<Integer, N>();
+		HashMap<N, Integer> nodeToLabel = new HashMap<N, Integer>();
 		IntStream.range(0, N).forEach((i)->{
 			labelToNode.put(i, g.nodes().get(i));
 			nodeToLabel.put(g.nodes().get(i), i);
