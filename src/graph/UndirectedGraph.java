@@ -3,14 +3,15 @@ package graph;
 import java.util.List;
 
 /**
- * Defines the behavior of a generic Graph
- * @param <N> the type of nodes that compose the graph. See @Node for more details
+ * Defines the behavior of a generic undirected Graph.
+ * An undirected graph is composed by a set of Nodes and of a set of Edges between the nodes.
+ * @param <N> the type of the nodes that compose the graph. See @Node for more details
  */
-public interface Graph {
+public interface UndirectedGraph<N> {
 	/**
 	 * @return the list of all the nodes of the graph
 	 */
-	public List<SimpleNode> nodes();
+	public List<N> nodes();
 	/**
 	 * @return the number of ALL the edges of the graph
 	 */
@@ -20,11 +21,11 @@ public interface Graph {
 	 * @param node a node of the graph
 	 * @return the degree of the node
 	 */
-	public double degree(SimpleNode node);
+	public double degree(N node);
 	/**
 	 * Returns the neighbors of a specific node
 	 * @param node a node of the graph
 	 * @return the list of its neighbors
 	 */
-	public List<SimpleNode> neighbors(SimpleNode node);
+	public List<N> neighbors(N node);
 }

@@ -3,29 +3,29 @@ package graph;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Edge {
+public class Edge<N> {
 	private static final String startFormat = "(%s, w:%.2f";
 	private static final String labelFormat = ", l:%s";
 	private static final String endFormat = ")";
 	
 	private String label;
-	private SimpleNode nodeA;
-	private SimpleNode nodeB;
+	private N nodeA;
+	private N nodeB;
 	private double weight;
 	
-	public Edge(SimpleNode a, SimpleNode b) {
+	public Edge(N a, N b) {
 		init(a, b, 1.0, "");
 	}
-	public Edge(SimpleNode a, SimpleNode b, String label) {
+	public Edge(N a, N b, String label) {
 		init(a, b, 1.0, label);
 	}
-	public Edge(SimpleNode a, SimpleNode b, double weight, String label) {
+	public Edge(N a, N b, double weight, String label) {
 		init(a, b, weight, label);
 	}
-	public Edge(SimpleNode a, SimpleNode b, double weight) {
+	public Edge(N a, N b, double weight) {
 		init(a, b, weight, "");
 	}
-	private void init(SimpleNode n, SimpleNode m, double weight, String label) {
+	private void init(N n, N m, double weight, String label) {
 		this.label = label;
 		this.nodeA = n;
 		this.nodeB = m;
@@ -37,10 +37,14 @@ public class Edge {
 			return false;
 		if(!Edge.class.isAssignableFrom(o.getClass()))
 			return false;
-		
-		final Edge other = (Edge) o;
-		boolean node_match = nodes().containsAll(other.nodes());
-		return node_match && weight==other.weight && label.equals(other.label);
+		try {
+			@SuppressWarnings("unchecked")
+			final Edge<N> other = (Edge<N>) o;
+			boolean node_match = nodes().containsAll(other.nodes());
+			return node_match && weight==other.weight && label.equals(other.label);
+		}catch(ClassCastException e) {
+			return false;
+		}
 	}
 	public int hashCode() {
 		if(Objects.hash(nodeA, nodeB) < Objects.hash(nodeB, nodeA))
@@ -56,8 +60,8 @@ public class Edge {
 		return sb.toString();
 	}
 	
-	public ArrayList<SimpleNode> nodes() {
-		ArrayList<SimpleNode> tmp = new ArrayList<SimpleNode>();
+	public ArrayList<N> nodes() {
+		ArrayList<N> tmp = new ArrayList<N>();
 		tmp.add(nodeA);
 		tmp.add(nodeB);
 		return tmp;
