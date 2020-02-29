@@ -1,4 +1,4 @@
-package greedyModularity;
+package clustering;
 
 import java.util.ArrayList;
 import java.util.HashMap;
