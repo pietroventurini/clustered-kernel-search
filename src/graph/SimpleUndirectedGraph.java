@@ -5,19 +5,44 @@ import java.util.stream.Collectors;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class SimpleUndirectedGraph<N> implements UndirectedGraph<N>{
+public class SimpleUndirectedGraph<N> implements UndirectedGraph<N> {
+	
 	private HashMap<N, HashSet<Edge<N>>> comp;
 	private double edges;
 	
+	/**
+	 * Constructor.
+	 * Inits the map of nodes and edges.
+	 */
 	public SimpleUndirectedGraph() {
-		init();
-	}
-	private void init() {
 		this.comp = new HashMap<N, HashSet<Edge<N>>>();
 		this.edges=0;
 	}
 	
-	public boolean add_node(N n) {
+	@Override
+	public double edgesNumber() {
+		return edges;
+	}
+	
+	@Override
+	public double degreeOf(N node) {
+		return comp.get(node).stream().mapToDouble((e)->e.weight()).sum();
+	}
+	
+	@Override
+	public int neighborsNumberOf(N node) {
+		if (!this.comp.containsKey(node)) {
+			return 0;
+		}
+		return comp.get(node).size();
+	}
+	
+	@Override
+	public List<N> nodes() {
+		return comp.keySet().stream().collect(Collectors.toList());
+	}
+	
+	public boolean addNode(N n) {
 		if(!comp.containsKey(n)) {
 			comp.put(n, new HashSet<Edge<N>>());
 			return true;
@@ -25,8 +50,8 @@ public class SimpleUndirectedGraph<N> implements UndirectedGraph<N>{
 		return false;
 	}
 	
-	private boolean add_new_edge(N n, N m, double weight, String label) {
-		if(!comp.containsKey(n) || !comp.containsKey(m))
+	private boolean connect(N n, N m, double weight, String label) {
+		if (!comp.containsKey(n) || !comp.containsKey(m))
 			return false;
 
 		N n_act = comp.keySet().stream()
@@ -36,7 +61,7 @@ public class SimpleUndirectedGraph<N> implements UndirectedGraph<N>{
 									.filter((k)->k.equals(m))
 									.findFirst().get();
 		Edge<N> e = new Edge<N>(n_act, m_act, weight, label);
-		if(neighbors(n).contains(m)) {
+		if(neighborsOf(n).contains(m)) {
 			Edge<N> e_new = new Edge<N>(n_act, 
 										m_act, 
 										weight + comp.get(n).stream()
@@ -54,26 +79,12 @@ public class SimpleUndirectedGraph<N> implements UndirectedGraph<N>{
 		edges+=weight;
 		return true;
 	}
-	public boolean add_edge(N n, N m, double weight) {
-		return add_new_edge(n, m, weight, "");
-	}
-	public boolean add_edge(N n, N m) {
-		return add_new_edge(n, m, 1.0, "");
+	
+	public boolean connect(N n, N m, double weight) {
+		return connect(n, m, weight, "");
 	}
 	
-	public double edgesN() {
-		return edges;
-	}
-	
-	public double degree(N n) {
-		return comp.get(n).stream().mapToDouble((e)->e.weight()).sum();
-	}
-	
-	public List<N> nodes(){
-		return comp.keySet().stream().collect(Collectors.toList());
-	}
-	
-	public List<N> neighbors(N n){
+	public List<N> neighborsOf(N n){
 		return comp.get(n).stream()
 							.map((edge)->edge.nodes().stream()
 												.filter((k)->!k.equals(n))
@@ -86,6 +97,7 @@ public class SimpleUndirectedGraph<N> implements UndirectedGraph<N>{
 	public String toString() {
 		return comp.toString();
 	}
+	
 	public boolean equals(Object obj) {
 		if(obj==null || !SimpleUndirectedGraph.class.isAssignableFrom(obj.getClass()))
 			return false;
@@ -99,7 +111,31 @@ public class SimpleUndirectedGraph<N> implements UndirectedGraph<N>{
 			return false;
 		}
 	}
+	
 	public int hashCode() {
 		return Objects.hash(comp, edges);
+	}
+	
+	@Override
+	public boolean removeNode(N node) {
+		this.comp.remove(node);
+		// TODO FIXME Sistemare questo metodo
+		return false;
+	}
+	
+	@Override
+	public boolean disconnect(N first, N second) {
+		// TODO FIXME Sistemare questo metodo
+		return false;
+	}
+	@Override
+	public boolean areConnected(N first, N second) {
+		// TODO FIXME Sistemare questo metodo
+		return false;
+	}
+	@Override
+	public double getConnectionWeight(N first, N second) {
+		// TODO FIXME Sistemare questo metodo
+		return 0;
 	}
 }

@@ -56,7 +56,7 @@ public class GreedyModularity {
 		log.info("start: GREEDY MODULARITY on "+g);
 		
 		int N = g.nodes().size();
-		double m = g.edgesN();
+		double m = g.edgesNumber();
 		double q0 = 1.0/(2.0*m);
 		
 		// Maps every node in an integer(just to simplify the use of nodes)
@@ -68,7 +68,7 @@ public class GreedyModularity {
 		});
 		
 		// Degree of each node
-		double[] k = IntStream.range(0, N).mapToDouble((i)->g.degree(labelToNode.get(i))).toArray();
+		double[] k = IntStream.range(0, N).mapToDouble((i)->g.degreeOf(labelToNode.get(i))).toArray();
 		
 		// Initialize the communities and the Story of all the merges
 		// At the start each node by itself is a community
@@ -86,7 +86,7 @@ public class GreedyModularity {
 		IntStream.range(0, N)
 			.forEach((i)->{
 				dq.put(i, new TreeMap<Integer, Double>());
-				g.neighbors(labelToNode.get(i))
+				g.neighborsOf(labelToNode.get(i))
 					.stream()
 					.filter((n)->!n.equals(labelToNode.get(i)))
 					.mapToInt((n)->nodeToLabel.get(n))

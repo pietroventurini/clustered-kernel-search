@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.*;
 
 import clustering.GreedyModularity;
+import graph.ImplicitUndirectedGraph;
 import graph.SimpleUndirectedGraph;
 import graph.UndirectedGraph;
 import gurobi.*;
@@ -80,18 +81,19 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
     // FIXME non termina la costruzione del grafo...
     private UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints){
         System.out.println("COMPOSING THE GRAPH...");
-        SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
+        UndirectedGraph<Item> g = new ImplicitUndirectedGraph<Item>();
 
         for (PriorityQueue<Item> constraint : constraints) {
             while (constraint.size() > 1) {
                 Item current = constraint.poll();
-                g.add_node(current);
+                g.addNode(current);
                 for (Item item : constraint) {
-                    g.add_node(item);
-                    g.add_edge(current, item);
+                    g.addNode(item);
+                    g.connect(current, item);
                 }
             }
         }
+        
         System.out.println("GRAPH HAS BEEN CREATED");
         return g;
     }
