@@ -86,10 +86,12 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         for (PriorityQueue<Item> constraint : constraints) {
             while (constraint.size() > 1) {
                 Item current = constraint.poll();
-                g.addNode(current);
+                g.addNode(current); // Adding item to graph as a node
+                
                 for (Item item : constraint) {
-                    g.addNode(item);
-                    g.connect(current, item);
+                    g.addNode(item); // Eventually adds the item to the graph
+                    double oldWeight = g.getConnectionWeight(current, item); // Getting the link weight (eventually 0, if nodes are not connected) 
+                    g.connect(current, item, oldWeight + 1); // Increasing the weight by one
                 }
             }
         }
