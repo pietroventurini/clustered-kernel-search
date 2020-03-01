@@ -51,9 +51,12 @@ public class KernelSearch{
 		tlimBucket = Integer.parseInt(p.getProperty(ConfigKey.BUCKET_TIME_LIMIT.key()));
 		kernelSize = Double.parseDouble(p.getProperty(ConfigKey.KERNEL_SIZE.key()));
 		bucketSize = Double.parseDouble(p.getProperty(ConfigKey.BUCKET_SIZE.key()));
+		System.out.println(p.getProperty(ConfigKey.PRIVILEGED_ITEMS_PERCENTAGE.key()));
+
 		bucketBuilder = BucketBuilderFactory.get(p.getProperty(ConfigKey.BUCKET_BUILDER.key()),
 													bucketSize,
 													Double.parseDouble(p.getProperty(ConfigKey.PRIVILEGED_ITEMS_PERCENTAGE.key())));
+
 		kernelBuilder = KernelBuilderFactory.get(p.getProperty(ConfigKey.KERNEL_BUILDER.key()));
 		modelProp = new ModelProperties(instPath,
 										logPath,
@@ -69,7 +72,7 @@ public class KernelSearch{
 		items = buildItems();
 		sorter.sort(items);	
 		kernel = kernelBuilder.build(items, kernelSize);
-		// è possibile fornire al bucketBuilder direttamente il GRBmodel usato nella risoluzione del kernel?
+		// possibile fornire al bucketBuilder direttamente il GRBmodel usato nella risoluzione del kernel?
 		// alla fine ci servono solo le variabili(Items), della soluzione non ci importa
 		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), 
 										kernel, 

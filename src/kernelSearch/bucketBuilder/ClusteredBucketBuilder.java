@@ -26,11 +26,10 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         UndirectedGraph<Item> g = fromConstraintsToGraph(items, kernel, config);
         //UndirectedGraph<Item> g = fromConstraintsToGraph(items, GRBModel);
         //visualizeAssociations(associations);
-        
-        //TODO call clustered Kernel Search to identify the clusters
-        //TODO convert clusters back into buckets
+
+        //call clustered Kernel Search to identify the clusters
         List<Set<Item>> clusters = GreedyModularity.extract(g);
-        
+        // convert clusters back into buckets
         List<Bucket> buckets = composeBuckets(clusters, items.size() + kernel.size());
         return buckets;
     }
@@ -46,7 +45,8 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         List<PriorityQueue<Item>> constraints = extractConstraints(items, kernel_items, model);
     	return composeGraph(constraints);
     }
-    
+
+
     private List<PriorityQueue<Item>> extractConstraints(List<Item> items, List<Item> kernel_items, GRBModel model){
         List<PriorityQueue<Item>> constraints = new ArrayList<PriorityQueue<Item>>(); // list of lists of strings
         
@@ -57,9 +57,16 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
                 PriorityQueue<Item> constraint = new PriorityQueue<Item>();
                 for (int i = 0; i < e.size(); i++) {
                     GRBVar var = e.getVar(i); // retrieve i-th variable of the LinExpr e
-                    Item var_item = new Item(var.get(GRB.StringAttr.VarName), var.get(DoubleAttr.X), var.get(DoubleAttr.RC));
-                    if(items.contains(var_item))
-                    	constraint.add(items.stream().filter(item->item.equals(var_item)).findAny().get());
+                    Item var_item = new Item(var.get(GRB.StringAttr.VarName), 0, 0);
+                    for (Item it : items)
+                        if (it.getName().equals(var_item.getName())) {
+                            constraint.add(it);
+                            break;
+                        }
+
+                    /*if(items.contains(var_item))
+                        constraint.add(items.stream().filter(item -> item.equals(var_item)).findAny().get());
+                    */
                 }
                 if(constraint.size() > 0)
                 	constraints.add(constraint);
@@ -69,7 +76,8 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         }
     	return constraints;
     }
-    
+
+    // FIXME non sembra funzionare
     private UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints){
     	SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
     	IntStream.range(0, constraints.size())
@@ -84,6 +92,7 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
     											});
     					}
     				});
+        System.out.println(g);
     	return g;
     }
     /**
