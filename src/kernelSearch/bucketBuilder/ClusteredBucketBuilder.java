@@ -77,24 +77,45 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
     	return constraints;
     }
 
-    // FIXME non sembra funzionare
+    // FIXME non termina la costruzione del grafo...
     private UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints){
-    	SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
-    	IntStream.range(0, constraints.size())
-    				.forEach(i->{
-    					while(constraints.get(i).size()>1) {
-    						Item current = constraints.get(i).poll();
-    						g.add_node(current);
-    						constraints.get(i).stream()
-    											.forEach(item->{
-    												g.add_node(item);
-    												g.add_edge(current, item);
-    											});
-    					}
-    				});
-        System.out.println(g);
-    	return g;
+        System.out.println("COMPOSING THE GRAPH...");
+        SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
+
+        for (PriorityQueue<Item> constraint : constraints) {
+            while (constraint.size() > 1) {
+                Item current = constraint.poll();
+                g.add_node(current);
+                for (Item item : constraint) {
+                    g.add_node(item);
+                    g.add_edge(current, item);
+                }
+            }
+        }
+        System.out.println("GRAPH HAS BEEN CREATED");
+        return g;
     }
+
+    /*
+    private UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints){
+        SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
+        IntStream.range(0, constraints.size())
+                .forEach(i->{
+                    while(constraints.get(i).size()>1) {
+                        Item current = constraints.get(i).poll();
+                        g.add_node(current);
+                        constraints.get(i).stream()
+                                .forEach(item->{
+                                    g.add_node(item);
+                                    g.add_edge(current, item);
+                                });
+                    }
+                });
+        System.out.println(g);
+        return g;
+    }
+    */
+
     /**
      * Retrieve constraints from the model and convert them into an "adjacency map between variables"
      * @param kernel_items a list of items that are not in the kernel (out-of-base variables)

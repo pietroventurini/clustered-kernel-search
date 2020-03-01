@@ -28,6 +28,7 @@ public class SimpleUndirectedGraph<N> implements UndirectedGraph<N>{
 	private boolean add_new_edge(N n, N m, double weight, String label) {
 		if(!comp.containsKey(n) || !comp.containsKey(m))
 			return false;
+
 		N n_act = comp.keySet().stream()
 									.filter((k)->k.equals(n))
 									.findFirst().get();
