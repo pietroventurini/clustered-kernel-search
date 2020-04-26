@@ -4,34 +4,33 @@ import java.util.*;
 import java.util.stream.*;
 
 import clustering.GreedyModularity;
+import graph.ImplicitUndirectedGraph;
 import graph.SimpleUndirectedGraph;
 import graph.UndirectedGraph;
 import gurobi.*;
 import gurobi.GRB.DoubleAttr;
 import kernelSearch.Bucket;
-import kernelSearch.Configuration;
 import kernelSearch.Item;
 import kernelSearch.Model;
+import kernelSearch.ModelProperties;
 
 /**
  * Define the behavior of Bucket Builders that build a list of Buckets
  * from clusters of these items.
  * Pattern: Template Method (circa)
- * @author Matteo
  */
 public abstract class ClusteredBucketBuilder implements BucketBuilder {
 	
     @Override
-    public List<Bucket> build(List<Item> items, List<Item> kernel, Configuration config) { // NOTE: items does not contain kernel items
+    public List<Bucket> build(List<Item> items, List<Item> kernel, double bucketSize, ModelProperties config) { // NOTE: items does not contain kernel items
         // Map<String, Set<String>> associations = fromConstraintsToAssociations(items, config);
         UndirectedGraph<Item> g = fromConstraintsToGraph(items, kernel, config);
         //UndirectedGraph<Item> g = fromConstraintsToGraph(items, GRBModel);
         //visualizeAssociations(associations);
-        
-        //TODO call clustered Kernel Search to identify the clusters
-        //TODO convert clusters back into buckets
+
+        //call clustered Kernel Search to identify the clusters
         List<Set<Item>> clusters = GreedyModularity.extract(g);
-        
+        // convert clusters back into buckets
         List<Bucket> buckets = composeBuckets(clusters, items.size() + kernel.size());
         return buckets;
     }
@@ -42,12 +41,13 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
      * @param config problem's configuration
      * @return 
      */
-    private UndirectedGraph<Item> fromConstraintsToGraph(List<Item> items, List<Item> kernel_items, Configuration config){
+    private UndirectedGraph<Item> fromConstraintsToGraph(List<Item> items, List<Item> kernel_items, ModelProperties config){
     	GRBModel model = retrieveGurobiModel(config);
         List<PriorityQueue<Item>> constraints = extractConstraints(items, kernel_items, model);
     	return composeGraph(constraints);
     }
-    
+
+
     private List<PriorityQueue<Item>> extractConstraints(List<Item> items, List<Item> kernel_items, GRBModel model){
         List<PriorityQueue<Item>> constraints = new ArrayList<PriorityQueue<Item>>(); // list of lists of strings
         
@@ -58,9 +58,16 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
                 PriorityQueue<Item> constraint = new PriorityQueue<Item>();
                 for (int i = 0; i < e.size(); i++) {
                     GRBVar var = e.getVar(i); // retrieve i-th variable of the LinExpr e
-                    Item var_item = new Item(var.get(GRB.StringAttr.VarName), var.get(DoubleAttr.X), var.get(DoubleAttr.RC));
-                    if(items.contains(var_item))
-                    	constraint.add(items.stream().filter(item->item.equals(var_item)).findAny().get());
+                    Item var_item = new Item(var.get(GRB.StringAttr.VarName), 0, 0);
+                    for (Item it : items)
+                        if (it.getName().equals(var_item.getName())) {
+                            constraint.add(it);
+                            break;
+                        }
+
+                    /*if(items.contains(var_item))
+                        constraint.add(items.stream().filter(item -> item.equals(var_item)).findAny().get());
+                    */
                 }
                 if(constraint.size() > 0)
                 	constraints.add(constraint);
@@ -70,30 +77,36 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         }
     	return constraints;
     }
-    
+
+    // FIXME non termina la costruzione del grafo...
     private UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints){
-    	SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
-    	IntStream.range(0, constraints.size())
-    				.forEach(i->{
-    					while(constraints.get(i).size()>1) {
-    						Item current = constraints.get(i).poll();
-    						g.add_node(current);
-    						constraints.get(i).stream()
-    											.forEach(item->{
-    												g.add_node(item);
-    												g.add_edge(current, item);
-    											});
-    					}
-    				});
-    	return g;
+        System.out.println("COMPOSING THE GRAPH...");
+        UndirectedGraph<Item> g = new ImplicitUndirectedGraph<Item>();
+
+        for (PriorityQueue<Item> constraint : constraints) {
+            while (constraint.size() > 1) {
+                Item current = constraint.poll();
+                g.addNode(current); // Adding item to graph as a node
+                
+                for (Item item : constraint) {
+                    g.addNode(item); // Eventually adds the item to the graph
+                    double oldWeight = g.getConnectionWeight(current, item); // Getting the link weight (eventually 0, if nodes are not connected) 
+                    g.connect(current, item, oldWeight + 1); // Increasing the weight by one
+                }
+            }
+        }
+        
+        System.out.println("GRAPH HAS BEEN CREATED");
+        return g;
     }
+
     /**
      * Retrieve constraints from the model and convert them into an "adjacency map between variables"
      * @param kernel_items a list of items that are not in the kernel (out-of-base variables)
      * @param config problem's configuration
      * @return a map of the form <K: variable, V: set of variables that join a constraint with variable K>
      */
-    private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> kernel_items, Configuration config) {
+    private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> kernel_items, ModelProperties config) {
         GRBModel model = retrieveGurobiModel(config);
         List<ArrayList<String>> constraints = readAllConstraints(model);
         removeKernelVarsFromConstraints(constraints, kernel_items);
@@ -101,8 +114,8 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         return associations;
     }
 
-    private GRBModel retrieveGurobiModel(Configuration config) {
-        Model model = new Model(config.getInstPath(), config.getLogPath(), config.getTimeLimit(), config, true);
+    private GRBModel retrieveGurobiModel(ModelProperties config) {
+        Model model = new Model(config, 100000, true);
         model.buildModel();
         return model.getGRBModel();
     }

@@ -11,24 +11,19 @@ import gurobi.GRB.StringAttr;
 
 public class Model
 {
-	private String mpsFilePath;
-	private String logPath;
-	private int timeLimit;
-	private Configuration config;
+	private ModelProperties config;
 	private boolean lpRelaxation;
+	private int timeLimit;
 	private GRBEnv env;
 	private GRBModel model;
-
 	private boolean hasSolution;
 	private double positiveThreshold = 1e-5;
 	
-	public Model(String mpsFilePath, String logPath, int timeLimit, Configuration config, boolean lpRelaxation)
+	public Model(ModelProperties config, int timeLimit, boolean lpRelaxation)
 	{
-		this.mpsFilePath = mpsFilePath;
-		this.logPath = logPath;
-		this.timeLimit = timeLimit;	
 		this.config = config;
 		this.lpRelaxation = lpRelaxation;
+		this.timeLimit = timeLimit;
 		this.hasSolution = false;
 	}
 	
@@ -38,7 +33,7 @@ public class Model
 		{
 			env = new GRBEnv();
 			setParameters();
-			model = new GRBModel(env, mpsFilePath);
+			model = new GRBModel(env, config.instance());
 
 			if(lpRelaxation)
 				model = model.relax();
@@ -50,10 +45,10 @@ public class Model
 	
 	private void setParameters() throws GRBException
 	{
-		env.set(GRB.StringParam.LogFile, logPath+"log.txt");
-		env.set(GRB.IntParam.Threads, config.getNumThreads());
-		env.set(GRB.IntParam.Presolve, config.getPresolve());
-		env.set(GRB.DoubleParam.MIPGap, config.getMipGap());
+		env.set(GRB.StringParam.LogFile, config.log()+"log.txt");
+		env.set(GRB.IntParam.Threads, config.threads());
+		env.set(GRB.IntParam.Presolve, config.presolve());
+		env.set(GRB.DoubleParam.MIPGap, config.mipgap());
 		if (timeLimit > 0)
 			env.set(GRB.DoubleParam.TimeLimit, timeLimit);
 		//env.set(GRB.IntParam.Method, 0);

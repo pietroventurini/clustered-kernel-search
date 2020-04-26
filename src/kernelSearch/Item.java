@@ -31,7 +31,7 @@ public class Item implements Comparable<Item>{
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	public boolean equals(Object obj) {
-		if(obj==null || Item.class.isAssignableFrom(obj.getClass()))
+		if(obj==null || !Item.class.isAssignableFrom(obj.getClass()))
 			return false;
 		final Item other = (Item) obj;
 		return name.equals(other.name);

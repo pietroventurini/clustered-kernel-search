@@ -7,6 +7,7 @@ import java.util.Set;
 import kernelSearch.Bucket;
 import kernelSearch.Item;
 import kernelSearch.bucketBuilder.ClusteredBucketBuilder;
+import kernelSearch.itemSorter.ItemSorterByValueAndAbsoluteRC;
 
 /**
  * Classe che implementa la strategia di creazione dei bucket basata su clustering degli item presenti nel problema.
@@ -27,11 +28,9 @@ import kernelSearch.bucketBuilder.ClusteredBucketBuilder;
 public class SimpleClustersWithPrivilegedItemsBucketBuilder extends ClusteredBucketBuilder {
 	
 	private final double privilegedItemsPercentage;
-	private final List<Item> notKernel_ordered;
 	
-	public SimpleClustersWithPrivilegedItemsBucketBuilder(double privilegedItemsPercentage, List<Item> notKernel_ordered) {
+	public SimpleClustersWithPrivilegedItemsBucketBuilder(double privilegedItemsPercentage) {
 		this.privilegedItemsPercentage = privilegedItemsPercentage;
-		this.notKernel_ordered = notKernel_ordered;
 	}
 //	@Override
 //	public List<Bucket> build(KernelSearch ks) {
@@ -91,6 +90,9 @@ public class SimpleClustersWithPrivilegedItemsBucketBuilder extends ClusteredBuc
 			buckets.add(currentBucket);
 		});
 		
+		List<Item> notKernel_ordered = new ArrayList<Item>();
+		clusters.stream().forEach(cluster->cluster.forEach(item->notKernel_ordered.add(item)));
+		new ItemSorterByValueAndAbsoluteRC().sort(notKernel_ordered);
 		notKernel_ordered.stream()
 							.limit((int) (notKernel_ordered.size() * this.privilegedItemsPercentage))
 							.forEach(item->buckets.forEach(b->b.addItem(item)));

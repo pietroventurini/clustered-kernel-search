@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kernelSearch.Bucket;
-import kernelSearch.Configuration;
 import kernelSearch.Item;
+import kernelSearch.ModelProperties;
 
 /**
  * Algoritmo di costruzione dei bucket.
@@ -17,11 +17,11 @@ import kernelSearch.Item;
 public class DefaultBucketBuilder implements BucketBuilder
 {
 	@Override
-	public List<Bucket> build(List<Item> toDispose, List<Item> kernel, Configuration config)
+	public List<Bucket> build(List<Item> toDispose, List<Item> kernel, double bucketSize, ModelProperties config)
 	{
 		List<Bucket> buckets = new ArrayList<>();
 		Bucket b = new Bucket();
-		int size = (int) Math.floor(toDispose.size()*config.getBucketSize());
+		int size = (int) Math.floor(toDispose.size()*bucketSize);
 		for(Item it : toDispose){
 			b.addItem(it);
 			
