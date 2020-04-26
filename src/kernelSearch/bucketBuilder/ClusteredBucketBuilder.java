@@ -6,10 +6,7 @@ import java.util.stream.*;
 import clustering.GreedyModularity;
 import com.google.common.graph.MutableValueGraph;
 import com.google.common.graph.ValueGraphBuilder;
-import graph.SimpleUndirectedGraph;
-import graph.UndirectedGraph;
 import gurobi.*;
-import gurobi.GRB.DoubleAttr;
 import kernelSearch.Bucket;
 import kernelSearch.Item;
 import kernelSearch.Model;
@@ -26,8 +23,8 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
     public List<Bucket> build(List<Item> items, List<Item> kernel, double bucketSize, ModelProperties config) { // NOTE: items does not contain kernel items
         //convert lists of items and kernel to maps
         Map<String, Item> itemsMap = items.stream().collect(Collectors.toMap(Item::getName, item -> item));
-        Map<String, Item> kernelMap = kernel.stream().collect(Collectors.toMap(Item::getName, kernel_item -> kernel_item));
-        MutableValueGraph<Item, Double> g = fromConstraintsToGraph(itemsMap, kernelMap, config);
+        //Map<String, Item> kernelMap = kernel.stream().collect(Collectors.toMap(Item::getName, kernel_item -> kernel_item));
+        MutableValueGraph<Item, Double> g = fromConstraintsToGraph(itemsMap, config);
 
         //call clustered Kernel Search to identify the clusters
         List<Set<Item>> clusters = GreedyModularity.extract(g);
@@ -42,20 +39,19 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
      * @param config problem's configuration
      * @return 
      */
-    private MutableValueGraph<Item, Double> fromConstraintsToGraph(Map<String, Item> items, Map<String, Item> kernel_items, ModelProperties config){
+    private MutableValueGraph<Item, Double> fromConstraintsToGraph(Map<String, Item> items, ModelProperties config){
     	GRBModel model = retrieveGurobiModel(config);
-        List<PriorityQueue<Item>> constraints = extractConstraints(items, kernel_items, model);
+        List<PriorityQueue<Item>> constraints = extractConstraints(items, model);
     	return composeGraph(constraints);
     }
 
     /**
      * Read the constraints from the GRBModel, and convert them into a List<PriorityQueue<Item>>
      * @param items a map of the items that are NOT inside the kernel
-     * @param kernel_items a map of the items in the kernel
      * @param model a fictitious GRBModel (from which we retrieve the constraints)
      * @return
      */
-    private List<PriorityQueue<Item>> extractConstraints(Map<String, Item> items, Map<String, Item> kernel_items, GRBModel model){
+    private List<PriorityQueue<Item>> extractConstraints(Map<String, Item> items, GRBModel model){
         List<PriorityQueue<Item>> constraints = new ArrayList<PriorityQueue<Item>>();
         
         // iterate over all the constraints in the model
@@ -93,7 +89,8 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
             while (constraint.size() > 1) {
                 Item current = constraint.poll();
                 for (Item item : constraint) {
-                    g.putEdgeValue(current, item, 1.0);
+                	double weight = 1.0 + g.edgeValueOrDefault(current, item, 0.0);
+                    g.putEdgeValue(current, item, weight);
                 }
             }
         }
@@ -121,4 +118,59 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
      * @return the list of Buckets
      */
     public abstract List<Bucket> composeBuckets(List<Set<Item>> clusters, int itemsN);
+    
+//    private List<Bucket> buildVersioneEspansa(List<Item> items, List<Item> kernel, double bucketSize, ModelProperties config) { // NOTE: items does not contain kernel items
+//        //convert lists of items and kernel to maps
+//        Map<String, Item> itemsMap = items.stream().collect(Collectors.toMap(Item::getName, item -> item));
+//        //Map<String, Item> kernelMap = kernel.stream().collect(Collectors.toMap(Item::getName, kernel_item -> kernel_item));
+//        
+//        //from constraints to graph
+//        GRBModel grbModel = new Model(config, 100000, true).buildModel();
+//    	
+//    	//extract constraints
+//        long tStart = System.nanoTime();
+//        List<PriorityQueue<Item>> constraints = new ArrayList<PriorityQueue<Item>>();
+//        for (GRBConstr c : grbModel.getConstrs()) {
+//            try {
+//                GRBLinExpr e = grbModel.getRow(c); //retrieve Linear Expression e corresponding to constraint c
+//                PriorityQueue<Item> constraint = new PriorityQueue<Item>();
+//                for (int i = 0; i < e.size(); i++) {
+//                    GRBVar var = e.getVar(i); // retrieve i-th variable of the LinExpr e
+//                    String var_name = var.get(GRB.StringAttr.VarName);
+//                    Item it = itemsMap.get(var_name);
+//                    if (it != null)
+//                        constraint.add(it);
+//                }
+//                if(constraint.size() > 0)
+//                	constraints.add(constraint);
+//            } catch (GRBException ex) {
+//                ex.printStackTrace();
+//            }
+//        }
+//        long tEnd = System.nanoTime();
+//        System.out.println("CONSTRAINTS EXTRACTED in "+ (tEnd-tStart)/1000000  +"ms");
+//        
+//        //compose graph
+//        long tStart1 = System.nanoTime();
+//        System.out.println("COMPOSING THE GRAPH...");
+//        
+//        MutableValueGraph<Item, Double> g = ValueGraphBuilder.undirected().build();
+//        for (PriorityQueue<Item> constraint : constraints) {
+//            while (constraint.size() > 1) {
+//                Item current = constraint.poll();
+//                for (Item item : constraint) {
+//                	double weight = 1.0 + g.edgeValueOrDefault(current, item, 0.0);
+//                    g.putEdgeValue(current, item, weight);
+//                }
+//            }
+//        }
+//        long tEnd1 = System.nanoTime();
+//        System.out.println("GRAPH HAS BEEN CREATED in "+ (tEnd1-tStart1)/1000000  +"ms");
+//        
+//        //call clustered Kernel Search to identify the clusters
+//        List<Set<Item>> clusters = GreedyModularity.extract(g);
+//        // convert clusters back into buckets
+//        List<Bucket> buckets = composeBuckets(clusters, items.size() + kernel.size());
+//        return buckets;
+//    }
 }

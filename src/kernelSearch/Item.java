@@ -1,5 +1,7 @@
 package kernelSearch;
 
+import java.util.Objects;
+
 import graph.Node;
 
 public class Item implements Comparable<Item>, Node {
@@ -38,11 +40,19 @@ public class Item implements Comparable<Item>, Node {
 		final Item other = (Item) obj;
 		return name.equals(other.name);
 	}
-	/**
+	
+	/*
 	 * @see java.lang.Comparable<Item>{@link #compareTo(Item)}
 	 */
 	@Override
 	public int compareTo(Item o) {
 		return name.compareTo(o.name);
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	public int hashCode() {
+		return Objects.hash(name, rc, xr);
 	}
 }

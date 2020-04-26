@@ -9,14 +9,13 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.logging.FileHandler;
+// import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
+// import java.util.logging.SimpleFormatter;
 
 import com.google.common.graph.MutableValueGraph;
 import graph.Node;
-import graph.UndirectedGraph;
 
 /**
  * Implements the Greedy Modularity method proposed by Clauset, Newman and Moore
@@ -70,12 +69,6 @@ public class GreedyModularity {
 			nodeToLabel.put(n, index);
 			index++;
 		}
-		/*
-		IntStream.range(0, N).forEach((i)->{
-			labelToNode.put(i, g.nodes().get(i));
-			nodeToLabel.put(g.nodes().get(i), i);
-		});
-		 */
 		
 		// Degree of each node
 		double[] k = IntStream.range(0, N).mapToDouble((i)->g.degree(labelToNode.get(i))).toArray();
@@ -83,9 +76,9 @@ public class GreedyModularity {
 		// Initialize the communities and the Story of all the merges
 		// At the start each node by itself is a community
 		TreeMap<Integer, HashSet<Integer>> communities = new TreeMap<Integer, HashSet<Integer>>();
-		labelToNode.keySet().stream().forEach((i)->{
-			communities.put(i, new HashSet<Integer>());
-			communities.get(i).add(i);
+		labelToNode.keySet().stream().forEach((key)->{
+			communities.put(key, new HashSet<Integer>());
+			communities.get(key).add(key);
 		});
 		ArrayList<String> merges = new ArrayList<String>();
 		

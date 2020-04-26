@@ -27,13 +27,13 @@ public class Model
 		this.hasSolution = false;
 	}
 	
-	public void buildModel()
+	public GRBModel buildModel()
 	{
 		try
 		{
 			env = new GRBEnv();
 			setParameters();
-			model = new GRBModel(env, config.instance());
+			model = new GRBModel(env, config.instancePath());
 
 			if(lpRelaxation)
 				model = model.relax();
@@ -41,11 +41,12 @@ public class Model
 		{
 			e.printStackTrace();
 		}
+		return model;
 	}
 	
 	private void setParameters() throws GRBException
 	{
-		env.set(GRB.StringParam.LogFile, config.log()+"log.txt");
+		env.set(GRB.StringParam.LogFile, config.logPath()+"log.txt");
 		env.set(GRB.IntParam.Threads, config.threads());
 		env.set(GRB.IntParam.Presolve, config.presolve());
 		env.set(GRB.DoubleParam.MIPGap, config.mipgap());
