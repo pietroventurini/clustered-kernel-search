@@ -2,7 +2,8 @@ package graph;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class SimpleUndirectedGraph<N extends Node> implements UndirectedGraph<N>{
+@Deprecated
+public class SimpleUndirectedGraph <N extends Node> implements UndirectedGraph<N>{
 	private Map<String, N> nodes;
 	private HashMap<N, HashSet<Edge<N>>> comp;
 	private double edges;

@@ -1,20 +1,15 @@
 package clustering;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.HashSet;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Set;
-import java.util.TreeMap;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 import com.google.common.graph.MutableValueGraph;
+import graph.MapGraph;
 import graph.Node;
 import graph.UndirectedGraph;
 
@@ -53,15 +48,17 @@ public class GreedyModularity {
 	 * @param g the graph to be analyzed
 	 * @return the list of clusters found
 	 */
-	public static <N extends Node, V> List<Set<N>> extract(MutableValueGraph<N, V> g) {
+	public static <N extends Node, V> List<Set<N>> extract(Map<String, N> itemsMap, UndirectedGraph<N> g) {
 		initLogger();
 		log.info("start: GREEDY MODULARITY on "+g);
 		
 		int N = g.nodes().size();
-		double m = g.edges().size();
+		//double m = g.edges().size();
+		double m = g.edgesN();
 		double q0 = 1.0/(2.0*m);
 		
 		// Maps every node in an integer(just to simplify the use of nodes)
+		//TODO come parametro di extract ricevo itemsMap che è una mappa <nomeVariabile -> Item>, può essere usata al posto di labelToNode
 		TreeMap<Integer, N> labelToNode = new TreeMap<Integer, N>();
 		HashMap<N, Integer> nodeToLabel = new HashMap<N, Integer>();
 		int index = 0;
@@ -96,7 +93,7 @@ public class GreedyModularity {
 		IntStream.range(0, N)
 			.forEach((i)->{
 				dq.put(i, new TreeMap<Integer, Double>());
-				g.adjacentNodes(labelToNode.get(i))
+				g.neighbors(labelToNode.get(i))
 					.stream()
 					.filter((n)->!n.equals(labelToNode.get(i)))
 					.mapToInt((n)->nodeToLabel.get(n))

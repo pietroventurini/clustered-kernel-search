@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Deprecated
 public class Edge<N> {
 	private static final String startFormat = "(%s, w:%.2f";
 	private static final String labelFormat = ", l:%s";

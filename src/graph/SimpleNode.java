@@ -7,6 +7,7 @@ import java.util.Objects;
  * In general: a node can be whatever we want it to be, it MUST have a label in order to uniquely identify it
  *
  */
+@Deprecated
 public class SimpleNode implements Node {
 	private static final String format = "%s";
 	private static final String linkedFormat = "-%s";
