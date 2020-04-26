@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.stream.*;
 
 import clustering.GreedyModularity;
+import com.google.common.graph.MutableValueGraph;
+import com.google.common.graph.ValueGraphBuilder;
 import graph.SimpleUndirectedGraph;
 import graph.UndirectedGraph;
 import gurobi.*;
@@ -22,10 +24,10 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
 	
     @Override
     public List<Bucket> build(List<Item> items, List<Item> kernel, double bucketSize, ModelProperties config) { // NOTE: items does not contain kernel items
-        // Map<String, Set<String>> associations = fromConstraintsToAssociations(items, config);
-        UndirectedGraph<Item> g = fromConstraintsToGraph(items, kernel, config);
-        //UndirectedGraph<Item> g = fromConstraintsToGraph(items, GRBModel);
-        //visualizeAssociations(associations);
+        //convert lists of items and kernel to maps
+        Map<String, Item> itemsMap = items.stream().collect(Collectors.toMap(Item::getName, item -> item));
+        Map<String, Item> kernelMap = kernel.stream().collect(Collectors.toMap(Item::getName, kernel_item -> kernel_item));
+        MutableValueGraph<Item, Double> g = fromConstraintsToGraph(itemsMap, kernelMap, config);
 
         //call clustered Kernel Search to identify the clusters
         List<Set<Item>> clusters = GreedyModularity.extract(g);
@@ -40,15 +42,21 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
      * @param config problem's configuration
      * @return 
      */
-    private UndirectedGraph<Item> fromConstraintsToGraph(List<Item> items, List<Item> kernel_items, ModelProperties config){
+    private MutableValueGraph<Item, Double> fromConstraintsToGraph(Map<String, Item> items, Map<String, Item> kernel_items, ModelProperties config){
     	GRBModel model = retrieveGurobiModel(config);
         List<PriorityQueue<Item>> constraints = extractConstraints(items, kernel_items, model);
     	return composeGraph(constraints);
     }
 
-
-    private List<PriorityQueue<Item>> extractConstraints(List<Item> items, List<Item> kernel_items, GRBModel model){
-        List<PriorityQueue<Item>> constraints = new ArrayList<PriorityQueue<Item>>(); // list of lists of strings
+    /**
+     * Read the constraints from the GRBModel, and convert them into a List<PriorityQueue<Item>>
+     * @param items a map of the items that are NOT inside the kernel
+     * @param kernel_items a map of the items in the kernel
+     * @param model a fictitious GRBModel (from which we retrieve the constraints)
+     * @return
+     */
+    private List<PriorityQueue<Item>> extractConstraints(Map<String, Item> items, Map<String, Item> kernel_items, GRBModel model){
+        List<PriorityQueue<Item>> constraints = new ArrayList<PriorityQueue<Item>>();
         
         // iterate over all the constraints in the model
         for (GRBConstr c : model.getConstrs()) {
@@ -57,16 +65,10 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
                 PriorityQueue<Item> constraint = new PriorityQueue<Item>();
                 for (int i = 0; i < e.size(); i++) {
                     GRBVar var = e.getVar(i); // retrieve i-th variable of the LinExpr e
-                    Item var_item = new Item(var.get(GRB.StringAttr.VarName), 0, 0);
-                    for (Item it : items)
-                        if (it.getName().equals(var_item.getName())) {
-                            constraint.add(it);
-                            break;
-                        }
-
-                    /*if(items.contains(var_item))
-                        constraint.add(items.stream().filter(item -> item.equals(var_item)).findAny().get());
-                    */
+                    String var_name = var.get(GRB.StringAttr.VarName);
+                    Item it = items.get(var_name);
+                    if (it != null)
+                        constraint.add(it);
                 }
                 if(constraint.size() > 0)
                 	constraints.add(constraint);
@@ -77,133 +79,40 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
     	return constraints;
     }
 
-    // FIXME non termina la costruzione del grafo...
-    private UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints){
+    /**
+     * Build a MutableValueGraph (using GUAVA library by Google: https://github.com/google/guava/wiki/GraphsExplained)
+     * @param constraints
+     * @return
+     */
+    //FIXME non termina in tempi ragionevoli (tuttavia termina commentando la riga g.putEdgeValue)
+    private MutableValueGraph<Item, Double> composeGraph(List<PriorityQueue<Item>> constraints){
+        long tStart = System.nanoTime();
         System.out.println("COMPOSING THE GRAPH...");
-        SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
-
+        MutableValueGraph<Item, Double> g = ValueGraphBuilder.undirected().build();
         for (PriorityQueue<Item> constraint : constraints) {
             while (constraint.size() > 1) {
                 Item current = constraint.poll();
-                g.add_node(current);
                 for (Item item : constraint) {
-                    g.add_node(item);
-                    g.add_edge(current, item);
+                    g.putEdgeValue(current, item, 1.0);
                 }
             }
         }
-        System.out.println("GRAPH HAS BEEN CREATED");
+        long tEnd = System.nanoTime();
+        System.out.println("GRAPH HAS BEEN CREATED in "+ (tEnd-tStart)/1000000  +"ms");
         return g;
     }
 
-    /*
-    private UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints){
-        SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
-        IntStream.range(0, constraints.size())
-                .forEach(i->{
-                    while(constraints.get(i).size()>1) {
-                        Item current = constraints.get(i).poll();
-                        g.add_node(current);
-                        constraints.get(i).stream()
-                                .forEach(item->{
-                                    g.add_node(item);
-                                    g.add_edge(current, item);
-                                });
-                    }
-                });
-        System.out.println(g);
-        return g;
-    }
-    */
 
     /**
-     * Retrieve constraints from the model and convert them into an "adjacency map between variables"
-     * @param kernel_items a list of items that are not in the kernel (out-of-base variables)
-     * @param config problem's configuration
-     * @return a map of the form <K: variable, V: set of variables that join a constraint with variable K>
+     * Retrieve a fictitious GRBModel that will be used to extract the constaints
+     * @param config a configuration file containing the path to the problem instance file
      */
-    private Map<String, Set<String>> fromConstraintsToAssociations(List<Item> kernel_items, ModelProperties config) {
-        GRBModel model = retrieveGurobiModel(config);
-        List<ArrayList<String>> constraints = readAllConstraints(model);
-        removeKernelVarsFromConstraints(constraints, kernel_items);
-        Map<String, Set<String>> associations = findAssociationsBetweenVars(constraints);
-        return associations;
-    }
-
     private GRBModel retrieveGurobiModel(ModelProperties config) {
         Model model = new Model(config, 100000, true);
         model.buildModel();
         return model.getGRBModel();
     }
-    
-    /**
-     * Analyzes the Gurobi's model converting its constraints into lists of variables' names
-     * @param model Gurobi's model
-     * @return a list of constraints, where each constraint is represented by a list of variables, and each variables
-     * is identified by its name
-     */
-    private List<ArrayList<String>> readAllConstraints(GRBModel model) {
-        List<ArrayList<String>> constraints = new ArrayList<>(); // list of lists of strings
 
-        // iterate over all the constraints in the model
-        for (GRBConstr c : model.getConstrs()) {
-            try {
-                GRBLinExpr e = model.getRow(c); //retrieve Linear Expression e corresponding to constraint c
-                ArrayList<String> constraint = new ArrayList<>();
-                for (int i = 0; i < e.size(); i++) {
-                    GRBVar var = e.getVar(i); // retrieve i-th variable of the LinExpr e
-                    String var_name = var.get(GRB.StringAttr.VarName); // retrieve name of variable var
-                    constraint.add(var_name);
-                }
-                constraints.add(constraint);
-            } catch (GRBException ex) {
-                ex.printStackTrace();
-            }
-        }
-        return constraints;
-    }
-
-    /**
-     * For each constraint, filter its variables by keeping only the ones that are contained into items (not the kernel ones)
-     * @param constraints
-     * @param items list of the items outside the kernel (out-of-base variables)
-     */
-    private void removeKernelVarsFromConstraints(List<ArrayList<String>> constraints, List<Item> items) {
-        constraints.forEach(c -> c.retainAll(items.stream()
-                                                    .map(Item::getName)
-                                                    .collect(Collectors.toList())
-                                            )
-                            );
-    }
-
-    /**
-     * Analyzes a list of constraints and returns a map <K: variable, V: set of variables that join a constraint with K>
-     * @param constraints a list of constraints. Each constraint is represented by a list of strings,
-     *                    where each string is the name of a variable involved in that constraint
-     * @return a map of the form <K: variable, V: set of variables that join a constraint with variable K>
-     */
-    private Map<String, Set<String>> findAssociationsBetweenVars(List<ArrayList<String>> constraints) {
-        Map<String, Set<String>> associations = new HashMap<>();
-
-        // implementazione poco elegante e costosa
-        for (ArrayList<String> constraint : constraints) {
-            for (String v1 : constraint) {
-                associations.putIfAbsent(v1, new HashSet<>());
-                for (String v2 : constraint)
-                    if (!v1.equals(v2))
-                        associations.get(v1).add(v2);
-            }
-        }
-
-        return associations;
-    }
-
-    private void visualizeAssociations(Map<String, Set<String>> associations) {
-        System.out.println("VISUALIZING ASSOCIATIONS BETWEEN VARIABLES");
-        associations.entrySet().forEach(v ->{
-            System.out.println(v.getKey() + " is related with " + v.getValue());
-        });
-    }
     
     /**
      * Compose a list of Buckets using the clusters of items found

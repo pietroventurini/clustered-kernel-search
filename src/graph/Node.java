@@ -8,4 +8,6 @@ package graph;
  * HashCode: public int hashCode()
  */
 public interface Node {
+
+    public String getName();
 }

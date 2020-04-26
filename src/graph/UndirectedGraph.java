@@ -7,7 +7,7 @@ import java.util.List;
  * An undirected graph is composed by a set of Nodes and of a set of Edges between the nodes.
  * @param <N> the type of the nodes that compose the graph. See @Node for more details
  */
-public interface UndirectedGraph<N> {
+public interface UndirectedGraph<N extends Node> {
 	/**
 	 * @return the list of all the nodes of the graph
 	 */

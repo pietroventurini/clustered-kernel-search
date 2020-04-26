@@ -14,6 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+import com.google.common.graph.MutableValueGraph;
+import graph.Node;
 import graph.UndirectedGraph;
 
 /**
@@ -51,21 +53,29 @@ public class GreedyModularity {
 	 * @param g the graph to be analyzed
 	 * @return the list of clusters found
 	 */
-	public static <N> List<Set<N>> extract(UndirectedGraph<N> g) {
+	public static <N extends Node, V> List<Set<N>> extract(MutableValueGraph<N, V> g) {
 		initLogger();
 		log.info("start: GREEDY MODULARITY on "+g);
 		
 		int N = g.nodes().size();
-		double m = g.edgesN();
+		double m = g.edges().size();
 		double q0 = 1.0/(2.0*m);
 		
 		// Maps every node in an integer(just to simplify the use of nodes)
 		TreeMap<Integer, N> labelToNode = new TreeMap<Integer, N>();
 		HashMap<N, Integer> nodeToLabel = new HashMap<N, Integer>();
+		int index = 0;
+		for (N n: g.nodes()) {
+			labelToNode.put(index, n);
+			nodeToLabel.put(n, index);
+			index++;
+		}
+		/*
 		IntStream.range(0, N).forEach((i)->{
 			labelToNode.put(i, g.nodes().get(i));
 			nodeToLabel.put(g.nodes().get(i), i);
 		});
+		 */
 		
 		// Degree of each node
 		double[] k = IntStream.range(0, N).mapToDouble((i)->g.degree(labelToNode.get(i))).toArray();
@@ -86,7 +96,7 @@ public class GreedyModularity {
 		IntStream.range(0, N)
 			.forEach((i)->{
 				dq.put(i, new TreeMap<Integer, Double>());
-				g.neighbors(labelToNode.get(i))
+				g.adjacentNodes(labelToNode.get(i))
 					.stream()
 					.filter((n)->!n.equals(labelToNode.get(i)))
 					.mapToInt((n)->nodeToLabel.get(n))

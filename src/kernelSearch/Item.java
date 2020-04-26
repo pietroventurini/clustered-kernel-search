@@ -1,6 +1,8 @@
 package kernelSearch;
 
-public class Item implements Comparable<Item>{
+import graph.Node;
+
+public class Item implements Comparable<Item>, Node {
 	private String name; // variable's name
 	private double rc; // variables's reduced cost
 	private double xr; // variable's value

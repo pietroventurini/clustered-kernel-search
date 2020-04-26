@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Edge<N> {
@@ -60,8 +61,8 @@ public class Edge<N> {
 		return sb.toString();
 	}
 	
-	public ArrayList<N> nodes() {
-		ArrayList<N> tmp = new ArrayList<N>();
+	public List<N> nodes() {
+		List<N> tmp = new ArrayList<>();
 		tmp.add(nodeA);
 		tmp.add(nodeB);
 		return tmp;
