@@ -8,11 +8,11 @@ import java.util.stream.Collectors;
 /**
  * Class used to define a node in the ImplicitUndirectedGraph class.
  * This allows to split the complexity and the responsibilities of the graph class in multiple instances of nodes.
- * The type parameter <i>N</i> is used to contain a generic payload, on which all the comparaisons are made.
+ * The type parameter <i>N</i> is used to contain a generic payload, on which all the comparisons are made.
  *
  * @param <N> The type of the payload
  */
-class Node<N extends Comparable<N>> implements Comparable<Node<N>> {
+class Node <N extends Comparable<N>> implements Comparable<Node<N>> {
 	
 	private N payload;
 	private Map<N, Double> edges;

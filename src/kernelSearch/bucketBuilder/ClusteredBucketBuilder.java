@@ -100,26 +100,6 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         return g;
     }
 
-    /*
-    private UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints){
-        SimpleUndirectedGraph<Item> g = new SimpleUndirectedGraph<Item>();
-        IntStream.range(0, constraints.size())
-                .forEach(i->{
-                    while(constraints.get(i).size()>1) {
-                        Item current = constraints.get(i).poll();
-                        g.add_node(current);
-                        constraints.get(i).stream()
-                                .forEach(item->{
-                                    g.add_node(item);
-                                    g.add_edge(current, item);
-                                });
-                    }
-                });
-        System.out.println(g);
-        return g;
-    }
-    */
-
     /**
      * Retrieve constraints from the model and convert them into an "adjacency map between variables"
      * @param kernel_items a list of items that are not in the kernel (out-of-base variables)
