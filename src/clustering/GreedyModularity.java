@@ -83,7 +83,7 @@ public class GreedyModularity {
 		// Contains the variations of Q related to the merge of 2 communities
 		TreeMap<Integer, TreeMap<Integer,Double>> dq = new TreeMap<Integer, TreeMap<Integer,Double>>();
 
-		// FIXME questo ciclo non termina con il problema eil33-2.mps
+		// FIXME questo ciclo non termina con il problema eil33-2.mps, tuttavia termina con test.mps
 		IntStream.range(0, N)
 			.forEach((i)->{
 				dq.put(i, new TreeMap<Integer, Double>());
