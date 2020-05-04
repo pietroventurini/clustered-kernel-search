@@ -58,5 +58,4 @@ public class MapGraph<N extends Node> implements UndirectedGraph<N> {
     private int computeNumberOfEdges() {
         return neighbors.values().stream().map(set -> set.size()).reduce(0, (a,b) -> a + b) / 2;
     }
-
 }
