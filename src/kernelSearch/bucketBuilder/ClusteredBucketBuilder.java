@@ -19,7 +19,7 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
 	
     @Override
     public List<Bucket> build(List<Item> items, List<Item> kernel, double bucketSize, ModelProperties config) { // NOTE: items does not contain kernel items
-        //convert lists of items and kernel to maps
+        //convert lists of items and kernel to maps (item_name -> item_object)
         Map<String, Item> itemsMap = items.stream().collect(Collectors.toMap(Item::getName, item -> item));
         Map<String, Item> kernelMap = kernel.stream().collect(Collectors.toMap(Item::getName, kernel_item -> kernel_item));
 
@@ -29,7 +29,7 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         System.out.println("GRAPH HAS BEEN CREATED in "+ (System.nanoTime() - tStart)/1000000  +"ms");
 
         //call clustered Kernel Search to identify the clusters
-        List<Set<Item>> clusters = GreedyModularity.extract(itemsMap, g);
+        List<Set<Item>> clusters = GreedyModularity.extract(g);
         // convert clusters back into buckets
         List<Bucket> buckets = composeBuckets(clusters, items.size() + kernel.size());
         return buckets;

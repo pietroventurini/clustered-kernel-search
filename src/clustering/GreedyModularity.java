@@ -48,18 +48,16 @@ public class GreedyModularity {
 	 * @param g the graph to be analyzed
 	 * @return the list of clusters found
 	 */
-	public static <N extends Node, V> List<Set<N>> extract(Map<String, N> itemsMap, UndirectedGraph<N> g) {
+	public static <N extends Node> List<Set<N>> extract(UndirectedGraph<N> g) {
 		initLogger();
 		log.info("start: GREEDY MODULARITY on "+g);
 		
 		int N = g.nodes().size();
-		//double m = g.edges().size();
 		double m = g.edgesN();
 		double q0 = 1.0/(2.0*m);
 		
 		// Maps every node in an integer(just to simplify the use of nodes)
-		//TODO come parametro di extract ricevo itemsMap che è una mappa <nomeVariabile -> Item>, può essere usata al posto di labelToNode
-		TreeMap<Integer, N> labelToNode = new TreeMap<Integer, N>();
+		TreeMap<Integer, N> labelToNode = new TreeMap<Integer, N>(); // se necessario esiste gia' una mappa nome -> item all'interno di MapGrapBuilder.build()
 		HashMap<N, Integer> nodeToLabel = new HashMap<N, Integer>();
 		int index = 0;
 		for (N n: g.nodes()) {
@@ -67,12 +65,6 @@ public class GreedyModularity {
 			nodeToLabel.put(n, index);
 			index++;
 		}
-		/*
-		IntStream.range(0, N).forEach((i)->{
-			labelToNode.put(i, g.nodes().get(i));
-			nodeToLabel.put(g.nodes().get(i), i);
-		});
-		 */
 		
 		// Degree of each node
 		double[] k = IntStream.range(0, N).mapToDouble((i)->g.degree(labelToNode.get(i))).toArray();
@@ -90,12 +82,13 @@ public class GreedyModularity {
 
 		// Contains the variations of Q related to the merge of 2 communities
 		TreeMap<Integer, TreeMap<Integer,Double>> dq = new TreeMap<Integer, TreeMap<Integer,Double>>();
+
+		// FIXME questo ciclo non termina con il problema eil33-2.mps
 		IntStream.range(0, N)
 			.forEach((i)->{
 				dq.put(i, new TreeMap<Integer, Double>());
 				g.neighbors(labelToNode.get(i))
 					.stream()
-					.filter((n)->!n.equals(labelToNode.get(i)))
 					.mapToInt((n)->nodeToLabel.get(n))
 					.forEach((j)->dq.get(i).put(j, 2*q0 - 2*k[i]*k[j]*q0*q0));
 			});

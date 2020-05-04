@@ -81,14 +81,14 @@ public class MapGraphBuilder {
 	 * @return
 	 */
 	private static MapGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints, Map items) {
-		Map<String, Set<String>> g = new HashMap<>();
+		Map<Item, Set<Item>> g = new HashMap<>();
 		// implementazione poco elegante e costosa
 		for (PriorityQueue<Item> constraint : constraints) {
 			for (Item v1 : constraint) {
-				g.putIfAbsent(v1.getName(), new HashSet<>());
+				g.putIfAbsent(v1, new HashSet<>());
 				for (Item v2 : constraint)
 					if (!v1.equals(v2))
-						g.get(v1.getName()).add(v2.getName());
+						g.get(v1).add(v2);
 			}
 		}
 		return new MapGraph(items, g);
