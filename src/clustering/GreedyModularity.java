@@ -3,13 +3,12 @@ package clustering;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.logging.FileHandler;
+//import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
+//import java.util.logging.SimpleFormatter;
 
-import com.google.common.graph.MutableValueGraph;
-import graph.MapGraph;
+//import graph.MapGraph;
 import graph.Node;
 import graph.UndirectedGraph;
 
