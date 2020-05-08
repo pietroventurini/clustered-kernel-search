@@ -3,7 +3,7 @@ package clustering;
 import java.util.Objects;
 
 public class OptimizedMatrixEntry<N> implements Comparable<OptimizedMatrixEntry<N>>{
-	private static final String format = "(%.16e, r:%d, c:%d)";
+	private static final String format = "(%.16e, r:%s, c:%s)";
 	private double value;
 	private N row;
 	private N column;

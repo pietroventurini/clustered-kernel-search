@@ -22,8 +22,8 @@ public class OptimizedGreedyModularity {
 	/**
 	 * String to describe each merge
 	 */
-	private static String merge_format = "%d->%d(+%.2f)";
-	private static final Logger log = Logger.getLogger(GreedyModularity.class.getName());
+	private static String merge_format = "%s->%s(+%.2f)";
+	private static final Logger log = Logger.getLogger(OptimizedGreedyModularity.class.getName());
 	
 	/**
 	 * Initialize the logger

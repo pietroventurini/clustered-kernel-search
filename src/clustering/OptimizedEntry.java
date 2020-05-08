@@ -3,7 +3,7 @@ package clustering;
 import java.util.Objects;
 
 public class OptimizedEntry<N>{
-	private static final String format = "(%d, %d)";
+	private static final String format = "(%s, %s)";
 	private N row;
 	private N column;
 	
