@@ -120,6 +120,7 @@ public class MixedClustersBucketBuilder extends ClusteredBucketBuilder {
 	@Override
 	public List<Bucket> composeBuckets(List<Set<Item>> clusters, int itemsN) {
 		int bucketsAbsoluteSize = ((int) Math.floor(itemsN * this.bucketsRelativeSize));
+		
 		List<ArrayList<Item>> clustersAsList = new ArrayList<ArrayList<Item>>();
 		// Inizialmente, per ciascun cluster ottenuto dall'algoritmo
 		for (Set<Item> cluster : clusters) {
@@ -146,11 +147,16 @@ public class MixedClustersBucketBuilder extends ClusteredBucketBuilder {
 			
 			// Riferimento al cluster corrente
 			ArrayList<Item> currentCluster = clustersAsList.get(clusterIndex);
+			if (currentCluster == null) {
+				System.out.printf("L'indice %3d ha cluster nullo\n", clusterIndex);
+			} else {
+				System.out.printf("L'indice %3d non ha cluster nullo\n", clusterIndex);
+			}
 			
 			// Se il cluster corrente non ha più item al suo interno
 			if (levelIndex >= currentCluster.size()) {
 				// Viene rimosso dalla lista dei cluster, che non è più necessaria
-				clusters.remove(clusterIndex);
+				clustersAsList.remove(clusterIndex);
 				continue;
 			}
 			
