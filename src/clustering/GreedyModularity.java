@@ -28,7 +28,8 @@ public class GreedyModularity {
 	 * Initialize the logger
 	 */
 	private static void initLogger() {
-		log.setLevel(Level.FINE);
+//		log.setLevel(Level.FINE);
+		log.setLevel(Level.OFF);
 		try {
 			// Output in a text file
 //			FileHandler fh = new FileHandler("log.txt");
