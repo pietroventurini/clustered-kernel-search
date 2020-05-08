@@ -2,30 +2,29 @@ package clustering;
 
 import java.util.Objects;
 
-public class MatrixEntry implements Comparable<MatrixEntry>{
-	private static final String format = "(%.16e, r:%d, c:%d)";
+public class MatrixEntry<N> implements Comparable<MatrixEntry<N>>{
+	private static final String format = "(%.16e, r:%s, c:%s)";
 	private double value;
-	private int row;
-	private int column;
+	private N row;
+	private N column;
 	
-	public MatrixEntry(double val, int row, int col) {
+	public MatrixEntry(double val, N row, N col) {
 		this.value = val;
 		this.row = row;
 		this.column = col;
 	}
 	public double value() {return value;}
-	public int row() {return row;}
-	public int col() {return column;}
-	public int compareTo(MatrixEntry t) {
+	public N row() {return row;}
+	public N col() {return column;}
+	public int compareTo(MatrixEntry<N> t) {
 		return value>t.value?1:value<t.value?-1:0;
 	}
 	
 	public boolean equals(Object obj) {
 		if(obj==null || !MatrixEntry.class.isAssignableFrom(obj.getClass())) 
 			return false;
-		
-		final MatrixEntry me = (MatrixEntry) obj;
-		return compareTo(me)==0 && row==me.row && column==me.column;
+		final MatrixEntry<?> me = (MatrixEntry<?>) obj;
+		return value==me.value && row.equals(me.row) && column.equals(me.column);
 	}
 	public int hashCode() {
 		return Objects.hash(value, row, column);

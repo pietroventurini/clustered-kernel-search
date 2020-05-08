@@ -9,8 +9,8 @@
 <entry key="sorter">ItemSorterByValueAndAbsoluteRC</entry>
 <entry key="kernel_builder">KernelBuilderPositive</entry>
 <entry key="kernel_size">0.1</entry>
-<entry key="bucket_size">0.55</entry>
-<entry key="bucket_builder">SimpleClustersBucketBuilder</entry>
+<entry key="bucket_size">0.34</entry>
+<entry key="bucket_builder">AggregatedClustersBucketBuilder</entry>
 <entry key="kernel_time_limit">20</entry>
 <entry key="iterations">2</entry>
 <entry key="bucket_time_limit">30</entry>

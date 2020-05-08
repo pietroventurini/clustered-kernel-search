@@ -20,8 +20,8 @@ public class ModelProperties {
 		this.presolve = presolve;
 		this.mipgap = mipgap;
 	}
-	public String instance() {return instancePath;}
-	public String log() {return logPath;}
+	public String instancePath() {return instancePath;}
+	public String logPath() {return logPath;}
 	public int threads() {return threads;}
 	public int presolve() {return presolve;}
 	public double mipgap() {return mipgap;}

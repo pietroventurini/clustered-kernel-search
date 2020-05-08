@@ -1,6 +1,10 @@
 package kernelSearch;
 
-public class Item implements Comparable<Item>{
+import java.util.Objects;
+
+import graph.Node;
+
+public class Item implements Comparable<Item>, Node {
 	private String name; // variable's name
 	private double rc; // variables's reduced cost
 	private double xr; // variable's value
@@ -36,11 +40,19 @@ public class Item implements Comparable<Item>{
 		final Item other = (Item) obj;
 		return name.equals(other.name);
 	}
-	/**
+	
+	/*
 	 * @see java.lang.Comparable<Item>{@link #compareTo(Item)}
 	 */
 	@Override
 	public int compareTo(Item o) {
 		return name.compareTo(o.name);
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	public int hashCode() {
+		return Objects.hash(name, rc, xr);
 	}
 }

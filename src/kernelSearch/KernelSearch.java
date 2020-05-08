@@ -74,7 +74,7 @@ public class KernelSearch{
 		kernel = kernelBuilder.build(items, kernelSize);
 		// possibile fornire al bucketBuilder direttamente il GRBmodel usato nella risoluzione del kernel?
 		// alla fine ci servono solo le variabili(Items), della soluzione non ci importa
-		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()), 
+		buckets = bucketBuilder.build(items.stream().filter(it -> !kernel.contains(it)).collect(Collectors.toList()),
 										kernel, 
 										bucketSize,
 										modelProp);

@@ -2,23 +2,23 @@ package clustering;
 
 import java.util.Objects;
 
-public class Entry {
-	private static final String format = "(%d, %d)";
-	private int row;
-	private int column;
+public class Entry<N>{
+	private static final String format = "(%s, %s)";
+	private N row;
+	private N column;
 	
-	public Entry(int row, int col) {
+	public Entry(N row, N col) {
 		this.row = row;
 		this.column = col;
 	}
-	public int row() {return row;}
-	public int col() {return column;}
+	public N row() {return row;}
+	public N col() {return column;}
 	
 	public boolean equals(Object obj) {
 		if(obj==null || !Entry.class.isAssignableFrom(obj.getClass()))
 			return false;
-		final Entry other = (Entry) obj;
-		return row==other.row && column==other.column;
+		final Entry<?> other = (Entry<?>) obj;
+		return row.equals(other.row) && column.equals(other.column);
 	}
 	public int hashCode() {
 		return Objects.hash(row,column);
