@@ -29,7 +29,11 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         System.out.println("GRAPH HAS BEEN CREATED in "+ (System.nanoTime() - tStart)/1000000  +"ms");
 
         //call clustered Kernel Search to identify the clusters
+        System.out.println("CLUSTERING...");
+        tStart = System.nanoTime();
         List<Set<Item>> clusters = GreedyModularity.extract(g);
+        System.out.println("CLUSTERING COMPLETED in "+ (System.nanoTime() - tStart)/1000000  +"ms");
+
         // convert clusters back into buckets
         List<Bucket> buckets = composeBuckets(clusters, items.size() + kernel.size());
         return buckets;

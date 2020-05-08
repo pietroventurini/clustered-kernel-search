@@ -84,23 +84,22 @@ public class GreedyModularity {
 		TreeMap<Integer, TreeMap<Integer,Double>> dq = new TreeMap<Integer, TreeMap<Integer,Double>>();
 
 		// FIXME questo ciclo non termina con il problema eil33-2.mps, tuttavia termina con test.mps
-		IntStream.range(0, N)
-			.forEach((i)->{
-				dq.put(i, new TreeMap<Integer, Double>());
-				g.neighbors(labelToNode.get(i))
-					.stream()
-					.mapToInt((n)->nodeToLabel.get(n))
-					.forEach((j)->dq.get(i).put(j, 2*q0 - 2*k[i]*k[j]*q0*q0));
-			});
-		
+		for (int i = 0; i < N; i++) {
+			dq.put(i, new TreeMap<>());
+			final int finalI = i;
+			g.neighborsStream(labelToNode.get(i))
+					.mapToInt((n) -> nodeToLabel.get(n))
+					.forEach((j) -> dq.get(finalI).put(j, 2 * q0 - 2 * k[finalI] * k[j] * q0 * q0));
+		}
+
 		// Contains, for each row of dQ, the max element. Log time to access the max of each row
 		TreeMap<Integer,PriorityQueue<MatrixEntry>> dq_heap = new TreeMap<Integer,PriorityQueue<MatrixEntry>>();
-		IntStream.range(0, N)
-					.forEach((i)->{
-						dq_heap.put(i, new PriorityQueue<MatrixEntry>((t1,t2)->-t1.compareTo(t2)));
-						dq.get(i).entrySet().stream()
-									.forEach((e)->dq_heap.get(i).add(new MatrixEntry(e.getValue(), i, e.getKey())));
-						});
+		for (int idx = 0; idx < N; idx++) {
+			final int i1 = idx;
+			dq_heap.put(i1, new PriorityQueue<>((t1, t2) -> -t1.compareTo(t2)));
+			dq.get(i1).entrySet().stream()
+					.forEach((e) -> dq_heap.get(i1).add(new MatrixEntry(e.getValue(), i1, e.getKey())));
+		}
 
 		// Contains all the row's maximum. Log time to access the max
 		PriorityQueue<MatrixEntry> H = new PriorityQueue<MatrixEntry>((t1,t2)->-t1.compareTo(t2));

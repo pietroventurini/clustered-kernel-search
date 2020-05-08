@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Defines the behavior of a generic undirected Graph.
@@ -28,4 +29,8 @@ public interface UndirectedGraph<N extends Node> {
 	 * @return the list of its neighbors
 	 */
 	public List<N> neighbors(N node);
+
+	public Stream<N> neighborsStream(N node);
+
+	public Stream<N> nodesStream();
 }

@@ -2,6 +2,7 @@ package graph;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MapGraph<N extends Node> implements UndirectedGraph<N> {
 
@@ -33,6 +34,16 @@ public class MapGraph<N extends Node> implements UndirectedGraph<N> {
     @Override
     public List<N> neighbors(N node) {
         return neighbors.get(node).stream().collect(Collectors.toList()); //valutare se convertire l'interfaccia e restituire un insieme
+    }
+
+    @Override
+    public Stream<N> neighborsStream(N node) {
+        return neighbors.get(node).stream();
+    }
+
+    @Override
+    public Stream<N> nodesStream() {
+        return nodes.values().stream();
     }
 
     public void removeNode(N node) {
