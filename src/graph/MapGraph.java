@@ -20,7 +20,12 @@ public class MapGraph<N extends Node> implements UndirectedGraph<N> {
     public List<N> nodes() {
         return this.nodes.values().stream().collect(Collectors.toList());
     }
-
+    
+    @Override
+    public int nodesN() {
+    	return this.nodes.size();
+    }
+    
     @Override
     public double edgesN() {
         return this.edges;

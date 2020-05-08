@@ -14,6 +14,10 @@ public interface UndirectedGraph<N extends Node> {
 	 */
 	public List<N> nodes();
 	/**
+	 * @return the number of nodes of the graph
+	 */
+	public int nodesN();
+	/**
 	 * @return the number of ALL the edges of the graph
 	 */
 	public double edgesN();
@@ -29,8 +33,14 @@ public interface UndirectedGraph<N extends Node> {
 	 * @return the list of its neighbors
 	 */
 	public List<N> neighbors(N node);
-
+	/**
+	 * Returns a stream containing the neighbors of a specific node
+	 * @param node a node of the graph
+	 * @return the list of its neighbors
+	 */
 	public Stream<N> neighborsStream(N node);
-
+	/**
+	 * @return a stream of all the nodes of the graph
+	 */
 	public Stream<N> nodesStream();
 }
