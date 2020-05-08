@@ -2,6 +2,7 @@ package clustering;
 
 import java.util.Objects;
 
+@Deprecated
 public class MatrixEntry implements Comparable<MatrixEntry>{
 	private static final String format = "(%.16e, r:%d, c:%d)";
 	private double value;

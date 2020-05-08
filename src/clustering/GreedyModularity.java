@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import graph.Node;
 import graph.UndirectedGraph;
 
+@Deprecated
 /**
  * Implements the Greedy Modularity method proposed by Clauset, Newman and Moore
  * Reference: http://ece-research.unm.edu/ifis/papers/community-moore.pdf

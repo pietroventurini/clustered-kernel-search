@@ -21,7 +21,7 @@ public class OptimizedMatrixEntry<N> implements Comparable<OptimizedMatrixEntry<
 	}
 	
 	public boolean equals(Object obj) {
-		if(obj==null || !MatrixEntry.class.isAssignableFrom(obj.getClass())) 
+		if(obj==null || !OptimizedMatrixEntry.class.isAssignableFrom(obj.getClass())) 
 			return false;
 		final OptimizedMatrixEntry<?> me = (OptimizedMatrixEntry<?>) obj;
 		return value==me.value && row.equals(me.row) && column.equals(me.column);

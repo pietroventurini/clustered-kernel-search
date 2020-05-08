@@ -2,6 +2,7 @@ package clustering;
 
 import java.util.Objects;
 
+@Deprecated
 public class Entry {
 	private static final String format = "(%d, %d)";
 	private int row;

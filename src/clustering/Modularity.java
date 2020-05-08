@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.stream.*;
 
 public class Modularity {
+	@Deprecated
 	public static double nodesAsCommunities(double[] a) {
 		return IntStream.range(0, a.length)
 				.mapToDouble((i)->-Math.pow(a[i], 2))
