@@ -33,9 +33,24 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         tStart = System.nanoTime();
         List<Set<Item>> clusters = GreedyModularity.extract(g);
         System.out.println("CLUSTERING COMPLETED in "+ (System.nanoTime() - tStart)/1000000  +"ms");
+        
+        // Logging to StdOut
+        System.out.println("\nCLUSTERING INFO:");
+        System.out.printf("\tNumber of kernel items: %d\n", kernel.size());
+        System.out.printf("\tNumber of out-of-kernel items: %d\n", items.size());
+        System.out.printf("\tNumber of generated clusters: %d\n", clusters.size());
+        double averageClusterSize = clusters.stream().mapToInt(cluster -> cluster.size()).sum() / (double)clusters.size(); 
+        System.out.printf("\tAverage cluster size: %.3f\n\n", averageClusterSize);
 
         // convert clusters back into buckets
         List<Bucket> buckets = composeBuckets(clusters, items.size() + kernel.size());
+        System.out.println("BUCKET BUILDING INFO:");
+        System.out.printf("\tNumber of generated buckets: %d\n", buckets.size());      
+        double averageBucketSize = clusters.stream().mapToInt(bucket -> bucket.size()).sum() / (double)buckets.size(); 
+        System.out.printf("\tAverage bucket size: %.3f\n", averageBucketSize); 
+        System.out.printf("\tExpected relative bucket size: %f\n", bucketSize);
+        System.out.printf("\tExpected absolute bucket size: %f\n\n", bucketSize * kernel.size());
+        
         return buckets;
     }
     
