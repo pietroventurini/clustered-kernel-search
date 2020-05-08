@@ -76,4 +76,5 @@ fabric.properties
 .idea/
 .classpath
 .project
+.settings
 KernelSearch.iml
