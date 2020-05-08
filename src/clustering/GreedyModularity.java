@@ -35,7 +35,7 @@ public class GreedyModularity {
 //			fh.setFormatter(new SimpleFormatter());
 //			log.addHandler(fh);
 			// No console
-			log.setUseParentHandlers(false);
+			//log.setUseParentHandlers(false);
 		}catch(Exception io) {
 			System.out.println("Error in the Logger: "+io);
 		}

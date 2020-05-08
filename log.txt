@@ -585,3 +585,54 @@ H 4864  2621                      87.0000000    0.00000   100%   2.7    0s
 *17962  8267              65      76.0000000    0.00000   100%   2.6    1s
 *20613  8170              58      68.0000000    0.00000   100%   2.6    1s
 *21536  9261              57      62.0000000    0.00000   100%   2.6    1s
+
+Gurobi 9.0.0 (win64) logging started 05/08/20 18:50:55
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.05 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 32 rows, 4516 columns and 44243 nonzeros
+Model fingerprint: 0x113e0e6c
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.03s
+Presolved: 32 rows, 4516 columns, 44243 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ AA' NZ     : 4.960e+02
+ Factor NZ  : 5.280e+02 (roughly 2 MBytes of memory)
+ Factor Ops : 1.144e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.22729645e+05  0.00000000e+00  2.57e+02 0.00e+00  1.42e+01     0s
+   1   3.37094382e+03 -1.60699429e+01  4.96e+00 1.14e-13  3.82e-01     0s
+   2   1.10247613e+03  4.12833278e+02  3.19e-01 1.14e-13  7.41e-02     0s
+   3   9.25949561e+02  7.53050113e+02  5.39e-03 1.42e-13  1.90e-02     0s
+   4   8.72138641e+02  7.79604684e+02  2.20e-04 1.28e-13  1.02e-02     0s
+   5   8.39356745e+02  8.01466181e+02  4.95e-05 9.95e-14  4.19e-03     0s
+
+Barrier performed 5 iterations in 0.06 seconds
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with primal simplex
+Solved in 1571 iterations and 0.06 seconds
+Optimal objective  8.112789961e+02
+
+Gurobi 9.0.0 (win64) logging started 05/08/20 18:50:55
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.03 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
