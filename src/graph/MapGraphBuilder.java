@@ -6,7 +6,6 @@ import kernelSearch.Model;
 import kernelSearch.ModelProperties;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Class to build a graph from an adjacency matrix
