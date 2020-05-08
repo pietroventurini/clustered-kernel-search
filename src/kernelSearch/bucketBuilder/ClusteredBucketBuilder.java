@@ -3,7 +3,7 @@ package kernelSearch.bucketBuilder;
 import java.util.*;
 import java.util.stream.*;
 
-import clustering.GreedyModularity;
+import clustering.OptimizedGreedyModularity;
 import graph.MapGraphBuilder;
 import graph.UndirectedGraph;
 import kernelSearch.Bucket;
@@ -31,7 +31,7 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         //call clustered Kernel Search to identify the clusters
         System.out.println("CLUSTERING...");
         tStart = System.nanoTime();
-        List<Set<Item>> clusters = GreedyModularity.extract(g);
+        List<Set<Item>> clusters = OptimizedGreedyModularity.extract(g);
         System.out.println("CLUSTERING COMPLETED in "+ (System.nanoTime() - tStart)/1000000  +"ms");
 
         // convert clusters back into buckets

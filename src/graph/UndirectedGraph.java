@@ -14,10 +14,6 @@ public interface UndirectedGraph<N extends Node> {
 	 */
 	public List<N> nodes();
 	/**
-	 * @return the number of nodes of the graph
-	 */
-	public int nodesN();
-	/**
 	 * @return the number of ALL the edges of the graph
 	 */
 	public double edgesN();

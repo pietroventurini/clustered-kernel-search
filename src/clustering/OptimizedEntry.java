@@ -2,7 +2,7 @@ package clustering;
 
 import java.util.Objects;
 
-public class OptimizedEntry<N> {
+public class OptimizedEntry<N>{
 	private static final String format = "(%d, %d)";
 	private N row;
 	private N column;
@@ -17,7 +17,7 @@ public class OptimizedEntry<N> {
 	public boolean equals(Object obj) {
 		if(obj==null || !OptimizedEntry.class.isAssignableFrom(obj.getClass()))
 			return false;
-		final OptimizedEntry<N> other = (OptimizedEntry<N>) obj;
+		final OptimizedEntry<?> other = (OptimizedEntry<?>) obj;
 		return row.equals(other.row) && column.equals(other.column);
 	}
 	public int hashCode() {

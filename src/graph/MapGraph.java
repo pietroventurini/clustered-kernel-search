@@ -22,11 +22,6 @@ public class MapGraph<N extends Node> implements UndirectedGraph<N> {
     }
     
     @Override
-    public int nodesN() {
-    	return this.nodes.size();
-    }
-    
-    @Override
     public double edgesN() {
         return this.edges;
     }
