@@ -18,17 +18,17 @@ import kernelSearch.ModelProperties;
 public abstract class ClusteredBucketBuilder implements BucketBuilder {
 	
     @Override
-    public List<Bucket> build(List<Item> items, List<Item> kernel, double bucketSize, ModelProperties config) { // NOTE: items does not contain kernel items
+    public List<Bucket> build(List<Item> items, List<Item> kernel, double bucketSize, ModelProperties config) { // NOTE: items does NOT contain kernel items
         //convert lists of items and kernel to maps (item_name -> item_object)
         Map<String, Item> itemsMap = items.stream().collect(Collectors.toMap(Item::getName, item -> item));
-        Map<String, Item> kernelMap = kernel.stream().collect(Collectors.toMap(Item::getName, kernel_item -> kernel_item));
+        // Map<String, Item> kernelMap = kernel.stream().collect(Collectors.toMap(Item::getName, kernel_item -> kernel_item));
 
         System.out.println("COMPOSING THE GRAPH...");
         long tStart = System.nanoTime();
-        UndirectedGraph<Item> g = MapGraphBuilder.build(itemsMap, kernelMap, config);
+        UndirectedGraph<Item> g = MapGraphBuilder.build(itemsMap, config);
         System.out.println("GRAPH HAS BEEN CREATED in "+ (System.nanoTime() - tStart)/1000000  +"ms");
 
-        //call clustered Kernel Search to identify the clusters
+        // call clustered Kernel Search to identify the clusters
         System.out.println("CLUSTERING...");
         tStart = System.nanoTime();
         List<Set<Item>> clusters = GreedyModularity.extract(g);

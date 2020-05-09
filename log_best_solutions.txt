@@ -1,0 +1,15 @@
+OBJ:3082.0  -  TIME: 0 s.
+OBJ:186.0  -  TIME: 0 s.
+OBJ:145.0  -  TIME: 0 s.
+OBJ:85.0  -  TIME: 0 s.
+OBJ:84.0  -  TIME: 0 s.
+OBJ:72.0  -  TIME: 0 s.
+OBJ:64.0  -  TIME: 0 s.
+OBJ:39.0  -  TIME: 0 s.
+OBJ:34.0  -  TIME: 0 s.
+OBJ:24.0  -  TIME: 0 s.
+OBJ:22.0  -  TIME: 0 s.
+OBJ:20.0  -  TIME: 0 s.
+OBJ:18.999999999999996  -  TIME: 0 s.
+OBJ:13.0  -  TIME: 0 s.
+OBJ:1.0  -  TIME: 1 s.

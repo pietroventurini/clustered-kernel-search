@@ -14,24 +14,22 @@ import java.util.*;
 public class MapGraphBuilder {
 	/**
 	 * Retrieve constraints from the model and convert them into an "adjacency map between variables"
-	 * @param kernel_items a list of items that are not in the kernel (out-of-base variables)
 	 * @param config problem's configuration
 	 * @return
 	 */
-	public static UndirectedGraph<Item> build(Map<String, Item> items, Map<String, Item> kernel_items, ModelProperties config){
+	public static UndirectedGraph<Item> build(Map<String, Item> items, ModelProperties config){
 		GRBModel model = retrieveGurobiModel(config);
-		List<PriorityQueue<Item>> constraints = extractConstraints(items, kernel_items, model);
-		return composeGraph(constraints, items); // valutare se convertire in Map<Item, Set<Item>>
+		List<PriorityQueue<Item>> constraints = extractConstraints(items, model);
+		return composeGraph(constraints, items);
 	}
 
 	/**
 	 * Read the constraints from the GRBModel, and convert them into a List<PriorityQueue<Item>>
 	 * @param items a map of the items that are NOT inside the kernel
-	 * @param kernel_items a map of the items in the kernel
 	 * @param model a fictitious GRBModel (from which we retrieve the constraints)
 	 * @return
 	 */
-	private static List<PriorityQueue<Item>> extractConstraints(Map<String, Item> items, Map<String, Item> kernel_items, GRBModel model){
+	private static List<PriorityQueue<Item>> extractConstraints(Map<String, Item> items, GRBModel model){
 		List<PriorityQueue<Item>> constraints = new ArrayList<PriorityQueue<Item>>();
 
 		// iterate over all the constraints in the model
@@ -56,29 +54,26 @@ public class MapGraphBuilder {
 	}
 
 	/**
-	 * Build a graph that consists in a map (node -> [set of adjacent nodes])
-	 * @param constraints
-	 * @return
+	 * Build a graph that consists in a map (node -> adjacent nodes)
+	 * @param constraints the list of constraints
+	 * @param items the map (item_name -> item_obj) of out-of-basis items
+	 * @return a map (node -> [set of adjacent nodes]
 	 */
 	private static MapGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints, Map<String, Item> items) {
 		Map<Item, Set<Item>> g = new HashMap<>();
 		// Initialize HashSets
-		for (Item item : items.values()) {
+		for (Item item : items.values())
 			g.put(item, new HashSet<>());
-		}
+
 		// Filling HashSets
-		for (PriorityQueue<Item> constraint : constraints) {
-			for (Item v1 : constraint) {
-				for (Item v2 : constraint) {
-					if (!v1.equals(v2)) {
+		for (PriorityQueue<Item> constraint : constraints)
+			for (Item v1 : constraint)
+				for (Item v2 : constraint)
+					if (!v1.equals(v2))
 						g.get(v1).add(v2);
-					}
-				}
-			}
-		}
+
 		return new MapGraph<>(items, g);
 	}
-
 
 	/**
 	 * Retrieve a fictitious GRBModel that will be used to extract the constaints
