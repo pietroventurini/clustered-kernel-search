@@ -6,10 +6,14 @@ import java.util.Properties;
 
 public class Start {
     public static void main(String[] args) {
-        String pathmps = args[0];
-        String pathlog = args[1];
-        String pathConfig = args[2];
-          
+//        String pathmps = args[0];
+//        String pathlog = args[1];
+//        String pathConfig = args[2];
+    	
+        String pathmps = "./instances/test.mps";
+        String pathlog = "";
+        String pathConfig = "config.xml";
+    	  
         Properties p = new Properties();
 
         try {

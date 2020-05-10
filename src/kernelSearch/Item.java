@@ -55,4 +55,9 @@ public class Item implements Comparable<Item>, Node {
 	public int hashCode() {
 		return Objects.hash(name, rc, xr);
 	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 }
