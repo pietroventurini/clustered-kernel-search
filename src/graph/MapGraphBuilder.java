@@ -60,11 +60,9 @@ public class MapGraphBuilder {
 	 * @return a map (node -> [set of adjacent nodes]
 	 */
 	private static UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints, Map<String, Item> items) {
-//		Map<Item, Map<Item, Integer>> g = new HashMap<>()
 		UndirectedGraph<Item> graph = new MapGraph<>();
 		// Initialize HashSets
 		for (Item item : items.values()) {
-//			g.put(item, new HashMap<Item, Integer>());
 			graph.insertNode(item);
 		}
 
@@ -78,11 +76,10 @@ public class MapGraphBuilder {
 					}
 		
 		// Cleaning graph from unnecessary links
-		int threshold = constraints.size() / 2;
-		System.out.printf("Threshold = %d\n", threshold);
+		double threshold = graph.getM() / graph.edgesN() * 3.2; // Average weight * 3.2
+		System.out.printf("Threshold = %f\n", threshold);
 		graph.eraseAllEdgesUnder(threshold);
 		
-//		return new MapGraph<>(g);
 		return graph;
 	}
 

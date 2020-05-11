@@ -189,7 +189,7 @@ public class MapGraph<N extends Node & Comparable<? super N>> implements Undirec
     }
 
 	@Override
-	public void eraseAllEdgesUnder(int threshold) {
+	public void eraseAllEdgesUnder(double threshold) {
 		for (Map<N, Integer> nodeNeighbors : this.neighbors.values()) {
 			// Removing link if the weight is under the threshold
 			nodeNeighbors.values().removeIf(weight -> weight < threshold);

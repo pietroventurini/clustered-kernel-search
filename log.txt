@@ -7518,3 +7518,1304 @@ Gurobi 9.0.1 (mac64) logging started Mon May 11 16:06:30 2020
 Read MPS format model from file ./instances/eil33-2.mps
 Reading time = 0.01 seconds
 eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:21:48 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.05 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 32 rows, 4516 columns and 44243 nonzeros
+Model fingerprint: 0xbb7d8ec4
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Warning: Thread count (8) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.03s
+Presolved: 32 rows, 4516 columns, 44243 nonzeros
+
+
+Warning: Thread count (6) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ AA' NZ     : 4.960e+02
+ Factor NZ  : 5.280e+02 (roughly 2 MBytes of memory)
+ Factor Ops : 1.144e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.22729645e+05  0.00000000e+00  2.57e+02 0.00e+00  1.42e+01     0s
+   1   3.37094382e+03 -1.60699429e+01  4.96e+00 1.14e-13  3.82e-01     0s
+   2   1.10247613e+03  4.12833278e+02  3.19e-01 1.14e-13  7.41e-02     0s
+   3   9.25949561e+02  7.53050113e+02  5.39e-03 1.71e-13  1.90e-02     0s
+   4   8.72138641e+02  7.79604684e+02  2.20e-04 1.14e-13  1.02e-02     0s
+   5   8.39356745e+02  8.01466181e+02  4.95e-05 1.14e-13  4.19e-03     0s
+   6   8.23599079e+02  8.05274273e+02  1.21e-05 1.14e-13  2.03e-03     0s
+   7   8.17133969e+02  8.08592629e+02  4.71e-06 1.14e-13  9.45e-04     0s
+   8   8.11857211e+02  8.10700152e+02  1.33e-07 1.71e-13  1.28e-04     0s
+
+Barrier performed 8 iterations in 0.05 seconds
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Solved in 139 iterations and 0.06 seconds
+Optimal objective  8.112789961e+02
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:21:49 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.06 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4518 rows, 4516 columns and 48729 nonzeros
+Model fingerprint: 0x6a3bd5b0
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4496 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 34, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4512 rows, 4516 columns and 48723 nonzeros
+Model fingerprint: 0xe15fb8cb
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4485 rows and 4511 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4514 rows, 4516 columns and 48725 nonzeros
+Model fingerprint: 0xd00c306f
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4490 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.03 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4510 rows, 4516 columns and 48721 nonzeros
+Model fingerprint: 0xef35ca23
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4482 rows and 4513 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.02 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4512 rows, 4516 columns and 48723 nonzeros
+Model fingerprint: 0x18c58e1d
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4485 rows and 4513 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4516 rows, 4516 columns and 48727 nonzeros
+Model fingerprint: 0x0133d32e
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4492 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 38, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4512 rows, 4516 columns and 48723 nonzeros
+Model fingerprint: 0xe15fb8cb
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4485 rows and 4511 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4514 rows, 4516 columns and 48725 nonzeros
+Model fingerprint: 0xd00c306f
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4490 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4510 rows, 4516 columns and 48721 nonzeros
+Model fingerprint: 0xef35ca23
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4482 rows and 4513 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:40 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4512 rows, 4516 columns and 48723 nonzeros
+Model fingerprint: 0x18c58e1d
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4485 rows and 4513 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:22:41 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4516 rows, 4516 columns and 48727 nonzeros
+Model fingerprint: 0x0133d32e
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4492 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:26:34 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 32 rows, 4516 columns and 44243 nonzeros
+Model fingerprint: 0xbb7d8ec4
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Warning: Thread count (8) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.03s
+Presolved: 32 rows, 4516 columns, 44243 nonzeros
+
+
+Warning: Thread count (6) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ AA' NZ     : 4.960e+02
+ Factor NZ  : 5.280e+02 (roughly 2 MBytes of memory)
+ Factor Ops : 1.144e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.22729645e+05  0.00000000e+00  2.57e+02 0.00e+00  1.42e+01     0s
+   1   3.37094382e+03 -1.60699429e+01  4.96e+00 1.14e-13  3.82e-01     0s
+   2   1.10247613e+03  4.12833278e+02  3.19e-01 1.14e-13  7.41e-02     0s
+   3   9.25949561e+02  7.53050113e+02  5.39e-03 1.71e-13  1.90e-02     0s
+   4   8.72138641e+02  7.79604684e+02  2.20e-04 1.14e-13  1.02e-02     0s
+   5   8.39356745e+02  8.01466181e+02  4.95e-05 1.14e-13  4.19e-03     0s
+   6   8.23599079e+02  8.05274273e+02  1.21e-05 1.14e-13  2.03e-03     0s
+   7   8.17133969e+02  8.08592629e+02  4.71e-06 1.14e-13  9.45e-04     0s
+   8   8.11857211e+02  8.10700152e+02  1.33e-07 1.71e-13  1.28e-04     0s
+
+Barrier performed 8 iterations in 0.05 seconds
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Solved in 139 iterations and 0.05 seconds
+Optimal objective  8.112789961e+02
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:26:35 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:27:20 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.11 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4518 rows, 4516 columns and 48729 nonzeros
+Model fingerprint: 0x6a3bd5b0
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4496 rows and 4511 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 34, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:27:48 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 32 rows, 4516 columns and 44243 nonzeros
+Model fingerprint: 0xbb7d8ec4
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Warning: Thread count (8) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.03s
+Presolved: 32 rows, 4516 columns, 44243 nonzeros
+
+
+Warning: Thread count (6) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ AA' NZ     : 4.960e+02
+ Factor NZ  : 5.280e+02 (roughly 2 MBytes of memory)
+ Factor Ops : 1.144e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.22729645e+05  0.00000000e+00  2.57e+02 0.00e+00  1.42e+01     0s
+   1   3.37094382e+03 -1.60699429e+01  4.96e+00 1.14e-13  3.82e-01     0s
+   2   1.10247613e+03  4.12833278e+02  3.19e-01 1.14e-13  7.41e-02     0s
+   3   9.25949561e+02  7.53050113e+02  5.39e-03 1.71e-13  1.90e-02     0s
+   4   8.72138641e+02  7.79604684e+02  2.20e-04 1.14e-13  1.02e-02     0s
+   5   8.39356745e+02  8.01466181e+02  4.95e-05 1.14e-13  4.19e-03     0s
+   6   8.23599079e+02  8.05274273e+02  1.21e-05 1.14e-13  2.03e-03     0s
+   7   8.17133969e+02  8.08592629e+02  4.71e-06 1.14e-13  9.45e-04     0s
+
+Barrier performed 7 iterations in 0.05 seconds
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Solved in 139 iterations and 0.05 seconds
+Optimal objective  8.112789961e+02
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:27:48 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:32:28 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.26 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 32 rows, 4516 columns and 44243 nonzeros
+Model fingerprint: 0xbb7d8ec4
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Warning: Thread count (8) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.02s
+Presolved: 32 rows, 4516 columns, 44243 nonzeros
+
+
+Warning: Thread count (6) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ AA' NZ     : 4.960e+02
+ Factor NZ  : 5.280e+02 (roughly 2 MBytes of memory)
+ Factor Ops : 1.144e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.22729645e+05  0.00000000e+00  2.57e+02 0.00e+00  1.42e+01     0s
+   1   3.37094382e+03 -1.60699429e+01  4.96e+00 1.14e-13  3.82e-01     0s
+   2   1.10247613e+03  4.12833278e+02  3.19e-01 1.14e-13  7.41e-02     0s
+   3   9.25949561e+02  7.53050113e+02  5.39e-03 1.71e-13  1.90e-02     0s
+   4   8.72138641e+02  7.79604684e+02  2.20e-04 1.14e-13  1.02e-02     0s
+   5   8.39356745e+02  8.01466181e+02  4.95e-05 1.14e-13  4.19e-03     0s
+   6   8.23599079e+02  8.05274273e+02  1.21e-05 1.14e-13  2.03e-03     0s
+
+Barrier performed 6 iterations in 0.04 seconds
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Solved in 139 iterations and 0.04 seconds
+Optimal objective  8.112789961e+02
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:32:29 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:03 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.05 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 32 rows, 4516 columns and 44243 nonzeros
+Model fingerprint: 0xbb7d8ec4
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Warning: Thread count (8) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.03s
+Presolved: 32 rows, 4516 columns, 44243 nonzeros
+
+
+Warning: Thread count (6) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ AA' NZ     : 4.960e+02
+ Factor NZ  : 5.280e+02 (roughly 2 MBytes of memory)
+ Factor Ops : 1.144e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.22729645e+05  0.00000000e+00  2.57e+02 0.00e+00  1.42e+01     0s
+   1   3.37094382e+03 -1.60699429e+01  4.96e+00 1.14e-13  3.82e-01     0s
+   2   1.10247613e+03  4.12833278e+02  3.19e-01 1.14e-13  7.41e-02     0s
+   3   9.25949561e+02  7.53050113e+02  5.39e-03 1.71e-13  1.90e-02     0s
+   4   8.72138641e+02  7.79604684e+02  2.20e-04 1.14e-13  1.02e-02     0s
+   5   8.39356745e+02  8.01466181e+02  4.95e-05 1.14e-13  4.19e-03     0s
+   6   8.23599079e+02  8.05274273e+02  1.21e-05 1.14e-13  2.03e-03     0s
+   7   8.17133969e+02  8.08592629e+02  4.71e-06 1.14e-13  9.45e-04     0s
+
+Barrier performed 7 iterations in 0.04 seconds
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Solved in 139 iterations and 0.04 seconds
+Optimal objective  8.112789961e+02
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:03 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4518 rows, 4516 columns and 48729 nonzeros
+Model fingerprint: 0x6a3bd5b0
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4496 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4514 rows, 4516 columns and 48725 nonzeros
+Model fingerprint: 0x508ea0ae
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4488 rows and 4510 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.02 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4474 rows, 4516 columns and 48685 nonzeros
+Model fingerprint: 0xfe5cd9e0
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4445 rows and 4513 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4508 rows, 4516 columns and 48719 nonzeros
+Model fingerprint: 0x7b9f1c5f
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4482 rows and 4510 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4512 rows, 4516 columns and 48723 nonzeros
+Model fingerprint: 0x4ba2eef7
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4486 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4514 rows, 4516 columns and 48725 nonzeros
+Model fingerprint: 0xb34f2b59
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4489 rows and 4513 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 34, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4512 rows, 4516 columns and 48723 nonzeros
+Model fingerprint: 0x9cafd27d
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4487 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4516 rows, 4516 columns and 48727 nonzeros
+Model fingerprint: 0x9cd121cc
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4491 rows and 4510 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4499 rows, 4516 columns and 48710 nonzeros
+Model fingerprint: 0x282253e5
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4469 rows and 4509 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 34, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4515 rows, 4516 columns and 48726 nonzeros
+Model fingerprint: 0xb04fdc2f
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4489 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4475 rows, 4516 columns and 48686 nonzeros
+Model fingerprint: 0x6c7ff95d
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4445 rows and 4510 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4515 rows, 4516 columns and 48726 nonzeros
+Model fingerprint: 0x65c647b6
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4491 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4514 rows, 4516 columns and 48725 nonzeros
+Model fingerprint: 0x508ea0ae
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4488 rows and 4510 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4474 rows, 4516 columns and 48685 nonzeros
+Model fingerprint: 0xfe5cd9e0
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4445 rows and 4513 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4508 rows, 4516 columns and 48719 nonzeros
+Model fingerprint: 0x7b9f1c5f
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4482 rows and 4510 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 34, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4512 rows, 4516 columns and 48723 nonzeros
+Model fingerprint: 0x4ba2eef7
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4486 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 38, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:54 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4514 rows, 4516 columns and 48725 nonzeros
+Model fingerprint: 0xb34f2b59
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4489 rows and 4513 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 34, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:55 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4512 rows, 4516 columns and 48723 nonzeros
+Model fingerprint: 0x9cafd27d
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4487 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:55 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4516 rows, 4516 columns and 48727 nonzeros
+Model fingerprint: 0x9cd121cc
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4491 rows and 4510 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:55 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4499 rows, 4516 columns and 48710 nonzeros
+Model fingerprint: 0x282253e5
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4469 rows and 4509 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 33, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:55 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.02 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4515 rows, 4516 columns and 48726 nonzeros
+Model fingerprint: 0xb04fdc2f
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4489 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:55 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4475 rows, 4516 columns and 48686 nonzeros
+Model fingerprint: 0x6c7ff95d
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4445 rows and 4510 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:36:55 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 4515 rows, 4516 columns and 48726 nonzeros
+Model fingerprint: 0x65c647b6
+Variable types: 0 continuous, 4516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4491 rows and 4511 columns
+Presolve time: 0.01s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:38:51 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
+Gurobi Optimizer version 9.0.1 build v9.0.1rc0 (mac64)
+Optimize a model with 32 rows, 4516 columns and 44243 nonzeros
+Model fingerprint: 0xbb7d8ec4
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e+01, 4e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Warning: Thread count (8) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve time: 0.04s
+Presolved: 32 rows, 4516 columns, 44243 nonzeros
+
+
+Warning: Thread count (6) is larger than core count (4)
+         Reduce the value of the Threads parameter to improve performance
+
+Ordering time: 0.01s
+
+Barrier statistics:
+ AA' NZ     : 4.960e+02
+ Factor NZ  : 5.280e+02 (roughly 2 MBytes of memory)
+ Factor Ops : 1.144e+04 (less than 1 second per iteration)
+ Threads    : 1
+
+Barrier performed 0 iterations in 0.05 seconds
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Solved in 139 iterations and 0.05 seconds
+Optimal objective  8.112789961e+02
+
+Gurobi 9.0.1 (mac64) logging started Mon May 11 16:38:52 2020
+
+Read MPS format model from file ./instances/eil33-2.mps
+Reading time = 0.01 seconds
+eil33-2: 32 rows, 4516 columns, 44243 nonzeros
