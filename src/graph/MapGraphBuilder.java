@@ -102,7 +102,7 @@ public class MapGraphBuilder {
 	 * @param g the graph to prune
 	 * @param maxGraphEdges the maximum number of edges it can have
 	 */
-	private static void pruneGraph(UndirectedGraph g, int maxGraphEdges) {
+	private static void pruneGraph(UndirectedGraph<?> g, int maxGraphEdges) {
 		int threshold = (int) Math.round(g.getM() / g.edgesN()); // average weight
 		while (g.edgesN() > maxGraphEdges) {
 			g.eraseAllEdgesUnder(threshold);
