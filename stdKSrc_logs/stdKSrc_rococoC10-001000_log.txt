@@ -1,0 +1,357 @@
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/rococoC10-001000.mps
+Reading time = 0.03 seconds
+rococoC10-001000: 1293 rows, 3117 columns, 11751 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 1293 rows, 3117 columns and 11751 nonzeros
+Model fingerprint: 0xb0ca600f
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+05]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 750 rows and 675 columns
+Presolve time: 0.01s
+Presolved: 543 rows, 2442 columns, 6806 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.022254e+03   0.000000e+00      0s
+    1429    7.5152710e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 1429 iterations and 0.03 seconds
+Optimal objective  7.515271029e+03
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/rococoC10-001000.mps
+Reading time = 0.02 seconds
+rococoC10-001000: 1293 rows, 3117 columns, 11751 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 4061 rows, 3117 columns and 14519 nonzeros
+Model fingerprint: 0xb7756c53
+Variable types: 0 continuous, 3117 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+05]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 4061 rows and 3117 columns
+Presolve time: 0.01s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 23730 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 2.373000000000e+04, best bound 2.373000000000e+04, gap 0.0000%
+
+User-callback calls 65, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/rococoC10-001000.mps
+Reading time = 0.01 seconds
+rococoC10-001000: 1293 rows, 3117 columns, 11751 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 2539 rows, 3117 columns and 12997 nonzeros
+Model fingerprint: 0x0213be54
+Variable types: 0 continuous, 3117 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+05]
+  RHS range        [1e+00, 1e+00]
+
+Loaded user MIP start with objective 23730
+
+Presolve removed 2116 rows and 2068 columns
+Presolve time: 0.02s
+Presolved: 423 rows, 1049 columns, 3072 nonzeros
+Variable types: 0 continuous, 1049 integer (1006 binary)
+Presolve removed 89 rows and 66 columns
+Presolved: 334 rows, 983 columns, 2691 nonzeros
+
+
+Root relaxation: objective 1.038162e+04, 672 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 10381.6209    0  141 23730.0000 10381.6209  56.3%     -    0s
+H    0     0                    20660.000000 10381.6209  49.8%     -    0s
+H    0     0                    19480.000000 10381.6209  46.7%     -    0s
+H    0     0                    17564.000000 10439.1345  40.6%     -    0s
+H    0     0                    16576.000000 10439.1345  37.0%     -    0s
+     0     0 11977.9410    0  207 16576.0000 11977.9410  27.7%     -    0s
+H    0     0                    16364.000000 11977.9410  26.8%     -    0s
+     0     0 12013.1026    0  209 16364.0000 12013.1026  26.6%     -    0s
+     0     0 12057.1069    0  199 16364.0000 12057.1069  26.3%     -    0s
+     0     0 13805.6032    0  143 16364.0000 13805.6032  15.6%     -    0s
+H    0     0                    16325.000000 13805.6032  15.4%     -    0s
+     0     0 14126.3317    0  168 16325.0000 14126.3317  13.5%     -    0s
+     0     0 14159.3346    0  191 16325.0000 14159.3346  13.3%     -    0s
+     0     0 14161.8287    0  186 16325.0000 14161.8287  13.3%     -    0s
+     0     0 15545.5271    0  200 16325.0000 15545.5271  4.77%     -    0s
+H    0     0                    16212.000000 15545.5271  4.11%     -    0s
+     0     0 15554.5192    0  203 16212.0000 15554.5192  4.06%     -    0s
+     0     0 15555.3317    0  201 16212.0000 15555.3317  4.05%     -    0s
+H    0     0                    16149.000000 15555.3317  3.68%     -    0s
+     0     0 15696.3817    0  211 16149.0000 15696.3817  2.80%     -    0s
+     0     0 15717.8001    0  208 16149.0000 15717.8001  2.67%     -    0s
+     0     0 15723.2777    0  215 16149.0000 15723.2777  2.64%     -    0s
+     0     0 15723.8735    0  223 16149.0000 15723.8735  2.63%     -    0s
+     0     0 15764.3541    0  218 16149.0000 15764.3541  2.38%     -    0s
+     0     0 15769.2512    0  210 16149.0000 15769.2512  2.35%     -    0s
+     0     0 15772.2320    0  217 16149.0000 15772.2320  2.33%     -    0s
+H    0     0                    16146.000000 15772.2320  2.31%     -    0s
+     0     0 15783.9142    0  227 16146.0000 15783.9142  2.24%     -    0s
+     0     0 15783.9142    0  212 16146.0000 15783.9142  2.24%     -    0s
+H    0     0                    16130.000000 15784.0261  2.14%     -    0s
+H    0     2                    16088.000000 15784.0261  1.89%     -    0s
+     0     2 15784.0261    0  210 16088.0000 15784.0261  1.89%     -    0s
+
+Cutting planes:
+  Gomory: 8
+  Cover: 311
+  Implied bound: 55
+  Clique: 124
+  MIR: 84
+  StrongCG: 6
+  Flow cover: 7
+  GUB cover: 4
+  Inf proof: 1
+  RLT: 1
+  Relax-and-lift: 29
+
+Explored 7135 nodes (214195 simplex iterations) in 3.79 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 10: 16088 16130 16146 ... 19480
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.608800000000e+04, best bound 1.608800000000e+04, gap 0.0000%
+
+User-callback calls 15314, time in user-callback 0.01 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/rococoC10-001000.mps
+Reading time = 0.01 seconds
+rococoC10-001000: 1293 rows, 3117 columns, 11751 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 2745 rows, 3117 columns and 13203 nonzeros
+Model fingerprint: 0x50f51b19
+Variable types: 0 continuous, 3117 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+05]
+  RHS range        [1e+00, 1e+00]
+
+Loaded user MIP start with objective 16088
+
+Presolve removed 2387 rows and 2326 columns
+Presolve time: 0.03s
+Presolved: 358 rows, 791 columns, 2305 nonzeros
+Variable types: 0 continuous, 791 integer (758 binary)
+Presolve removed 57 rows and 46 columns
+Presolved: 301 rows, 745 columns, 2084 nonzeros
+
+
+Root relaxation: objective 8.388267e+03, 490 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 8388.26699    0  161 16088.0000 8388.26699  47.9%     -    0s
+H    0     0                    15876.000000 8388.26699  47.2%     -    0s
+     0     0 11927.3296    0  126 15876.0000 11927.3296  24.9%     -    0s
+H    0     0                    15471.000000 11927.3296  22.9%     -    0s
+H    0     0                    15192.000000 11927.3296  21.5%     -    0s
+     0     0 11938.4542    0  124 15192.0000 11938.4542  21.4%     -    0s
+     0     0 13806.5224    0  163 15192.0000 13806.5224  9.12%     -    0s
+     0     0 13953.3439    0   70 15192.0000 13953.3439  8.15%     -    0s
+     0     0 13953.3439    0   68 15192.0000 13953.3439  8.15%     -    0s
+     0     0 14265.6260    0  112 15192.0000 14265.6260  6.10%     -    0s
+     0     0 14315.4310    0  169 15192.0000 14315.4310  5.77%     -    0s
+     0     0 14323.0082    0  180 15192.0000 14323.0082  5.72%     -    0s
+     0     0 14323.7880    0  124 15192.0000 14323.7880  5.71%     -    0s
+     0     0 14452.7008    0  189 15192.0000 14452.7008  4.87%     -    0s
+     0     0 14506.5484    0  187 15192.0000 14506.5484  4.51%     -    0s
+     0     0 14518.5710    0  190 15192.0000 14518.5710  4.43%     -    0s
+     0     0 14522.0017    0  196 15192.0000 14522.0017  4.41%     -    0s
+
+Cutting planes:
+  Gomory: 2
+  Cover: 45
+  Implied bound: 7
+  Clique: 84
+  MIR: 23
+  StrongCG: 2
+  Flow cover: 1
+  GUB cover: 2
+  Relax-and-lift: 24
+
+Explored 1 nodes (1535 simplex iterations) in 0.37 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 15192 15471 15876 16088 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.519200000000e+04, best bound 1.519200000000e+04, gap 0.0000%
+
+User-callback calls 322, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/rococoC10-001000.mps
+Reading time = 0.02 seconds
+rococoC10-001000: 1293 rows, 3117 columns, 11751 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 2537 rows, 3117 columns and 12995 nonzeros
+Model fingerprint: 0xfbc19731
+Variable types: 0 continuous, 3117 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+05]
+  RHS range        [1e+00, 1e+00]
+
+Loaded user MIP start with objective 15192
+
+Presolve removed 2107 rows and 2052 columns
+Presolve time: 0.02s
+Presolved: 430 rows, 1065 columns, 3129 nonzeros
+Variable types: 0 continuous, 1065 integer (1029 binary)
+Presolve removed 91 rows and 68 columns
+Presolved: 339 rows, 997 columns, 2741 nonzeros
+
+
+Root relaxation: objective 8.562249e+03, 726 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 8562.24897    0  147 15192.0000 8562.24897  43.6%     -    0s
+H    0     0                    14892.000000 8562.24897  42.5%     -    0s
+     0     0 12964.4667    0  157 14892.0000 12964.4667  12.9%     -    0s
+     0     0 12989.8494    0  160 14892.0000 12989.8494  12.8%     -    0s
+     0     0 13707.1629    0  143 14892.0000 13707.1629  7.96%     -    0s
+     0     0 14090.6478    0  135 14892.0000 14090.6478  5.38%     -    0s
+     0     0 14092.8296    0  136 14892.0000 14092.8296  5.37%     -    0s
+H    0     0                    14840.000000 14092.8296  5.03%     -    0s
+     0     0 14334.6809    0  146 14840.0000 14334.6809  3.41%     -    0s
+H    0     0                    14826.000000 14334.6809  3.31%     -    0s
+     0     0 14366.6293    0  182 14826.0000 14366.6293  3.10%     -    0s
+     0     0 14369.1867    0  191 14826.0000 14369.1867  3.08%     -    0s
+     0     0 14376.3451    0  205 14826.0000 14376.3451  3.03%     -    0s
+     0     0 14376.3451    0  184 14826.0000 14376.3451  3.03%     -    0s
+H    0     0                    14823.000000 14376.3451  3.01%     -    0s
+     0     2 14376.3451    0  180 14823.0000 14376.3451  3.01%     -    0s
+H   31    33                    14821.000000 14479.9040  2.30%  52.9    0s
+  3887  1424 14663.1554   24  162 14821.0000 14663.1554  1.07%  27.7    5s
+
+Cutting planes:
+  Gomory: 16
+  Cover: 85
+  Implied bound: 6
+  Clique: 53
+  MIR: 35
+  StrongCG: 13
+  Flow cover: 13
+  GUB cover: 7
+  Inf proof: 5
+  Zero half: 9
+  RLT: 4
+  Relax-and-lift: 6
+
+Explored 5960 nodes (160381 simplex iterations) in 6.55 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 14821 14823 14826 ... 15192
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.482100000000e+04, best bound 1.482100000000e+04, gap 0.0000%
+
+User-callback calls 14214, time in user-callback 0.01 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/rococoC10-001000.mps
+Reading time = 0.01 seconds
+rococoC10-001000: 1293 rows, 3117 columns, 11751 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 2701 rows, 3117 columns and 13159 nonzeros
+Model fingerprint: 0x320a0701
+Variable types: 0 continuous, 3117 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+05]
+  RHS range        [1e+00, 1e+00]
+
+Loaded user MIP start with objective 14821
+
+Presolve removed 2319 rows and 2270 columns
+Presolve time: 0.03s
+Presolved: 382 rows, 847 columns, 2474 nonzeros
+Variable types: 0 continuous, 847 integer (814 binary)
+Presolve removed 61 rows and 46 columns
+Presolved: 321 rows, 801 columns, 2240 nonzeros
+
+
+Root relaxation: objective 8.028061e+03, 494 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 8028.06091    0  177 14821.0000 8028.06091  45.8%     -    0s
+     0     0 10475.6635    0  160 14821.0000 10475.6635  29.3%     -    0s
+H    0     0                    14781.000000 10475.6635  29.1%     -    0s
+     0     0 10479.2029    0  165 14781.0000 10479.2029  29.1%     -    0s
+     0     0 12547.5531    0  196 14781.0000 12547.5531  15.1%     -    0s
+     0     0 12576.7502    0  217 14781.0000 12576.7502  14.9%     -    0s
+     0     0 12576.8012    0  214 14781.0000 12576.8012  14.9%     -    0s
+     0     0 13492.1035    0  232 14781.0000 13492.1035  8.72%     -    0s
+     0     0 13604.7202    0  209 14781.0000 13604.7202  7.96%     -    0s
+     0     0 13609.8930    0  215 14781.0000 13609.8930  7.92%     -    0s
+     0     0 13611.4186    0  210 14781.0000 13611.4186  7.91%     -    0s
+     0     0 13849.8770    0  235 14781.0000 13849.8770  6.30%     -    0s
+     0     0 13913.4814    0  243 14781.0000 13913.4814  5.87%     -    0s
+     0     0 13947.0283    0  268 14781.0000 13947.0283  5.64%     -    0s
+     0     0 13948.7355    0  257 14781.0000 13948.7355  5.63%     -    0s
+     0     0 14031.3043    0  245 14781.0000 14031.3043  5.07%     -    0s
+     0     0 14054.7673    0  243 14781.0000 14054.7673  4.91%     -    0s
+     0     0 14058.9416    0  238 14781.0000 14058.9416  4.89%     -    0s
+     0     0 14080.7937    0  243 14781.0000 14080.7937  4.74%     -    0s
+     0     0 14089.3424    0  245 14781.0000 14089.3424  4.68%     -    0s
+     0     0 14093.6086    0  248 14781.0000 14093.6086  4.65%     -    0s
+     0     0 14098.3838    0  220 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14098.3838    0  218 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14098.3838    0  137 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14098.3838    0  156 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14098.3838    0  204 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14098.3838    0  217 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14098.3838    0  201 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14098.3838    0  229 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14098.3838    0  260 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14098.3838    0  230 14781.0000 14098.3838  4.62%     -    0s
+     0     0 14099.3835    0  235 14781.0000 14099.3835  4.61%     -    1s
+     0     0 14099.5629    0  233 14781.0000 14099.5629  4.61%     -    1s
+     0     0 14106.4826    0  236 14781.0000 14106.4826  4.56%     -    1s
+     0     0 14108.6715    0  229 14781.0000 14108.6715  4.55%     -    1s
+     0     0 14112.7442    0  218 14781.0000 14112.7442  4.52%     -    1s
+     0     0 14112.7442    0  216 14781.0000 14112.7442  4.52%     -    1s
+     0     2 14112.7442    0  216 14781.0000 14112.7442  4.52%     -    1s
+
+Cutting planes:
+  Gomory: 4
+  Cover: 50
+  Implied bound: 8
+  Clique: 86
+  MIR: 17
+  StrongCG: 10
+  GUB cover: 2
+  Relax-and-lift: 19
+
+Explored 22 nodes (4905 simplex iterations) in 1.27 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 14781 14821 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.478100000000e+04, best bound 1.478100000000e+04, gap 0.0000%
+
+User-callback calls 834, time in user-callback 0.00 sec
