@@ -136,10 +136,14 @@ public class MapGraph<N extends Node & Comparable<? super N>> implements Undirec
     	if (weight == 0) {
     		return;
     	}
+    	if (this.neighbors.get(node1).containsKey(node2)) {
+        	this.m += weight - this.neighbors.get(node1).get(node2);
+    	} else {
+        	this.edges += 1;
+        	this.m += weight;
+    	}
     	this.neighbors.get(node1).put(node2, weight);
     	this.neighbors.get(node2).put(node1, weight);
-    	this.edges += 1;
-    	this.m += weight;
     }
 
     /**

@@ -78,7 +78,9 @@ public class MapGraphBuilder {
 					}
 		
 		// Cleaning graph from unnecessary links
-		graph.eraseAllEdgesUnder(constraints.size() / 5);
+		int threshold = constraints.size() / 2;
+		System.out.printf("Threshold = %d\n", threshold);
+		graph.eraseAllEdgesUnder(threshold);
 		
 //		return new MapGraph<>(g);
 		return graph;
