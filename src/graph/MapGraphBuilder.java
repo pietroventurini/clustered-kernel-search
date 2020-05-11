@@ -75,10 +75,16 @@ public class MapGraphBuilder {
 						graph.connect(v1, v2, previousWeight + 1);
 					}
 		
+		System.out.printf("Number of nodes: %10d\n", graph.nodes().size());
+		System.out.printf("Number of edges: %10.0f\n", graph.edgesN());
+		
 		// Cleaning graph from unnecessary links
 		double threshold = graph.getM() / graph.edgesN() * 3.2; // Average weight * 3.2
 		System.out.printf("Threshold = %f\n", threshold);
 		graph.eraseAllEdgesUnder(threshold);
+
+		System.out.printf("Number of nodes after cleaning: %10d\n", graph.nodes().size());
+		System.out.printf("Number of edges after cleaning: %10.0f\n", graph.edgesN());
 		
 		return graph;
 	}
