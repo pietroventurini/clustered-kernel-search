@@ -6,12 +6,12 @@ import kernelSearch.bucketBuilder.clusteringBasedStrategies.SimpleClustersBucket
 import kernelSearch.bucketBuilder.clusteringBasedStrategies.SimpleClustersWithPrivilegedItemsBucketBuilder;
 
 public class BucketBuilderFactory {
-	public static BucketBuilder get(String builder, double bucketSize, double privilegedItemsPercentage) {
+	public static BucketBuilder get(String builder, double bucketRelativeSize, double privilegedItemsPercentage, double kernelRelativeSize) {
 		if(builder.equals(AggregatedClustersBucketBuilder.class.getSimpleName()))
-			return new AggregatedClustersBucketBuilder(bucketSize);
+			return new AggregatedClustersBucketBuilder(bucketRelativeSize, kernelRelativeSize);
 		
 		if(builder.equals(MixedClustersBucketBuilder.class.getSimpleName()))
-			return new MixedClustersBucketBuilder(bucketSize);
+			return new MixedClustersBucketBuilder(bucketRelativeSize);
 		
 		if(builder.equals(SimpleClustersBucketBuilder.class.getSimpleName()))
 			return new SimpleClustersBucketBuilder();

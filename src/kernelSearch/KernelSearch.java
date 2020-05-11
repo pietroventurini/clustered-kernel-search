@@ -55,7 +55,8 @@ public class KernelSearch{
 
 		bucketBuilder = BucketBuilderFactory.get(p.getProperty(ConfigKey.BUCKET_BUILDER.key()),
 													bucketSize,
-													Double.parseDouble(p.getProperty(ConfigKey.PRIVILEGED_ITEMS_PERCENTAGE.key())));
+													Double.parseDouble(p.getProperty(ConfigKey.PRIVILEGED_ITEMS_PERCENTAGE.key())),
+													kernelSize);
 
 		kernelBuilder = KernelBuilderFactory.get(p.getProperty(ConfigKey.KERNEL_BUILDER.key()));
 		modelProp = new ModelProperties(instPath,
