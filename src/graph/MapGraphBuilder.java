@@ -72,10 +72,14 @@ public class MapGraphBuilder {
 		for (PriorityQueue<Item> constraint : constraints)
 			for (Item v1 : constraint)
 				for (Item v2 : constraint)
-					if (v1.compareTo(v2) < 0)
-//						g.get(v1).put(v2, 1);
-						graph.connect(v1, v2, 1);
-
+					if (v1.compareTo(v2) < 0) {
+						int previousWeight = graph.weightOfEdge(v1, v2);
+						graph.connect(v1, v2, previousWeight + 1);
+					}
+		
+		// Cleaning graph from unnecessary links
+		graph.eraseAllEdgesUnder(constraints.size() / 5);
+		
 //		return new MapGraph<>(g);
 		return graph;
 	}

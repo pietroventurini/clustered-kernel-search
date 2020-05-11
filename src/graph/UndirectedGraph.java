@@ -79,4 +79,11 @@ public interface UndirectedGraph<N extends Node> {
 	 * @param node The node to be added
 	 */
 	void insertNode(N node);
+	
+	/**
+	 * Removes from the graph every edge which has weight STRICLTY LESS than the threshold.
+	 * (This means that edges having the weight equal to the threshold are NOT removed).
+	 * @param threshold
+	 */
+	void eraseAllEdgesUnder(int threshold);
 }
