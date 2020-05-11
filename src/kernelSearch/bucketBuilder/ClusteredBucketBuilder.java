@@ -31,7 +31,7 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         // Logging to StdOut
         System.out.println("\nGRAPH INFO:");
         System.out.printf("\tNodes: %d\n", g.nodes().size());
-        System.out.printf("\tEdges: %d\n", (int) g.edgesN());
+        System.out.printf("\tEdges: %d\n", Math.round(g.edgesN()));
 
         // call clustered Kernel Search to identify the clusters
         System.out.println("CLUSTERING...");
@@ -56,6 +56,7 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         System.out.printf("\tExpected relative bucket size: %f\n", bucketSize);
         System.out.printf("\tExpected absolute bucket size: %f\n\n", bucketSize * kernel.size());
         
+        buckets = handle1SizedBuckets(buckets);
         return buckets;
     }
     
@@ -67,4 +68,27 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
      * @return the list of Buckets
      */
     public abstract List<Bucket> composeBuckets(List<Set<Item>> clusters, int itemsN);
+    
+    /**
+     * Incorporates eventual 1 sized buckets into the other buckets.
+     * Distribute the 1 sized buckets' items as fairly as possible.
+     * The first buckets will receive the most profitable items.
+     * @param buckets the list of buckets
+     * @return the buckets with an acceptable size
+     */
+    private List<Bucket> handle1SizedBuckets(List<Bucket> buckets){
+    	PriorityQueue<Item> outsiders = new PriorityQueue<Item>(
+    			(it1, it2)->Double.compare(it1.getRc(), it2.getRc())
+    			);
+    	buckets.stream()
+    			.filter((b)->b.size() == 1)
+    			.forEach((b)->outsiders.add(b.getItems().get(0)));
+    	buckets.removeIf((bucket)->bucket.size() == 1);
+    	int i = 0;
+    	while(!outsiders.isEmpty()) {
+    		buckets.get(i%buckets.size()).addItem(outsiders.poll());
+    		i++;
+    	}
+    	return buckets;
+    }
 }
