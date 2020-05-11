@@ -59,20 +59,25 @@ public class MapGraphBuilder {
 	 * @param items the map (item_name -> item_obj) of out-of-basis items
 	 * @return a map (node -> [set of adjacent nodes]
 	 */
-	private static MapGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints, Map<String, Item> items) {
-		Map<Item, Set<Item>> g = new HashMap<>();
+	private static UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints, Map<String, Item> items) {
+//		Map<Item, Map<Item, Integer>> g = new HashMap<>()
+		UndirectedGraph<Item> graph = new MapGraph<>();
 		// Initialize HashSets
-		for (Item item : items.values())
-			g.put(item, new HashSet<>());
+		for (Item item : items.values()) {
+//			g.put(item, new HashMap<Item, Integer>());
+			graph.insertNode(item);
+		}
 
 		// Filling HashSets
 		for (PriorityQueue<Item> constraint : constraints)
 			for (Item v1 : constraint)
 				for (Item v2 : constraint)
-					if (!v1.equals(v2))
-						g.get(v1).add(v2);
+					if (v1.compareTo(v2) < 0)
+//						g.get(v1).put(v2, 1);
+						graph.connect(v1, v2, 1);
 
-		return new MapGraph<>(items, g);
+//		return new MapGraph<>(g);
+		return graph;
 	}
 
 	/**

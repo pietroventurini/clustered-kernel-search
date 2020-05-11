@@ -10,4 +10,5 @@ package graph;
 public interface Node {
 
     public String getName();
+    
 }
