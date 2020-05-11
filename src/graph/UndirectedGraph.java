@@ -44,4 +44,14 @@ public interface UndirectedGraph<N extends Node> {
 	 * @return the sum of the weights of all the links in the network
 	 */
 	public int getM();
+
+	/**
+	 * @return the weight of the edge between n1 and n2
+	 */
+	public int weightOfEdge(N n1, N n2);
+
+	/**
+	 * @return true if n1 and n2 are connected, false otherwise.
+	 */
+	public boolean areConnected(N n1, N n2);
 }

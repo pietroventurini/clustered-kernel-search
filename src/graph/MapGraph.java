@@ -53,6 +53,20 @@ public class MapGraph<N extends Node> implements UndirectedGraph<N> {
         return m;
     }
 
+    // TODO peso tra i due nodi
+    @Override
+    public int weightOfEdge(N n1, N n2) {
+        if (areConnected(n1, n2))
+            return 1;
+        return 0;
+    }
+
+    // TODO verifica se connessi
+    @Override
+    public boolean areConnected(N n1, N n2) {
+        return false;
+    }
+
     public void removeNode(N node) {
         if (neighbors.containsKey(node))
             removeNodeAndNeighbors(node);
@@ -77,7 +91,8 @@ public class MapGraph<N extends Node> implements UndirectedGraph<N> {
         return neighbors.values().stream().map(set -> set.size()).reduce(0, (a,b) -> a + b) / 2;
     }
 
+    // TODO somma pesi grafo
     private int computeM() {
-        return this.edges; //TODO
+        return this.edges;
     }
 }
