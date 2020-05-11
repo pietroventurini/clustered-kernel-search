@@ -41,7 +41,7 @@ public class MapGraph<N extends Node & Comparable<? super N>> implements Undirec
     /**
      * Each time a Map is needed in the class, we call this method.
      * In this way, we can easily edit the specific class, if we want to test different possibilities
-     * (HashMap, TreeMap, ConcurrentHashMap, WaekHashMap, etc...).
+     * (HashMap, TreeMap, ConcurrentHashMap, WeakHashMap, etc...).
      * @param <N> Map's keys type
      * @param <M> Map's values type
      * @return A new empty map
@@ -194,7 +194,8 @@ public class MapGraph<N extends Node & Comparable<? super N>> implements Undirec
 			// Removing link if the weight is under the threshold
 			nodeNeighbors.values().removeIf(weight -> weight < threshold);
 		}
-		// Removing empty map
+		// Removing empty map (nodes that are alone)
+		// TODO decidere se rimuovere i nodi lasciati singoli. Se no, rimuovere la riga successiva.
 		this.neighbors.values().removeIf(map -> map.isEmpty());
 		// Updating edges total weight and edges count
 		// FIXME Per il momento è un'implementazione pessima, poi sarà da tener conto di ogni singolo edge rimosso invece che calcolare le due quantità da capo.

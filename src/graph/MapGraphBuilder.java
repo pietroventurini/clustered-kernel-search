@@ -79,7 +79,7 @@ public class MapGraphBuilder {
 		System.out.printf("Number of edges: %10.0f\n", graph.edgesN());
 		
 		// Cleaning graph from unnecessary links
-		double threshold = graph.getM() / graph.edgesN() * 3.2; // Average weight * 3.2
+		double threshold = graph.getM() / graph.edgesN() * 4; // Average weight * 3.2
 		System.out.printf("Threshold = %f\n", threshold);
 		graph.eraseAllEdgesUnder(threshold);
 
