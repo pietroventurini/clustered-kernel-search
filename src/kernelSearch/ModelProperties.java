@@ -1,6 +1,5 @@
 package kernelSearch;
 
-
 public class ModelProperties {
 	private String instancePath;
 	private String logPath;
