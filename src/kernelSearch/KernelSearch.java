@@ -63,7 +63,8 @@ public class KernelSearch{
 										logPath,
 										Integer.parseInt(p.getProperty(ConfigKey.THREADS.key())),
 										Integer.parseInt(p.getProperty(ConfigKey.PRESOLVE.key())),
-										Double.parseDouble(p.getProperty(ConfigKey.MIPGAP.key())));
+										Double.parseDouble(p.getProperty(ConfigKey.MIPGAP.key())),
+										Integer.parseInt(p.getProperty(ConfigKey.MAX_GRAPH_EDGES.key())));
 
 	}
 	

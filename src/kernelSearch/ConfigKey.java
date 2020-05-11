@@ -15,7 +15,8 @@ public enum ConfigKey {
 	BUCKET_TIME_LIMIT("Time limit to compose a bucket"),
 	INSTANCE("Path to the mpl file"),
 	LOG("Path to the log file"),
-	PRIVILEGED_ITEMS_PERCENTAGE("The percentage of priviledged items");
+	PRIVILEGED_ITEMS_PERCENTAGE("The percentage of privileged items"),
+	MAX_GRAPH_EDGES("The maximum number of edges in the graph");
 	
 	private String description;
 	private ConfigKey(String description) {

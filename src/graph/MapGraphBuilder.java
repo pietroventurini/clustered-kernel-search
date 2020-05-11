@@ -20,7 +20,7 @@ public class MapGraphBuilder {
 	public static UndirectedGraph<Item> build(Map<String, Item> items, ModelProperties config){
 		GRBModel model = retrieveGurobiModel(config);
 		List<PriorityQueue<Item>> constraints = extractConstraints(items, model);
-		return composeGraph(constraints, items);
+		return composeGraph(constraints, items, config);
 	}
 
 	/**
@@ -59,12 +59,11 @@ public class MapGraphBuilder {
 	 * @param items the map (item_name -> item_obj) of out-of-basis items
 	 * @return a map (node -> [set of adjacent nodes]
 	 */
-	private static UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints, Map<String, Item> items) {
+	private static UndirectedGraph<Item> composeGraph(List<PriorityQueue<Item>> constraints, Map<String, Item> items, ModelProperties config) {
 		UndirectedGraph<Item> graph = new MapGraph<>();
 		// Initialize HashSets
-		for (Item item : items.values()) {
+		for (Item item : items.values())
 			graph.insertNode(item);
-		}
 
 		// Filling HashSets
 		for (PriorityQueue<Item> constraint : constraints)
@@ -79,9 +78,7 @@ public class MapGraphBuilder {
 		System.out.printf("Number of edges: %10.0f\n", graph.edgesN());
 		
 		// Cleaning graph from unnecessary links
-		double threshold = graph.getM() / graph.edgesN() * 4; // Average weight * 3.2
-		System.out.printf("Threshold = %f\n", threshold);
-		graph.eraseAllEdgesUnder(threshold);
+		pruneGraph(graph, config.maxGraphSize());
 
 		System.out.printf("Number of nodes after cleaning: %10d\n", graph.nodes().size());
 		System.out.printf("Number of edges after cleaning: %10.0f\n", graph.edgesN());
@@ -97,5 +94,19 @@ public class MapGraphBuilder {
 		Model model = new Model(config, 100000, true);
 		model.buildModel();
 		return model.getGRBModel();
+	}
+
+	/**
+	 * Remove edges whose weight does not exceed a certain threshold, incrementing the threshold until the graph
+	 * has less than maxGraphEdges edges.
+	 * @param g the graph to prune
+	 * @param maxGraphEdges the maximum number of edges it can have
+	 */
+	private static void pruneGraph(UndirectedGraph g, int maxGraphEdges) {
+		int threshold = (int) Math.round(g.getM() / g.edgesN()); // average weight
+		while (g.edgesN() > maxGraphEdges) {
+			g.eraseAllEdgesUnder(threshold);
+			threshold++;
+		}
 	}
 }

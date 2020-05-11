@@ -85,5 +85,5 @@ public interface UndirectedGraph<N extends Node> {
 	 * (This means that edges having the weight equal to the threshold are NOT removed).
 	 * @param threshold
 	 */
-	void eraseAllEdgesUnder(double threshold);
+	void eraseAllEdgesUnder(int threshold);
 }

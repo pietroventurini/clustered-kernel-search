@@ -15,4 +15,5 @@
 <entry key="iterations">2</entry>
 <entry key="bucket_time_limit">30</entry>
 <entry key="privileged_items_percentage">0.2</entry>
+<entry key="max_graph_edges">10000</entry>
 </properties>
