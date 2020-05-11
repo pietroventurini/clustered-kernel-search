@@ -9,11 +9,13 @@ public class MapGraph<N extends Node> implements UndirectedGraph<N> {
     private Map<String, N> nodes; //map from variable name to Item
     private Map<N, Set<N>> neighbors; //map from node (item) to a set of adjacent nodes
     private int edges;
+    private int m; // sum of edges' weights
 
     public MapGraph(Map<String, N> nodes, Map<N, Set<N>> neighbors) {
         this.nodes = nodes;
         this.neighbors = neighbors;
         this.edges = computeNumberOfEdges();
+        this.m = computeM();
     }
 
     @Override
@@ -46,6 +48,11 @@ public class MapGraph<N extends Node> implements UndirectedGraph<N> {
         return nodes.values().stream();
     }
 
+    @Override
+    public int getM() {
+        return m;
+    }
+
     public void removeNode(N node) {
         if (neighbors.containsKey(node))
             removeNodeAndNeighbors(node);
@@ -68,5 +75,9 @@ public class MapGraph<N extends Node> implements UndirectedGraph<N> {
      */
     private int computeNumberOfEdges() {
         return neighbors.values().stream().map(set -> set.size()).reduce(0, (a,b) -> a + b) / 2;
+    }
+
+    private int computeM() {
+        return this.edges; //TODO
     }
 }

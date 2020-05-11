@@ -39,4 +39,9 @@ public interface UndirectedGraph<N extends Node> {
 	 * @return a stream of all the nodes of the graph
 	 */
 	public Stream<N> nodesStream();
+
+	/**
+	 * @return the sum of the weights of all the links in the network
+	 */
+	public int getM();
 }
