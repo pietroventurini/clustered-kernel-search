@@ -51,6 +51,8 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         System.out.printf("\tExpected absolute bucket size: %f\n\n", bucketSize * kernel.size());
 
         handle1SizedBuckets(buckets);
+        System.out.println("HANDLING 1 SIZED BUCKETS:");
+        System.out.printf("\tNumber of total buckets: %d\n", buckets.size()); 
         return buckets;
     }
     
