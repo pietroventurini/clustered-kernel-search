@@ -40,7 +40,8 @@ public class AggregatedClustersBucketBuilder extends ClusteredBucketBuilder {
 			throw new IllegalArgumentException(
 					String.format("Impossibile istanziare un oggetto AggregatedClustersBucketBuilder con dimensione relativa dei buckets pari a %f", bucketsRelativeSize));
 		}
-		this.effectiveRelativeBucketsSize = (bucketsRelativeSize * kernelSize);
+		//this.effectiveRelativeBucketsSize = (bucketsRelativeSize * kernelSize);
+		this.effectiveRelativeBucketsSize = bucketsRelativeSize;
 	}
 	
 	/**

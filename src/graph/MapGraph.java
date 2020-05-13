@@ -196,7 +196,7 @@ public class MapGraph<N extends Node & Comparable<? super N>> implements Undirec
 		}
 		// Removing empty map (nodes that are alone)
 		// TODO decidere se rimuovere i nodi lasciati singoli. Se no, rimuovere la riga successiva.
-		this.neighbors.values().removeIf(map -> map.isEmpty());
+		// this.neighbors.values().removeIf(map -> map.isEmpty());
 		// Updating edges total weight and edges count
 		// FIXME Per il momento è un'implementazione pessima, poi sarà da tener conto di ogni singolo edge rimosso invece che calcolare le due quantità da capo.
 		this.edges = this.computeNumberOfEdges();

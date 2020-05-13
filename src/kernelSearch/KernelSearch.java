@@ -140,7 +140,7 @@ public class KernelSearch{
 			model.buildModel();
 					
 			model.disableItems(toDisable);
-		//	model.addBucketConstraint(b.getItems()); // can we use this constraint regardless of the type of variables chosen as items?
+			//model.addBucketConstraint(b.getItems()); // can we use this constraint regardless of the type of variables chosen as items?
 			
 			if(!bestSolution.isEmpty())
 			{

@@ -21,7 +21,6 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
     public List<Bucket> build(List<Item> items, List<Item> kernel, double bucketSize, ModelProperties config) { // NOTE: items does NOT contain kernel items
         //convert lists of items and kernel to maps (item_name -> item_object)
         Map<String, Item> itemsMap = items.stream().collect(Collectors.toMap(Item::getName, item -> item));
-        // Map<String, Item> kernelMap = kernel.stream().collect(Collectors.toMap(Item::getName, kernel_item -> kernel_item));
 
         System.out.println("COMPOSING THE GRAPH...");
         long tStart = System.nanoTime();
@@ -55,8 +54,8 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         System.out.printf("\tAverage bucket size: %.3f\n", averageBucketSize); 
         System.out.printf("\tExpected relative bucket size: %f\n", bucketSize);
         System.out.printf("\tExpected absolute bucket size: %f\n\n", bucketSize * kernel.size());
-        
-        buckets = handle1SizedBuckets(buckets);
+
+        handle1SizedBuckets(buckets);
         return buckets;
     }
     
@@ -76,9 +75,9 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
      * @param buckets the list of buckets
      * @return the buckets with an acceptable size
      */
-    private List<Bucket> handle1SizedBuckets(List<Bucket> buckets){
+    private void handle1SizedBuckets(List<Bucket> buckets){
     	PriorityQueue<Item> outsiders = new PriorityQueue<Item>(
-    			(it1, it2)->Double.compare(it1.getRc(), it2.getRc())
+                Comparator.comparingDouble(Item::getRc)
     			);
     	buckets.stream()
     			.filter((b)->b.size() == 1)
@@ -89,6 +88,6 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
     		buckets.get(i%buckets.size()).addItem(outsiders.poll());
     		i++;
     	}
-    	return buckets;
+    	return;
     }
 }
