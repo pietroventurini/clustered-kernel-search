@@ -10,7 +10,7 @@ public class Start {
 //        String pathlog = args[1];
 //        String pathConfig = args[2];
     	
-        String pathmps = "./instances/30n20b8.mps";
+        String pathmps = "./instances/rococoC10-001000.mps";
         String pathlog = "";
         String pathConfig = "config.xml";
     	  

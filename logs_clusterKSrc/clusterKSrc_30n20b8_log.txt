@@ -1,0 +1,1292 @@
+0.2
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.11 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 576 rows, 18380 columns and 109706 nonzeros
+Model fingerprint: 0xdebeaebc
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 171 rows and 7284 columns
+Presolve time: 0.08s
+Presolved: 405 rows, 11096 columns, 60699 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Dense cols : 2
+ AA' NZ     : 8.122e+03
+ Factor NZ  : 1.249e+04 (roughly 5 MBytes of memory)
+ Factor Ops : 4.480e+05 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.77428848e+03 -8.36434247e+04  1.77e+03 2.72e+00  1.83e+02     0s
+   1   6.36328777e+03 -6.32342108e+04  8.32e+02 2.58e+01  8.63e+01     0s
+
+Barrier performed 1 iterations in 0.11 seconds
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Solved in 430 iterations and 0.13 seconds
+Optimal objective  1.566407646e+00
+COMPOSING THE GRAPH...
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.17 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Number of nodes:      18234
+Number of edges:    6668485
+Number of nodes after cleaning:      18234
+Number of edges after cleaning:        496
+GRAPH HAS BEEN CREATED in 88393ms
+CLUSTERING...
+CLUSTERING COMPLETED in 6723ms
+
+CLUSTERING INFO:
+	Number of kernel items: 146
+	Number of out-of-kernel items: 18234
+	Number of generated clusters: 17755
+	Average cluster size: 1,027
+
+BUCKET BUILDING INFO:
+	Number of generated buckets: 17755
+	Average bucket size: 1,027
+	Expected relative bucket size: 0,340000
+	Expected absolute bucket size: 49,640000
+
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18810 rows, 18380 columns and 127940 nonzeros
+Model fingerprint: 0x5c70a4d1
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 18470 rows and 18270 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 25, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18042 rows, 18380 columns and 127172 nonzeros
+Model fingerprint: 0x594bdf27
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17876 rows and 18187 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 56, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.11 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18056 rows, 18380 columns and 127186 nonzeros
+Model fingerprint: 0x6d65ce8d
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17826 rows and 18097 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 31, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.11 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18056 rows, 18380 columns and 127186 nonzeros
+Model fingerprint: 0x25a6aa5c
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17854 rows and 18164 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 39, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18048 rows, 18380 columns and 127178 nonzeros
+Model fingerprint: 0xef1c59a6
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17838 rows and 18112 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 33, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18040 rows, 18380 columns and 127170 nonzeros
+Model fingerprint: 0xe0a90bf7
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17859 rows and 18174 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 53, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18047 rows, 18380 columns and 127177 nonzeros
+Model fingerprint: 0x31cd142b
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17887 rows and 18195 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 51, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18045 rows, 18380 columns and 127175 nonzeros
+Model fingerprint: 0x29c89cad
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17843 rows and 18114 columns
+Presolve time: 0.05s
+
+Explored 0 nodes (0 simplex iterations) in 0.08 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 33, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.26 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18043 rows, 18380 columns and 127173 nonzeros
+Model fingerprint: 0x8fdce316
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17829 rows and 18137 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.06 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 38, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.25 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18056 rows, 18380 columns and 127186 nonzeros
+Model fingerprint: 0xf4ef32d5
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17841 rows and 18154 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18042 rows, 18380 columns and 127172 nonzeros
+Model fingerprint: 0x5ed625b8
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17858 rows and 18171 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 51, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.16 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18053 rows, 18380 columns and 127183 nonzeros
+Model fingerprint: 0x2bc98ddf
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17730 rows and 17954 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 38, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.16 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18048 rows, 18380 columns and 127178 nonzeros
+Model fingerprint: 0x76ea0b70
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17851 rows and 18148 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 47, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18040 rows, 18380 columns and 127170 nonzeros
+Model fingerprint: 0xbd140341
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17823 rows and 18115 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 33, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.11 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18051 rows, 18380 columns and 127181 nonzeros
+Model fingerprint: 0x4eae8b4b
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17831 rows and 18143 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 36, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18054 rows, 18380 columns and 127184 nonzeros
+Model fingerprint: 0x52f7f554
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17845 rows and 18115 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18057 rows, 18380 columns and 127187 nonzeros
+Model fingerprint: 0x32a11cbd
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17847 rows and 18112 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 33, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18055 rows, 18380 columns and 127185 nonzeros
+Model fingerprint: 0xda0759b1
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17831 rows and 18135 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 43, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.11 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18041 rows, 18380 columns and 127171 nonzeros
+Model fingerprint: 0xb619bedd
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17842 rows and 18145 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.04 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 38, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18054 rows, 18380 columns and 127184 nonzeros
+Model fingerprint: 0x911cb74b
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17837 rows and 18152 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18051 rows, 18380 columns and 127181 nonzeros
+Model fingerprint: 0x03961e09
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17859 rows and 18159 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 44, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18068 rows, 18380 columns and 127198 nonzeros
+Model fingerprint: 0x4a0916de
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17713 rows and 17944 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 29, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18053 rows, 18380 columns and 127183 nonzeros
+Model fingerprint: 0x47d66915
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17850 rows and 18153 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18052 rows, 18380 columns and 127182 nonzeros
+Model fingerprint: 0x1b04a33c
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17826 rows and 18134 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.11 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18054 rows, 18380 columns and 127184 nonzeros
+Model fingerprint: 0x748b57a7
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17878 rows and 18171 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 50, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18042 rows, 18380 columns and 127172 nonzeros
+Model fingerprint: 0x594bdf27
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17876 rows and 18187 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 55, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18056 rows, 18380 columns and 127186 nonzeros
+Model fingerprint: 0x6d65ce8d
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17826 rows and 18097 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 31, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18056 rows, 18380 columns and 127186 nonzeros
+Model fingerprint: 0x25a6aa5c
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17854 rows and 18164 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 39, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.11 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18048 rows, 18380 columns and 127178 nonzeros
+Model fingerprint: 0xef1c59a6
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17838 rows and 18112 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 34, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.16 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18040 rows, 18380 columns and 127170 nonzeros
+Model fingerprint: 0xe0a90bf7
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17859 rows and 18174 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 53, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18047 rows, 18380 columns and 127177 nonzeros
+Model fingerprint: 0x31cd142b
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17887 rows and 18195 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 51, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18045 rows, 18380 columns and 127175 nonzeros
+Model fingerprint: 0x29c89cad
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17843 rows and 18114 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 34, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18043 rows, 18380 columns and 127173 nonzeros
+Model fingerprint: 0x8fdce316
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17829 rows and 18137 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 38, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.11 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18056 rows, 18380 columns and 127186 nonzeros
+Model fingerprint: 0xf4ef32d5
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17841 rows and 18154 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.16 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18042 rows, 18380 columns and 127172 nonzeros
+Model fingerprint: 0x5ed625b8
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17858 rows and 18171 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 51, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18053 rows, 18380 columns and 127183 nonzeros
+Model fingerprint: 0x2bc98ddf
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17730 rows and 17954 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 38, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18048 rows, 18380 columns and 127178 nonzeros
+Model fingerprint: 0x76ea0b70
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17851 rows and 18148 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 47, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18040 rows, 18380 columns and 127170 nonzeros
+Model fingerprint: 0xbd140341
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17823 rows and 18115 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 33, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18051 rows, 18380 columns and 127181 nonzeros
+Model fingerprint: 0x4eae8b4b
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17831 rows and 18143 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18054 rows, 18380 columns and 127184 nonzeros
+Model fingerprint: 0x52f7f554
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17845 rows and 18115 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.06 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18057 rows, 18380 columns and 127187 nonzeros
+Model fingerprint: 0x32a11cbd
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17847 rows and 18112 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.04 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 33, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18055 rows, 18380 columns and 127185 nonzeros
+Model fingerprint: 0xda0759b1
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17831 rows and 18135 columns
+Presolve time: 0.03s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 43, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.16 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18041 rows, 18380 columns and 127171 nonzeros
+Model fingerprint: 0xb619bedd
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17842 rows and 18145 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.14 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18054 rows, 18380 columns and 127184 nonzeros
+Model fingerprint: 0x911cb74b
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17837 rows and 18152 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 38, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18051 rows, 18380 columns and 127181 nonzeros
+Model fingerprint: 0x03961e09
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17859 rows and 18159 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 44, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18068 rows, 18380 columns and 127198 nonzeros
+Model fingerprint: 0x4a0916de
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17713 rows and 17944 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 28, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18053 rows, 18380 columns and 127183 nonzeros
+Model fingerprint: 0x47d66915
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17850 rows and 18153 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 37, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.13 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18052 rows, 18380 columns and 127182 nonzeros
+Model fingerprint: 0x1b04a33c
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17826 rows and 18134 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 35, time in user-callback 0.00 sec
+Academic license - for non-commercial use only
+Read MPS format model from file ./instances/30n20b8.mps
+Reading time = 0.11 seconds
+30n20b8: 576 rows, 18380 columns, 109706 nonzeros
+Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
+Optimize a model with 18054 rows, 18380 columns and 127184 nonzeros
+Model fingerprint: 0x748b57a7
+Variable types: 0 continuous, 18380 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [5e+01, 1e+02]
+  Bounds range     [1e+00, 2e+02]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 17878 rows and 18171 columns
+Presolve time: 0.02s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+User-callback calls 50, time in user-callback 0.00 sec

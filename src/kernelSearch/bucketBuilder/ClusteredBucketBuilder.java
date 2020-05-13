@@ -26,11 +26,6 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         long tStart = System.nanoTime();
         UndirectedGraph<Item> g = MapGraphBuilder.build(itemsMap, config);
         System.out.println("GRAPH HAS BEEN CREATED in "+ (System.nanoTime() - tStart)/1000000  +"ms");
-        
-        // Logging to StdOut
-        System.out.println("\nGRAPH INFO:");
-        System.out.printf("\tNodes: %d\n", g.nodes().size());
-        System.out.printf("\tEdges: %d\n", Math.round(g.edgesN()));
 
         // call clustered Kernel Search to identify the clusters
         System.out.println("CLUSTERING...");
