@@ -20,7 +20,7 @@ import kernelSearch.bucketBuilder.ClusteredBucketBuilder;
  */
 public class AggregatedClustersBucketBuilder extends ClusteredBucketBuilder {
 	
-	private final double effectiveRelativeBucketsSize;
+	private final double bucketsRelativeSize;
 	
 	/**
 	 * Costruttore.
@@ -40,8 +40,7 @@ public class AggregatedClustersBucketBuilder extends ClusteredBucketBuilder {
 			throw new IllegalArgumentException(
 					String.format("Impossibile istanziare un oggetto AggregatedClustersBucketBuilder con dimensione relativa dei buckets pari a %f", bucketsRelativeSize));
 		}
-		//this.effectiveRelativeBucketsSize = (bucketsRelativeSize * kernelSize);
-		this.effectiveRelativeBucketsSize = bucketsRelativeSize;
+		this.bucketsRelativeSize = bucketsRelativeSize;
 	}
 	
 	/**
@@ -49,7 +48,7 @@ public class AggregatedClustersBucketBuilder extends ClusteredBucketBuilder {
 	 */
 	@Override
 	public List<Bucket> composeBuckets(List<Set<Item>> clusters, int itemsNumber) {
-		int effectiveBucketsSize = (int) Math.ceil(itemsNumber * this.effectiveRelativeBucketsSize);
+		int effectiveBucketsSize = (int) Math.ceil(itemsNumber * this.bucketsRelativeSize);
 		
 		// Istanzio il numero corretto di buckets
 		List<Bucket> buckets = new ArrayList<Bucket>();

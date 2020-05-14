@@ -42,16 +42,16 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         System.out.printf("\tAverage cluster size: %.3f\n\n", averageClusterSize);
 
         // convert clusters back into buckets
-        List<Bucket> buckets = composeBuckets(clusters, items.size() + kernel.size());
+        List<Bucket> buckets = composeBuckets(clusters, items.size());
         System.out.println("BUCKET BUILDING INFO:");
         System.out.printf("\tNumber of generated buckets: %d\n", buckets.size());      
         double averageBucketSize = clusters.stream().mapToInt(bucket -> bucket.size()).sum() / (double)buckets.size(); 
         System.out.printf("\tAverage bucket size: %.3f\n", averageBucketSize); 
-        System.out.printf("\tExpected relative bucket size: %f\n", bucketSize);
-        System.out.printf("\tExpected absolute bucket size: %f\n\n", bucketSize * kernel.size());
+        System.out.printf("\tRelative bucket size: %f\n", bucketSize);
+        System.out.printf("\tExpected number of items-per-bucket: %f\n\n", bucketSize*items.size());
 
-        handle1SizedBuckets(buckets);
         System.out.println("HANDLING 1 SIZED BUCKETS:");
+        handle1SizedBuckets(buckets);
         System.out.printf("\tNumber of total buckets: %d\n", buckets.size()); 
         return buckets;
     }
@@ -73,16 +73,14 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
      * @return the buckets with an acceptable size
      */
     private void handle1SizedBuckets(List<Bucket> buckets){
-    	PriorityQueue<Item> outsiders = new PriorityQueue<Item>(
-                Comparator.comparingDouble(Item::getRc)
-    			);
+    	Queue<Item> outsiders = new PriorityQueue<Item>(Comparator.comparingDouble(Item::getRc));
     	buckets.stream()
     			.filter((b)->b.size() == 1)
     			.forEach((b)->outsiders.add(b.getItems().get(0)));
     	buckets.removeIf((bucket)->bucket.size() == 1);
     	int i = 0;
     	while(!outsiders.isEmpty()) {
-    		buckets.get(i%buckets.size()).addItem(outsiders.poll());
+    		buckets.get(i % buckets.size()).addItem(outsiders.poll());
     		i++;
     	}
     	return;

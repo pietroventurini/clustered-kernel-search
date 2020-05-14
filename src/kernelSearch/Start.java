@@ -6,25 +6,23 @@ import java.util.Properties;
 
 public class Start {
     public static void main(String[] args) {
-//        String pathmps = args[0];
-//        String pathlog = args[1];
-//        String pathConfig = args[2];
-    	
-        String pathmps = "./instances/30n20b8.mps";
-        String pathlog = "";
-        String pathConfig = "config.xml";
-    	  
+        String pathmps = args[0];
+        String pathlog = args[1];
+        String pathConfig = args[2];
+
         Properties p = new Properties();
 
         try {
         	p.loadFromXML(new FileInputStream(new File(pathConfig)));
-        }catch(Exception e) {
+        } catch(Exception e) {
         	e.printStackTrace();
         }        
         p.setProperty("instance", pathmps);
         p.setProperty("log", pathlog);
 
+        long tStart = System.nanoTime();
         KernelSearch ks = new KernelSearch(p);
         ks.start();
+        System.out.println("TOTAL TIME:" + (System.nanoTime() - tStart)/1000000 +"ms");
     }
 }
