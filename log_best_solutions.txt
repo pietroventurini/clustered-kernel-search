@@ -1,2 +1,0 @@
-OBJ:655.0  -  TIME: 19 s.
-OBJ:453.0  -  TIME: 19 s.
