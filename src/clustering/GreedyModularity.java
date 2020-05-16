@@ -228,8 +228,20 @@ public class GreedyModularity {
 			//log.info("Iteration end(Q:"+Q+"): merges : "+merges+", communities: "+communities+", H: "+H);
 			log.info("Iteration end(Q:"+Q+"): communities: "+communities+", H: "+H);
 		}
+
+		deallocate(a,dq,dq_heap,H);
 		return communities.values()
 							.stream()
 							.collect(Collectors.toList());
+	}
+	
+	private static <N> void deallocate(TreeMap<N, Double> a, 
+			HashMap<N, HashMap<N, Double>> dq, 
+			HashMap<N, PriorityQueue<MatrixEntry<N>>> dq_heap,
+			PriorityQueue<MatrixEntry<N>> H) {
+		a.clear();
+		dq.clear();
+		dq_heap.clear();
+		H.clear();
 	}
 }

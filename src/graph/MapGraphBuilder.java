@@ -20,6 +20,7 @@ public class MapGraphBuilder {
 	public static UndirectedGraph<Item> build(Map<String, Item> items, ModelProperties config){
 		GRBModel model = retrieveGurobiModel(config);
 		List<PriorityQueue<Item>> constraints = extractConstraints(items, model);
+		model = null;
 		return composeGraph(constraints, items, config);
 	}
 
@@ -73,13 +74,13 @@ public class MapGraphBuilder {
 						int previousWeight = graph.weightOfEdge(v1, v2);
 						graph.connect(v1, v2, previousWeight + 1);
 					}
-		
+		constraints = null;
 		System.out.printf("Number of nodes: %10d\n", graph.nodes().size());
 		System.out.printf("Number of edges: %10.0f\n", graph.edgesN());
 		
 		// Cleaning graph from unnecessary links
 		pruneGraph(graph, config.maxGraphSize());
-
+		
 		System.out.printf("Number of nodes after cleaning: %10d\n", graph.nodes().size());
 		System.out.printf("Number of edges after cleaning: %10.0f\n", graph.edgesN());
 		

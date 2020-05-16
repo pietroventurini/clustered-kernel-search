@@ -91,5 +91,4 @@ public class AggregatedClustersBucketBuilder extends ClusteredBucketBuilder {
 		}
 		return buckets;
 	}
-
 }

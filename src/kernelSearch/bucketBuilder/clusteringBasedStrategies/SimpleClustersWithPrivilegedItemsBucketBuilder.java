@@ -45,12 +45,12 @@ public class SimpleClustersWithPrivilegedItemsBucketBuilder extends ClusteredBuc
 		});
 		
 		List<Item> notKernel_ordered = new ArrayList<Item>();
-		clusters.stream().forEach(cluster->cluster.forEach(item->notKernel_ordered.add(item)));
+		buckets.stream().forEach(bucket->notKernel_ordered.addAll(bucket.getItems()));
 		new ItemSorterByValueAndAbsoluteRC().sort(notKernel_ordered);
 		notKernel_ordered.stream()
 							.limit((int) (notKernel_ordered.size() * this.privilegedItemsPercentage))
-							.forEach(item->buckets.forEach(b->b.addItem(item)));
+							.forEach(item->buckets.stream().filter(bucket->!bucket.contains(item) && bucket.size() > 1).forEach(b->b.addItem(item)));
+		notKernel_ordered.clear();
 		return buckets;
 	}
-
 }
