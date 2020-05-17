@@ -44,9 +44,13 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
         System.out.printf("\tAverage cluster size: %.3f\n\n", averageClusterSize);
 
         // convert clusters back into buckets
+        System.out.println("BUILDING BUCKETS...");
+        tStart = System.nanoTime();
         List<Bucket> buckets = composeBuckets(clusters, items.size());
+        System.out.println("BUCKETS BUILT in "+ (System.nanoTime() - tStart)/1000000  +"ms");
         clusters.forEach(cluster->cluster.clear());
         clusters.clear();
+        
         System.out.println("BUCKET BUILDING INFO:");
         System.out.printf("\tNumber of generated buckets: %d\n", buckets.size());      
         double averageBucketSize = buckets.stream().mapToInt(bucket -> bucket.size()).sum() / (double)buckets.size(); 
