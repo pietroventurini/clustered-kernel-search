@@ -28,12 +28,10 @@ public class SimpleClustersBucketBuilder extends ClusteredBucketBuilder {
 		}
 		return buckets;
 	}
-	
 	/* TODO Implementazione futura
 	 * Dato che l'algoritmo di clustering di CNM costruisce il dendrogramma del grafo,
 	 * sarebbe interessante permettere di scegliere il numero di cluster (e quindi di bucket) 
 	 * da restituire. Si tratterebbe di "tagliare" il dendrogramma all'altezza corretta in modo
 	 * da avere una suddivisione del grafo in esattamente N cluster.
 	 */
-
 }

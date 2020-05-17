@@ -44,6 +44,7 @@ public class SimpleClustersWithPrivilegedItemsBucketBuilder extends ClusteredBuc
 			buckets.add(currentBucket);
 		});
 		
+		clusters.clear();
 		List<Item> notKernel_ordered = new ArrayList<Item>();
 		buckets.stream().forEach(bucket->notKernel_ordered.addAll(bucket.getItems()));
 		new ItemSorterByValueAndAbsoluteRC().sort(notKernel_ordered);

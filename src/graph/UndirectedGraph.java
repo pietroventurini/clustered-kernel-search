@@ -86,4 +86,9 @@ public interface UndirectedGraph<N extends Node> {
 	 * @param threshold
 	 */
 	void eraseAllEdgesUnder(int threshold);
+	
+	/**
+	 * Erase all the nodes and edges
+	 */
+	void clear();
 }

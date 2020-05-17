@@ -74,7 +74,7 @@ public class MapGraphBuilder {
 						int previousWeight = graph.weightOfEdge(v1, v2);
 						graph.connect(v1, v2, previousWeight + 1);
 					}
-		constraints = null;
+		constraints.clear();
 		System.out.printf("Number of nodes: %10d\n", graph.nodes().size());
 		System.out.printf("Number of edges: %10.0f\n", graph.edgesN());
 		

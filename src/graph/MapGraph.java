@@ -16,17 +16,6 @@ public class MapGraph<N extends Node & Comparable<? super N>> implements Undirec
     private Map<N, Map<N, Integer>> neighbors; //map from node (item) to a set of adjacent nodes
     private int edges; // number of edges
     private int m; // sum of edges' weights
-
-    /**
-     * Public constructor.
-     * @param nodes Map: <Name of node, Node Object>
-     * @param neighbors: The map of neighbors
-     */
-    public MapGraph(Map<N, Map<N, Integer>> adjacencyMap) {
-        this.neighbors = adjacencyMap;
-        this.edges = computeNumberOfEdges();
-        this.m = computeM();
-    }
     
     /**
      * Public empty constructor.
@@ -201,5 +190,12 @@ public class MapGraph<N extends Node & Comparable<? super N>> implements Undirec
 		// FIXME Per il momento è un'implementazione pessima, poi sarà da tener conto di ogni singolo edge rimosso invece che calcolare le due quantità da capo.
 		this.edges = this.computeNumberOfEdges();
 		this.m = this.computeM();
+	}
+	
+	@Override
+	public void clear() {
+		this.edges = 0;
+		this.m = 0;
+		this.neighbors.clear();
 	}
 }
