@@ -38,13 +38,14 @@ Iter       Primal          Dual         Primal    Dual     Compl     Time
    7   8.17133969e+02  8.08592629e+02  4.71e-06 8.53e-14  9.45e-04     0s
    8   8.11857211e+02  8.10700152e+02  1.33e-07 1.07e-13  1.28e-04     0s
    9   8.11424391e+02  8.11074929e+02  2.93e-08 1.14e-13  3.87e-05     0s
+  10   8.11300808e+02  8.11256587e+02  4.06e-09 9.95e-14  4.90e-06     0s
 
-Barrier performed 9 iterations in 0.05 seconds
+Barrier performed 10 iterations in 0.05 seconds
 Barrier solve interrupted - model solved by another algorithm
 
 
-Solved with dual simplex
-Solved in 157 iterations and 0.05 seconds
+Solved with primal simplex
+Solved in 1571 iterations and 0.05 seconds
 Optimal objective  8.112789961e+02
 COMPOSING THE GRAPH...
 Academic license - for non-commercial use only
@@ -55,9 +56,9 @@ Number of nodes:       4486
 Number of edges:    9514770
 Number of nodes after cleaning:       4486
 Number of edges after cleaning:        371
-GRAPH HAS BEEN CREATED in 114945ms
+GRAPH HAS BEEN CREATED in 101399ms
 CLUSTERING...
-CLUSTERING COMPLETED in 1624ms
+CLUSTERING COMPLETED in 2251ms
 
 CLUSTERING INFO:
 	Number of kernel items: 30
@@ -66,22 +67,22 @@ CLUSTERING INFO:
 	Average cluster size: 1,014
 
 BUILDING BUCKETS...
-BUCKETS BUILT in 18ms
+BUCKETS BUILT in 12ms
 BUCKET BUILDING INFO:
-	Number of generated buckets: 10
-	Average bucket size: 448,600
-	Relative bucket size: 0,100000
-	Expected number of items-per-bucket: 448,600000
+	Number of generated buckets: 3
+	Average bucket size: 1495,333
+	Relative bucket size: 0,340000
+	Expected number of items-per-bucket: 1525,240000
 
 HANDLING 1 SIZED BUCKETS:
-	Number of total buckets: 10
+	Number of total buckets: 3
 Academic license - for non-commercial use only
 Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.05 seconds
+Reading time = 0.03 seconds
 eil33-2: 32 rows, 4516 columns, 44243 nonzeros
 Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
 Optimize a model with 4518 rows, 4516 columns and 48729 nonzeros
-Model fingerprint: 0x0dd3c3d1
+Model fingerprint: 0x9fa7960f
 Variable types: 0 continuous, 4516 integer (0 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
@@ -89,9 +90,9 @@ Coefficient statistics:
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
 Presolve removed 4496 rows and 4511 columns
-Presolve time: 0.00s
+Presolve time: 0.02s
 
-Explored 0 nodes (0 simplex iterations) in 0.02 seconds
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
 Thread count was 1 (of 8 available processors)
 
 Solution count 0
@@ -99,240 +100,285 @@ Solution count 0
 Model is infeasible
 Best objective -, best bound -, gap -
 
-User-callback calls 28, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.03 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4069 rows, 4516 columns and 48280 nonzeros
-Model fingerprint: 0xbfde4f66
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-Presolve removed 4037 rows and 4372 columns
-Presolve time: 0.05s
-
-Explored 0 nodes (0 simplex iterations) in 0.06 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 0
-
-Model is infeasible
-Best objective -, best bound -, gap -
-
-User-callback calls 53, time in user-callback 0.00 sec
+User-callback calls 27, time in user-callback 0.00 sec
 Academic license - for non-commercial use only
 Read MPS format model from file ./instances/eil33-2.mps
 Reading time = 0.05 seconds
 eil33-2: 32 rows, 4516 columns, 44243 nonzeros
 Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4069 rows, 4516 columns and 48280 nonzeros
-Model fingerprint: 0xda4d9716
+Optimize a model with 2992 rows, 4516 columns and 47203 nonzeros
+Model fingerprint: 0x6f4f1f3c
 Variable types: 0 continuous, 4516 integer (0 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
   Objective range  [7e+01, 4e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
-Presolve removed 4037 rows and 4444 columns
-Presolve time: 0.03s
+Presolve removed 2960 rows and 3657 columns
+Presolve time: 0.41s
+Presolved: 32 rows, 859 columns, 7505 nonzeros
+Variable types: 0 continuous, 859 integer (859 binary)
+Presolved: 32 rows, 859 columns, 7505 nonzeros
 
-Explored 0 nodes (0 simplex iterations) in 0.05 seconds
-Thread count was 1 (of 8 available processors)
 
-Solution count 0
+Root relaxation: objective 8.118811e+02, 113 iterations, 0.00 seconds
 
-Model is infeasible
-Best objective -, best bound -, gap -
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-User-callback calls 44, time in user-callback 0.00 sec
+     0     0  811.88112    0   22          -  811.88112      -     -    0s
+     0     0  822.44247    0   34          -  822.44247      -     -    0s
+H    0     0                    1129.4235420  822.44247  27.2%     -    0s
+     0     0  823.11605    0   34 1129.42354  823.11605  27.1%     -    0s
+     0     0  823.25329    0   36 1129.42354  823.25329  27.1%     -    0s
+     0     0  828.58129    0   44 1129.42354  828.58129  26.6%     -    0s
+     0     0  829.01229    0   48 1129.42354  829.01229  26.6%     -    0s
+     0     0  829.18535    0   50 1129.42354  829.18535  26.6%     -    0s
+     0     0  831.67083    0   51 1129.42354  831.67083  26.4%     -    0s
+     0     0  839.14612    0   53 1129.42354  839.14612  25.7%     -    0s
+     0     0  840.38534    0   53 1129.42354  840.38534  25.6%     -    0s
+     0     2  840.40602    0   53 1129.42354  840.40602  25.6%     -    0s
+H   80    47                    1111.3920718  850.89143  23.4%  55.2    1s
+*  185    49              11    1053.0286620  860.63348  18.3%  38.2    1s
+
+Cutting planes:
+  Clique: 50
+  MIR: 7
+  Mod-K: 7
+
+Explored 535 nodes (14521 simplex iterations) in 1.30 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 1053.03 1111.39 1129.42 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.053028662000e+03, best bound 1.053028662000e+03, gap 0.0000%
+
+User-callback calls 1262, time in user-callback 0.00 sec
 Academic license - for non-commercial use only
 Read MPS format model from file ./instances/eil33-2.mps
 Reading time = 0.03 seconds
 eil33-2: 32 rows, 4516 columns, 44243 nonzeros
 Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4069 rows, 4516 columns and 48280 nonzeros
-Model fingerprint: 0xdd8522ed
+Optimize a model with 2988 rows, 4516 columns and 47199 nonzeros
+Model fingerprint: 0xcb2a1701
 Variable types: 0 continuous, 4516 integer (0 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
   Objective range  [7e+01, 4e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
-Presolve removed 4038 rows and 4457 columns
-Presolve time: 0.03s
 
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
+Loaded user MIP start with objective 1053.03
 
-Solution count 0
+Presolve removed 2956 rows and 3739 columns
+Presolve time: 0.39s
+Presolved: 32 rows, 777 columns, 6893 nonzeros
+Variable types: 0 continuous, 777 integer (777 binary)
+Presolved: 32 rows, 777 columns, 6893 nonzeros
 
-Model is infeasible
-Best objective -, best bound -, gap -
 
-User-callback calls 47, time in user-callback 0.00 sec
+Root relaxation: objective 8.126671e+02, 114 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  812.66714    0   24 1053.02866  812.66714  22.8%     -    0s
+     0     0  821.45449    0   24 1053.02866  821.45449  22.0%     -    0s
+     0     0  821.76503    0   26 1053.02866  821.76503  22.0%     -    0s
+     0     0  822.08721    0   26 1053.02866  822.08721  21.9%     -    0s
+     0     0  822.09662    0   30 1053.02866  822.09662  21.9%     -    0s
+     0     0  828.90206    0   42 1053.02866  828.90206  21.3%     -    0s
+     0     0  832.44348    0   44 1053.02866  832.44348  20.9%     -    0s
+     0     0  835.53141    0   44 1053.02866  835.53141  20.7%     -    0s
+     0     0  843.21180    0   44 1053.02866  843.21180  19.9%     -    0s
+     0     0  844.35533    0   44 1053.02866  844.35533  19.8%     -    0s
+     0     2  844.50024    0   44 1053.02866  844.50024  19.8%     -    0s
+H   37    29                    1046.8426480  852.57344  18.6%  47.4    0s
+
+Cutting planes:
+  Clique: 47
+  MIR: 6
+  Mod-K: 5
+
+Explored 401 nodes (10848 simplex iterations) in 1.13 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 1046.84 1053.03 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.046842648000e+03, best bound 1.046842648000e+03, gap 0.0000%
+
+User-callback calls 987, time in user-callback 0.00 sec
 Academic license - for non-commercial use only
 Read MPS format model from file ./instances/eil33-2.mps
 Reading time = 0.03 seconds
 eil33-2: 32 rows, 4516 columns, 44243 nonzeros
 Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4069 rows, 4516 columns and 48280 nonzeros
-Model fingerprint: 0xafde3bb2
+Optimize a model with 3078 rows, 4516 columns and 47289 nonzeros
+Model fingerprint: 0xcffd2ea0
 Variable types: 0 continuous, 4516 integer (0 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
   Objective range  [7e+01, 4e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
-Presolve removed 4041 rows and 4508 columns
-Presolve time: 0.03s
 
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
+Loaded user MIP start with objective 1046.84
 
-Solution count 0
+Presolve removed 3046 rows and 3920 columns
+Presolve time: 1.13s
+Presolved: 32 rows, 596 columns, 4901 nonzeros
+Variable types: 0 continuous, 596 integer (596 binary)
+Presolved: 32 rows, 596 columns, 4901 nonzeros
 
-Model is infeasible
-Best objective -, best bound -, gap -
 
-User-callback calls 56, time in user-callback 0.00 sec
+Root relaxation: objective 8.130398e+02, 118 iterations, 0.02 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  813.03984    0   24 1046.84265  813.03984  22.3%     -    1s
+     0     0  825.41957    0   29 1046.84265  825.41957  21.2%     -    1s
+     0     0  833.95617    0   30 1046.84265  833.95617  20.3%     -    1s
+     0     0  834.50997    0   35 1046.84265  834.50997  20.3%     -    1s
+     0     0  835.86431    0   35 1046.84265  835.86431  20.2%     -    1s
+     0     0  837.05688    0   38 1046.84265  837.05688  20.0%     -    1s
+     0     0  853.26417    0   41 1046.84265  853.26417  18.5%     -    1s
+     0     0  855.88220    0   41 1046.84265  855.88220  18.2%     -    1s
+     0     2  856.40360    0   41 1046.84265  856.40360  18.2%     -    1s
+
+Cutting planes:
+  Clique: 35
+  MIR: 6
+  Mod-K: 5
+
+Explored 314 nodes (7651 simplex iterations) in 1.81 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 1: 1046.84 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.046842648000e+03, best bound 1.046842648000e+03, gap 0.0000%
+
+User-callback calls 811, time in user-callback 0.00 sec
 Academic license - for non-commercial use only
 Read MPS format model from file ./instances/eil33-2.mps
 Reading time = 0.03 seconds
 eil33-2: 32 rows, 4516 columns, 44243 nonzeros
 Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4069 rows, 4516 columns and 48280 nonzeros
-Model fingerprint: 0xbc619a37
+Optimize a model with 2990 rows, 4516 columns and 47201 nonzeros
+Model fingerprint: 0xdf5ec161
 Variable types: 0 continuous, 4516 integer (0 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
   Objective range  [7e+01, 4e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
-Presolve removed 4037 rows and 4460 columns
-Presolve time: 0.03s
 
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
+Loaded user MIP start with objective 1046.84
 
-Solution count 0
+Presolve removed 2958 rows and 3661 columns
+Presolve time: 0.72s
+Presolved: 32 rows, 855 columns, 7448 nonzeros
+Variable types: 0 continuous, 855 integer (855 binary)
+Presolved: 32 rows, 855 columns, 7448 nonzeros
 
-Model is infeasible
-Best objective -, best bound -, gap -
 
-User-callback calls 55, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.03 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4069 rows, 4516 columns and 48280 nonzeros
-Model fingerprint: 0x5cb34c12
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-Presolve removed 4037 rows and 4430 columns
-Presolve time: 0.02s
+Root relaxation: objective 8.118811e+02, 126 iterations, 0.03 seconds
 
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-Solution count 0
+     0     0  811.88112    0   22 1046.84265  811.88112  22.4%     -    0s
+     0     0  819.41525    0   31 1046.84265  819.41525  21.7%     -    0s
+     0     0  822.05067    0   30 1046.84265  822.05067  21.5%     -    1s
+     0     0  822.35687    0   31 1046.84265  822.35687  21.4%     -    1s
+     0     0  822.36911    0   31 1046.84265  822.36911  21.4%     -    1s
+     0     0  829.56874    0   47 1046.84265  829.56874  20.8%     -    1s
+     0     0  832.79081    0   41 1046.84265  832.79081  20.4%     -    1s
+     0     0  832.79081    0   46 1046.84265  832.79081  20.4%     -    1s
+     0     0  832.79081    0   51 1046.84265  832.79081  20.4%     -    1s
+     0     0  834.64442    0   50 1046.84265  834.64442  20.3%     -    1s
+     0     0  840.70880    0   57 1046.84265  840.70880  19.7%     -    1s
+     0     0  840.85722    0   57 1046.84265  840.85722  19.7%     -    1s
+     0     2  841.01079    0   57 1046.84265  841.01079  19.7%     -    1s
 
-Model is infeasible
-Best objective -, best bound -, gap -
+Cutting planes:
+  Clique: 49
+  MIR: 5
+  Mod-K: 6
 
-User-callback calls 52, time in user-callback 0.00 sec
+Explored 411 nodes (11413 simplex iterations) in 1.91 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 1: 1046.84 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.046842648000e+03, best bound 1.046842648000e+03, gap 0.0000%
+
+User-callback calls 1035, time in user-callback 0.00 sec
 Academic license - for non-commercial use only
 Read MPS format model from file ./instances/eil33-2.mps
 Reading time = 0.02 seconds
 eil33-2: 32 rows, 4516 columns, 44243 nonzeros
 Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4069 rows, 4516 columns and 48280 nonzeros
-Model fingerprint: 0xce31766e
+Optimize a model with 2988 rows, 4516 columns and 47199 nonzeros
+Model fingerprint: 0x268facc4
 Variable types: 0 continuous, 4516 integer (0 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
   Objective range  [7e+01, 4e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
-Presolve removed 4037 rows and 4465 columns
-Presolve time: 0.02s
 
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
+Loaded user MIP start with objective 1046.84
 
-Solution count 0
+Presolve removed 2956 rows and 3739 columns
+Presolve time: 0.59s
+Presolved: 32 rows, 777 columns, 6893 nonzeros
+Variable types: 0 continuous, 777 integer (777 binary)
+Presolved: 32 rows, 777 columns, 6893 nonzeros
 
-Model is infeasible
-Best objective -, best bound -, gap -
 
-User-callback calls 56, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.02 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4069 rows, 4516 columns and 48280 nonzeros
-Model fingerprint: 0xd14dad0c
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-Presolve removed 4052 rows and 4512 columns
-Presolve time: 0.02s
+Root relaxation: objective 8.126671e+02, 114 iterations, 0.00 seconds
 
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-Solution count 0
+     0     0  812.66714    0   24 1046.84265  812.66714  22.4%     -    0s
+     0     0  821.45449    0   24 1046.84265  821.45449  21.5%     -    0s
+     0     0  821.76503    0   26 1046.84265  821.76503  21.5%     -    0s
+     0     0  822.08721    0   26 1046.84265  822.08721  21.5%     -    0s
+     0     0  822.09662    0   30 1046.84265  822.09662  21.5%     -    0s
+     0     0  828.90206    0   42 1046.84265  828.90206  20.8%     -    0s
+     0     0  832.44348    0   44 1046.84265  832.44348  20.5%     -    0s
+     0     0  835.53141    0   44 1046.84265  835.53141  20.2%     -    0s
+     0     0  843.21180    0   44 1046.84265  843.21180  19.5%     -    0s
+     0     0  844.35533    0   44 1046.84265  844.35533  19.3%     -    0s
+     0     2  844.50024    0   44 1046.84265  844.50024  19.3%     -    0s
 
-Model is infeasible
-Best objective -, best bound -, gap -
+Cutting planes:
+  Clique: 46
+  MIR: 5
+  Mod-K: 5
 
-User-callback calls 47, time in user-callback 0.00 sec
+Explored 430 nodes (11164 simplex iterations) in 1.47 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 1: 1046.84 
+
+Optimal solution found (tolerance 1.00e-12)
+Best objective 1.046842648000e+03, best bound 1.046842648000e+03, gap 0.0000%
+
+User-callback calls 1053, time in user-callback 0.02 sec
 Academic license - for non-commercial use only
 Read MPS format model from file ./instances/eil33-2.mps
 Reading time = 0.03 seconds
 eil33-2: 32 rows, 4516 columns, 44243 nonzeros
 Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4069 rows, 4516 columns and 48280 nonzeros
-Model fingerprint: 0x9410a068
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-Presolve removed 4069 rows and 4516 columns
-Presolve time: 0.03s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.05 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1056.37 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.056372323000e+03, best bound 1.056372323000e+03, gap 0.0000%
-
-User-callback calls 73, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.02 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4068 rows, 4516 columns and 48279 nonzeros
-Model fingerprint: 0x6d94e954
+Optimize a model with 3078 rows, 4516 columns and 47289 nonzeros
+Model fingerprint: 0xcffd2ea0
 Variable types: 0 continuous, 4516 integer (0 binary)
 Coefficient statistics:
   Matrix range     [1e+00, 1e+00]
@@ -340,309 +386,42 @@ Coefficient statistics:
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
 
-Loaded user MIP start with objective 1056.37
+Loaded user MIP start with objective 1046.84
 
-Presolve removed 4068 rows and 4516 columns
-Presolve time: 0.03s
-Presolve: All rows and columns removed
+Presolve removed 3046 rows and 3920 columns
+Presolve time: 0.67s
+Presolved: 32 rows, 596 columns, 4901 nonzeros
+Variable types: 0 continuous, 596 integer (596 binary)
+Presolved: 32 rows, 596 columns, 4901 nonzeros
 
-Explored 0 nodes (0 simplex iterations) in 0.05 seconds
-Thread count was 1 (of 8 available processors)
 
-Solution count 1: 1056.37 
+Root relaxation: objective 8.130398e+02, 118 iterations, 0.03 seconds
 
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.056372323000e+03, best bound 1.056372323000e+03, gap 0.0000%
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-User-callback calls 73, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.03 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4064 rows, 4516 columns and 48275 nonzeros
-Model fingerprint: 0x7aabcbf0
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
+     0     0  813.03984    0   24 1046.84265  813.03984  22.3%     -    0s
+     0     0  825.41957    0   29 1046.84265  825.41957  21.2%     -    0s
+     0     0  833.95617    0   30 1046.84265  833.95617  20.3%     -    0s
+     0     0  834.50997    0   35 1046.84265  834.50997  20.3%     -    1s
+     0     0  835.86431    0   35 1046.84265  835.86431  20.2%     -    1s
+     0     0  837.05688    0   38 1046.84265  837.05688  20.0%     -    1s
+     0     0  853.26417    0   41 1046.84265  853.26417  18.5%     -    1s
+     0     0  855.88220    0   41 1046.84265  855.88220  18.2%     -    1s
+     0     2  856.40360    0   41 1046.84265  856.40360  18.2%     -    1s
 
-Loaded user MIP start with objective 1056.37
+Cutting planes:
+  Clique: 35
+  MIR: 6
+  Mod-K: 5
 
-Presolve removed 4064 rows and 4516 columns
-Presolve time: 0.05s
-Presolve: All rows and columns removed
+Explored 314 nodes (7651 simplex iterations) in 1.62 seconds
+Thread count was 8 (of 8 available processors)
 
-Explored 0 nodes (0 simplex iterations) in 0.05 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1056.37 
+Solution count 1: 1046.84 
 
 Optimal solution found (tolerance 1.00e-12)
-Best objective 1.056372323000e+03, best bound 1.056372323000e+03, gap 0.0000%
+Best objective 1.046842648000e+03, best bound 1.046842648000e+03, gap 0.0000%
 
-User-callback calls 70, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.03 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4064 rows, 4516 columns and 48275 nonzeros
-Model fingerprint: 0x56d6fff6
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
-Loaded user MIP start with objective 1056.37
-
-Presolve removed 4064 rows and 4516 columns
-Presolve time: 0.03s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 1019.52 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.019521461000e+03, best bound 1.019521461000e+03, gap 0.0000%
-
-User-callback calls 54, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.03 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4063 rows, 4516 columns and 48274 nonzeros
-Model fingerprint: 0x1f1ed561
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
-Loaded user MIP start with objective 1019.52
-
-Presolve removed 4063 rows and 4516 columns
-Presolve time: 0.03s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1019.52 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.019521461000e+03, best bound 1.019521461000e+03, gap 0.0000%
-
-User-callback calls 65, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.03 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4063 rows, 4516 columns and 48274 nonzeros
-Model fingerprint: 0x0c75c865
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
-Loaded user MIP start with objective 1019.52
-
-Presolve removed 4063 rows and 4516 columns
-Presolve time: 0.03s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1019.52 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.019521461000e+03, best bound 1.019521461000e+03, gap 0.0000%
-
-User-callback calls 65, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.03 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4063 rows, 4516 columns and 48274 nonzeros
-Model fingerprint: 0x9f4c18fd
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
-Loaded user MIP start with objective 1019.52
-
-Presolve removed 4063 rows and 4516 columns
-Presolve time: 0.03s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1019.52 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.019521461000e+03, best bound 1.019521461000e+03, gap 0.0000%
-
-User-callback calls 66, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.02 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4063 rows, 4516 columns and 48274 nonzeros
-Model fingerprint: 0xd89e7b17
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
-Loaded user MIP start with objective 1019.52
-
-Presolve removed 4063 rows and 4516 columns
-Presolve time: 0.03s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1019.52 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.019521461000e+03, best bound 1.019521461000e+03, gap 0.0000%
-
-User-callback calls 83, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.03 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4063 rows, 4516 columns and 48274 nonzeros
-Model fingerprint: 0x94467815
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
-Loaded user MIP start with objective 1019.52
-
-Presolve removed 4063 rows and 4516 columns
-Presolve time: 0.03s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1019.52 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.019521461000e+03, best bound 1.019521461000e+03, gap 0.0000%
-
-User-callback calls 66, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.02 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4063 rows, 4516 columns and 48274 nonzeros
-Model fingerprint: 0xa632891d
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
-Loaded user MIP start with objective 1019.52
-
-Presolve removed 4063 rows and 4516 columns
-Presolve time: 0.05s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.06 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1019.52 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.019521461000e+03, best bound 1.019521461000e+03, gap 0.0000%
-
-User-callback calls 96, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.03 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4068 rows, 4516 columns and 48279 nonzeros
-Model fingerprint: 0x8b616c59
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
-Loaded user MIP start with objective 1019.52
-
-Presolve removed 4068 rows and 4516 columns
-Presolve time: 0.03s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.03 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1019.52 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.019521461000e+03, best bound 1.019521461000e+03, gap 0.0000%
-
-User-callback calls 76, time in user-callback 0.00 sec
-Academic license - for non-commercial use only
-Read MPS format model from file ./instances/eil33-2.mps
-Reading time = 0.05 seconds
-eil33-2: 32 rows, 4516 columns, 44243 nonzeros
-Gurobi Optimizer version 9.0.0 build v9.0.0rc2 (win64)
-Optimize a model with 4067 rows, 4516 columns and 48278 nonzeros
-Model fingerprint: 0xd1c3e4a2
-Variable types: 0 continuous, 4516 integer (0 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [7e+01, 4e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
-Loaded user MIP start with objective 1019.52
-
-Presolve removed 4067 rows and 4516 columns
-Presolve time: 0.06s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.06 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 1019.52 
-
-Optimal solution found (tolerance 1.00e-12)
-Best objective 1.019521461000e+03, best bound 1.019521461000e+03, gap 0.0000%
-
-User-callback calls 78, time in user-callback 0.00 sec
-TOTAL TIME:119174ms
+User-callback calls 817, time in user-callback 0.02 sec
+TOTAL TIME:113721ms

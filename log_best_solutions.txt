@@ -1,11 +1,3 @@
-OBJ:23730.0  -  TIME: 4 s.
-OBJ:23406.0  -  TIME: 4 s.
-OBJ:23129.0  -  TIME: 4 s.
-OBJ:23084.0  -  TIME: 4 s.
-OBJ:21802.0  -  TIME: 4 s.
-OBJ:21595.0  -  TIME: 4 s.
-OBJ:21592.0  -  TIME: 4 s.
-OBJ:21527.0  -  TIME: 4 s.
-OBJ:21315.0  -  TIME: 5 s.
-OBJ:21264.0  -  TIME: 5 s.
-OBJ:21017.0  -  TIME: 5 s.
+OBJ:906.0  -  TIME: 24 s.
+OBJ:453.0  -  TIME: 24 s.
+OBJ:402.0  -  TIME: 24 s.
