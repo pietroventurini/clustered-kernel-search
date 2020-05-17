@@ -45,6 +45,7 @@ public abstract class ClusteredBucketBuilder implements BucketBuilder {
 
         // convert clusters back into buckets
         List<Bucket> buckets = composeBuckets(clusters, items.size());
+        clusters.forEach(cluster->cluster.clear());
         clusters.clear();
         System.out.println("BUCKET BUILDING INFO:");
         System.out.printf("\tNumber of generated buckets: %d\n", buckets.size());      

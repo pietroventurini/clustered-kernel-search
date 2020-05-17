@@ -240,7 +240,9 @@ public class GreedyModularity {
 			HashMap<N, PriorityQueue<MatrixEntry<N>>> dq_heap,
 			PriorityQueue<MatrixEntry<N>> H) {
 		a.clear();
+		dq.keySet().forEach(key->dq.get(key).clear());
 		dq.clear();
+		dq_heap.keySet().forEach(key->dq.get(key).clear());
 		dq_heap.clear();
 		H.clear();
 	}

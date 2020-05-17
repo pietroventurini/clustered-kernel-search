@@ -196,6 +196,7 @@ public class MapGraph<N extends Node & Comparable<? super N>> implements Undirec
 	public void clear() {
 		this.edges = 0;
 		this.m = 0;
+		this.neighbors.keySet().forEach(key->neighbors.get(key).clear());
 		this.neighbors.clear();
 	}
 }
