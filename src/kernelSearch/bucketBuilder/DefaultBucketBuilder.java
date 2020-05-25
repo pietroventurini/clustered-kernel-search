@@ -33,6 +33,7 @@ public class DefaultBucketBuilder implements BucketBuilder
 		if(b.size() < size && b.size() > 0){
 			buckets.add(b);
 		}
+		System.out.println("BUCKETS: " + buckets.size());
 		return buckets;
 	}
 }

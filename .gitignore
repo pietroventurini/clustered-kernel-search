@@ -78,3 +78,7 @@ fabric.properties
 .project
 .settings
 KernelSearch.iml
+
+bestSolution.sol
+log_best_solutions.txt
+log.txt
